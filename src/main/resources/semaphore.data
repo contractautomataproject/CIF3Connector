@@ -1,0 +1,7 @@
+Rank: 1
+Initial state: [Close]
+Final states: [[Close]]
+Committed states: [[]]
+Transitions: 
+([Close],[?open],[Open])
+([Open],[?close],[Close])

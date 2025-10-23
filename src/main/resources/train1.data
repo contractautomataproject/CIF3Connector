@@ -1,0 +1,12 @@
+Rank: 1
+Initial state: [(0; 1)]
+Final states: [[(5; 1)_OUT,(5; 0)_OUT]]
+Committed states: [[]]
+Transitions: 
+!L([(0; 1)],[?goright],[(1; 1)])
+!L([(1; 1)],[?goright],[(2; 1)])
+!L([(2; 1)],[?goright],[(3; 1)])
+!L([(3; 1)],[?goright],[(4; 1)])
+!L([(4; 1)],[?goup],[(4; 0)])
+!L([(4; 1)],[?goright],[(5; 1)_OUT])
+!L([(4; 0)],[?goright],[(5; 0)_OUT])
