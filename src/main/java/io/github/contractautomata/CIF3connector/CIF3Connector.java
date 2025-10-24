@@ -28,6 +28,11 @@ import java.util.stream.IntStream;
 import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.PERMITTED;
 import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.URGENT;
 
+/**
+ * This is the tool for translating contract automata into CIF3 automata.
+ * The tool takes in input a list of principal automata, computes their composition and the corresponding orchestration (MPC), both translated into CIF3 format.
+ * In case of a single principal automaton in input, it is treated as it this is already the composed automaton.
+ */
 public class CIF3Connector {
     private static final AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
 
@@ -190,7 +195,7 @@ public class CIF3Connector {
 
 
     //taken from CATLib
-    private static  List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> encodePrincipals(List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> laut){
+    public static  List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> encodePrincipals(List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> laut){
         return laut.stream()
                 .map(aut->
                 {

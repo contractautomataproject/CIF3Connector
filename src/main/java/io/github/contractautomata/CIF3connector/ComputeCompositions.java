@@ -32,10 +32,19 @@ import java.util.stream.IntStream;
 import static io.github.contractautomata.CIF3connector.CIF3Connector.contractAutomatonToCIF3;
 import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.PERMITTED;
 import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.URGENT;
+
+/**
+ * This class computes the compositions and orchestrations for the card and railway examples,
+ * and exports them to CIF3 format.
+ * Differently from the Main class, here the compositions and orchestrations are computed from the principals automata.
+ * This means that the encoding from semi-controllable to uncontrollable-controllable (Splitting Orchestration) is explicitly handled in the class, whereas in the Main class it was assumed that the composition and orchestration were already computed.
+ * In the railway example case, it also computes the forbidden states.
+ */
 public class ComputeCompositions {
 
     private static final AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
     private static final String dir = System.getProperty("user.dir")+ File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
+
 
     public static void main(String[] args){
         System.out.println("CIF3 connector Example");
@@ -53,7 +62,7 @@ public class ComputeCompositions {
 
         //compose encoded principals
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>> comp =
-                new MSCACompositionFunction<>(encodePrincipals(List.of(dealer,player,player)), t-> new StrongAgreement().negate().test(t.getLabel())).apply(Integer.MAX_VALUE);
+                new MSCACompositionFunction<>(CIF3Connector.encodePrincipals(List.of(dealer,player,player)), t-> new StrongAgreement().negate().test(t.getLabel())).apply(Integer.MAX_VALUE);
 
         bdc.exportMSCA(dir+"CardComposition.data",comp);
         exportToCif(comp,"CardComposition.cif");
@@ -71,6 +80,7 @@ public class ComputeCompositions {
         Files.writeString(filePath, content, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
     }
 
+
     private static void computeCompositionRailwayExample() throws IOException {
         Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train1 = bdc.importMSCA(dir + "train1.data");
         Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train2 = bdc.importMSCA(dir + "train2.data");
@@ -80,7 +90,7 @@ public class ComputeCompositions {
         List<Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>>> list = List.of(train1,train2,driver,semaphoreContr,semaphore);
 
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>> comp =
-                new MSCACompositionFunction<>(encodePrincipals(list), t-> new StrongAgreement().negate().test(t.getLabel())).apply(Integer.MAX_VALUE);
+                new MSCACompositionFunction<>(CIF3Connector.encodePrincipals(list), t-> new StrongAgreement().negate().test(t.getLabel())).apply(Integer.MAX_VALUE);
 
         //standard synthesis does not take a forbidden predicate, therefore I add to all forbidden states an uncontrollable transition to a sink state
         Predicate<State<String>> badState = getBadStatePredicate();
@@ -148,45 +158,4 @@ public class ComputeCompositions {
                             || (!train1AtSemaphore && !train2AtSemaphore && semaphoreOpen);//the semaphore is open only when a train is near it
         };
     }
-
-
-    //taken from CATLib
-    private static  List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> encodePrincipals(List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> laut){
-        return laut.stream()
-                .map(aut->
-                {
-                    //each lazy transition is unfolded into two linked transitions, one uncontrollable and one controllable
-                    Map<ModalTransition<String, Action, State<String>, CALabel>, List<ModalTransition<String, Action, State<String>, CALabel>>> map =
-                            aut.getTransition().parallelStream()
-                                    .collect(Collectors.toMap(t -> t, t -> {
-                                        if (!t.getModality().equals(ModalTransition.Modality.LAZY))
-                                            return List.of(t);
-                                        else {
-                                            List<Action> label = IntStream.range(0, t.getLabel().getRank())
-                                                    .mapToObj(i -> new IdleAction())
-                                                    .collect(Collectors.toList());
-
-                                            List<BasicState<String>> intermediate = new ArrayList<>(t.getSource().getState());
-
-                                            //the checks at the beginning of the method ensures that only necessary requests are lazy, and principals cannot have matches
-                                            if (t.getLabel().isRequest()) {
-                                                label.set(t.getLabel().getRequester(), new TauAction(t.getLabel().getAction().getLabel()));//the label cannot be a request
-                                                String stateLabel = t.getSource().getState().get(t.getLabel().getRequester()).getState() + "_" + t.getLabel().getAction().getLabel() + "_" + t.getTarget().getState().get(t.getLabel().getRequester()).getState();
-                                                intermediate.set(t.getLabel().getRequester(), new BasicState<>(stateLabel, false, false, false));
-                                            }
-
-                                            State<String> intermediateState = new State<>(intermediate);
-                                            ModalTransition<String, Action, State<String>, CALabel> t1 = new ModalTransition<>(t.getSource(), new CALabel(label), intermediateState, URGENT);
-                                            ModalTransition<String, Action, State<String>, CALabel> t2 = new ModalTransition<>(intermediateState, t.getLabel(), t.getTarget(), PERMITTED);
-                                            return List.of(t1, t2);
-                                        }
-                                    }));
-
-                    return new Automaton<>(
-                            aut.getTransition().parallelStream()
-                                    .flatMap(t -> map.get(t).stream())
-                                    .collect(Collectors.toSet()));
-                }).collect(Collectors.toList());
-    }
-
 }

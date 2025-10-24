@@ -28,8 +28,11 @@ import static io.github.contractautomata.CIF3connector.CIF3Connector.contractAut
 import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.PERMITTED;
 import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.URGENT;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/**
+ * This Main was used to test the translation from MSCA to CIF3 format.
+ * It would directly translate the already computed composition, and the already computed orchestration (splitting) from the examples in the JLAMP paper (card and railway).
+ *
+ */
 public class Main {
 
     private static final AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
