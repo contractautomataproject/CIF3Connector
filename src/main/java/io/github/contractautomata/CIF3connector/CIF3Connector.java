@@ -75,6 +75,8 @@ public class CIF3Connector {
             if (inputFiles.size() == 1) {
                 // Only one automaton: treat as already composed
                 var aut = bdc.importMSCA(inputFiles.get(0));
+                if (aut.getTransition().parallelStream().anyMatch(ModalTransition::isLazy))
+                    throw new RuntimeException("The provided composed automaton contains lazy transitions. ");
                 exportToCif(aut, compCif);
 
                 var mpc = new MpcSynthesisOperator<String>(new StrongAgreement()).apply(aut);
