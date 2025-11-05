@@ -3,16 +3,13 @@ package io.github.contractautomata.CIF3connector;
 import io.github.contractautomata.catlib.automaton.Automaton;
 import io.github.contractautomata.catlib.automaton.label.CALabel;
 import io.github.contractautomata.catlib.automaton.label.action.Action;
-import io.github.contractautomata.catlib.automaton.label.action.IdleAction;
 import io.github.contractautomata.catlib.automaton.label.action.OfferAction;
-import io.github.contractautomata.catlib.automaton.label.action.TauAction;
 import io.github.contractautomata.catlib.automaton.state.BasicState;
 import io.github.contractautomata.catlib.automaton.state.State;
 import io.github.contractautomata.catlib.automaton.transition.ModalTransition;
 import io.github.contractautomata.catlib.converters.AutDataConverter;
 import io.github.contractautomata.catlib.operations.MSCACompositionFunction;
 import io.github.contractautomata.catlib.operations.MpcSynthesisOperator;
-import io.github.contractautomata.catlib.requirements.Agreement;
 import io.github.contractautomata.catlib.requirements.StrongAgreement;
 
 import java.io.File;
@@ -20,27 +17,22 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static io.github.contractautomata.CIF3connector.CIF3Connector.contractAutomatonToCIF3;
-import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.PERMITTED;
 import static io.github.contractautomata.catlib.automaton.transition.ModalTransition.Modality.URGENT;
 
 /**
  * This class computes the compositions and orchestrations for the card and railway examples,
  * and exports them to CIF3 format.
- * Differently from the Main class, here the compositions and orchestrations are computed from the principals automata.
- * This means that the encoding from semi-controllable to uncontrollable-controllable (Splitting Orchestration) is explicitly handled in the class, whereas in the Main class it was assumed that the composition and orchestration were already computed.
+ * The encoding from semi-controllable to uncontrollable-controllable (Splitting Orchestration) is explicitly handled in the class, whereas in the Main class it was assumed that the composition and orchestration were already computed.
  * In the railway example case, it also computes the forbidden states.
  */
-public class ComputeCompositions {
+public class ComputeExamples {
 
     private static final AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
     private static final String dir = System.getProperty("user.dir")+ File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
@@ -75,7 +67,7 @@ public class ComputeCompositions {
     }
 
     private static void exportToCif(Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> aut, String filename) throws IOException {
-        String content = contractAutomatonToCIF3(aut);
+        String content = CIF3Connector.contractAutomatonToCIF3(aut);
         Path filePath = Path.of(dir+filename);
         Files.writeString(filePath, content, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
     }
