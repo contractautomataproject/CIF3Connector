@@ -29,7 +29,7 @@ import static io.github.contractautomata.catlib.automaton.transition.ModalTransi
 /**
  * This class computes the compositions and orchestrations for the card and railway examples,
  * and exports them to CIF3 format.
- * The encoding from semi-controllable to uncontrollable-controllable (Splitting Orchestration) is explicitly handled in the class, whereas in the Main class it was assumed that the composition and orchestration were already computed.
+ * The encoding from semi-controllable to uncontrollable-controllable (Splitting Orchestration) is explicitly handled in the class.
  * In the railway example case, it also computes the forbidden states.
  */
 public class ComputeExamples {
