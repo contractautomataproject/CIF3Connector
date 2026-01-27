@@ -1,7 +1,3 @@
-This README.md provides instructions on how to use **CIF3Connector**, an open-source bridge tool designed to translate contract automata into the **Compositional Interchange Format (CIF3)** for supervisory control synthesis.
-
----
-
 # CIF3Connector
 
 **CIF3Connector** is a tool that enables redundant orchestration synthesis by bridging the **Contract Automata Library (CATLib)** and the **Eclipse Supervisory Control Engineering Toolkit (ESCET)**. It translates contract automata models into the CIF3 input language, allowing users to cross-validate orchestration results between CATLib’s native synthesis and CIF3’s most permissive controller synthesis.
