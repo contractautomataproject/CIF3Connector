@@ -32,20 +32,39 @@ import static io.github.contractautomata.catlib.automaton.transition.ModalTransi
  * The encoding from semi-controllable to uncontrollable-controllable (Splitting Orchestration) is explicitly handled in the class.
  * In the railway example case, it also computes the forbidden states.
  */
-public class ComputeExamples {
+public class CIF3ConnectorExamples {
 
     private static final AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
     private static final String dir = System.getProperty("user.dir")+ File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
 
 
     public static void main(String[] args){
-        System.out.println("CIF3 connector Example");
+        System.out.println("CIF3 connector Examples");
         try {
+            computeClientServiceExample();
             computeCompositionCardExample();
             computeCompositionRailwayExample();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static void computeClientServiceExample() throws IOException {
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> client = bdc.importMSCA(dir + "client.data");
+        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> service = bdc.importMSCA(dir + "service.data");
+
+        //compose encoded principals
+        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>> comp =
+                new MSCACompositionFunction<>(CIF3Connector.encodePrincipals(List.of(client,service)), t-> new StrongAgreement().negate().test(t.getLabel())).apply(Integer.MAX_VALUE);
+
+        bdc.exportMSCA(dir+"ClientServiceComposition.data",comp);
+        exportToCif(comp,"ClientServiceComposition.cif");
+
+        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> mpc=new MpcSynthesisOperator<String>(new StrongAgreement()).apply(comp);
+
+        bdc.exportMSCA(dir+"ClientServiceOrchestration.data",mpc);
+        exportToCif(mpc,"ClientServiceOrchestration.cif");
+
     }
 
     private static void computeCompositionCardExample() throws IOException {

@@ -1,0 +1,7 @@
+Rank: 1
+Initial state: [Init]
+Final states: [[Init]]
+Transitions:
+([Init],[!create],[Computing])
+([Computing],[!update],[Computing])
+([Computing],[!quit],[Init])

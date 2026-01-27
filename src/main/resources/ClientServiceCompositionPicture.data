@@ -1,0 +1,9 @@
+Rank: 2
+Initial state: [Init, Init]
+Final states: [[Init][Init]]
+Committed states: [[][]]
+Transitions:
+!U([Computing, Computing],[!tau_update, -],[Computing_update_Computing, Computing])
+([Computing, Computing],[?quit, !quit],[Init, Init])
+([Computing_update_Computing, Computing],[?update, !update],[Computing, Computing])
+([Init, Init],[?create, !create],[Computing, Computing])

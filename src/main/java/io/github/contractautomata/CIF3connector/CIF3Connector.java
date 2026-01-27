@@ -35,17 +35,10 @@ import static io.github.contractautomata.catlib.automaton.transition.ModalTransi
  */
 public class CIF3Connector {
     private static final AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
+    private static boolean printContractAutomata = false;
 
 
     public static void main(String[] args) {
-        System.out.println("Usage: java -jar <jarfile> -i <input1.data> [<input2.data> ...] [-o <composition.cif> <orchestration.cif>]");
-        System.out.println("  -i: List of input automata files (.data).");
-        System.out.println("  -o: (Optional) Output CIF filenames for composition and orchestration.");
-        System.out.println("      Defaults: Composition.cif and Orchestration.cif");
-        System.out.println("Examples:");
-        System.out.println("  java -jar CIF3connector-1.0-SNAPSHOT.jar -i Dealer.data Player.data -o CardComposition.cif CardOrchestration.cif");
-        System.out.println("  java -jar tool.jar -i CardComposition.data");
-
         List<String> inputFiles = new ArrayList<>();
         String compCif = "Composition.cif";
         String orchCif = "Orchestration.cif";
@@ -63,10 +56,20 @@ public class CIF3Connector {
                 i++;
                 if (i < args.length && args[i].endsWith(".cif")) compCif = args[i++];
                 if (i < args.length && args[i].endsWith(".cif")) orchCif = args[i];
+            } else if ("-a".equals(args[i])){
+                printContractAutomata=true;
             }
         }
 
         if (inputFiles.isEmpty()) {
+            System.out.println("Usage: java -jar <jarfile> -i <input1.data> [<input2.data> ...] [-o <composition.cif> <orchestration.cif>]");
+            System.out.println("  -i: List of input automata files (.data).");
+            System.out.println("  -o: (Optional) Output CIF filenames for composition and orchestration.");
+            System.out.println("      Defaults: Composition.cif and Orchestration.cif");
+            System.out.println("  -a: (Optional) Print intermediate contract automata (composition and orchestration).");
+            System.out.println("Examples:");
+            System.out.println("  java -jar CIF3connector-1.0-SNAPSHOT.jar -i Dealer.data Player.data -o CardComposition.cif CardOrchestration.cif");
+            System.out.println("  java -jar tool.jar -i CardComposition.data");
             System.err.println("No input files specified.");
             return;
         }
@@ -109,6 +112,10 @@ public class CIF3Connector {
 
 
     private static void exportToCif(Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> aut, String filename) throws IOException {
+        if (printContractAutomata){
+            AutDataConverter<CALabel> adc = new AutDataConverter<>(CALabel::new);
+            adc.exportMSCA(filename.substring(0,filename.length()-3)+"data",aut);
+        }
         String content = contractAutomatonToCIF3(aut);
         Path filePath = Path.of(filename);
         Files.writeString(filePath, content, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
@@ -195,8 +202,6 @@ public class CIF3Connector {
         }
     }
 
-
-    //taken from CATLib
     public static  List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> encodePrincipals(List<Automaton<String,Action,State<String>,ModalTransition<String, Action,State<String>,CALabel>>> laut){
         return laut.stream()
                 .map(aut->

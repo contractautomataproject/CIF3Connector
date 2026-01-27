@@ -1,2127 +1,2127 @@
 group Aut:
-  controllable c_goup_match_3_1;
   controllable c_close_match_4_5;
-  controllable c_open_match_4_5;
-  controllable c_goright_match_3_2;
   controllable c_goright_match_3_1;
+  controllable c_open_match_4_5;
+  controllable c_goup_match_3_1;
+  controllable c_goright_match_3_2;
   controllable c_goup_match_3_2;
-  uncontrollable u_tau_goright_tau_2;
-  uncontrollable u_tau_goup_tau_2;
   uncontrollable u_sink_off_2;
   uncontrollable u_tau_goright_tau_1;
   uncontrollable u_tau_goup_tau_1;
+  uncontrollable u_tau_goright_tau_2;
+  uncontrollable u_tau_goup_tau_2;
 end
 plant automaton statespace:
-  alphabet Aut.c_goup_match_3_1, Aut.c_close_match_4_5, Aut.c_open_match_4_5, Aut.c_goright_match_3_2, Aut.c_goright_match_3_1, Aut.c_goup_match_3_2, Aut.u_tau_goright_tau_2, Aut.u_tau_goup_tau_2, Aut.u_sink_off_2, Aut.u_tau_goright_tau_1, Aut.u_tau_goup_tau_1;
-  @state(Aut: "(3; 1)_goright_(4; 1),(5; 0)_OUT,0,Open,Open")
+  alphabet Aut.c_close_match_4_5, Aut.c_goright_match_3_1, Aut.c_open_match_4_5, Aut.c_goup_match_3_1, Aut.c_goright_match_3_2, Aut.c_goup_match_3_2, Aut.u_sink_off_2, Aut.u_tau_goright_tau_1, Aut.u_tau_goup_tau_1, Aut.u_tau_goright_tau_2, Aut.u_tau_goup_tau_2;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goup_(4; 0),0,Close,Close")
   location loc1:
-    edge Aut.c_goright_match_3_1 goto loc65;
-    edge Aut.c_close_match_4_5 goto loc354;
-  @state(Aut: "(0; 1),(3; 1),0,Close,Close")
+    edge Aut.c_open_match_4_5 goto loc188;
+    edge Aut.c_goright_match_3_1 goto loc321;
+    edge Aut.c_goup_match_3_2 goto loc253;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0),(5; 0)_OUT,0,Open,Open")
   location loc2:
-    edge Aut.u_tau_goright_tau_1 goto loc81;
-    edge Aut.u_tau_goright_tau_2 goto loc114;
-    edge Aut.c_open_match_4_5 goto loc313;
-  @state(Aut: "(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
+    edge Aut.c_close_match_4_5 goto loc163;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc271;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
   location loc3:
-    edge Aut.c_goup_match_3_2 goto loc286;
-    edge Aut.c_open_match_4_5 goto loc180;
-  @state(Aut: "(5; 0)_OUT,(5; 1)_OUT,0,Close,Close")
+    edge Aut.c_close_match_4_5 goto loc357;
+    edge Aut.c_goright_match_3_1 goto loc128;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_2 goto loc65;
+  @state(Aut: "(4; 1),(2; 1)_goright_(3; 1),0,Open,Open")
   location loc4:
-    marked;
-    edge Aut.c_open_match_4_5 goto loc187;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0),0,Open,Open")
+    edge Aut.c_goright_match_3_2 goto loc280;
+    edge Aut.c_close_match_4_5 goto loc103;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc273;
+    edge Aut.u_tau_goup_tau_1 goto loc198;
+  @state(Aut: "(2; 1)_goright_(3; 1),(5; 1)_OUT,0,Close,Close")
   location loc5:
-    edge Aut.c_close_match_4_5 goto loc259;
-    edge Aut.u_tau_goright_tau_2 goto loc387;
-    edge Aut.c_goright_match_3_1 goto loc107;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(5; 0)_OUT,(4; 1),0,Close,Close")
+    edge Aut.c_open_match_4_5 goto loc181;
+    edge Aut.c_goright_match_3_1 goto loc20;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(2; 1),(3; 1)_goright_(4; 1),0,Close,Close")
   location loc6:
-    edge Aut.c_open_match_4_5 goto loc104;
-    edge Aut.u_tau_goup_tau_2 goto loc3;
-    edge Aut.u_tau_goright_tau_2 goto loc285;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc160;
+    edge Aut.c_goright_match_3_2 goto loc265;
+    edge Aut.u_tau_goright_tau_1 goto loc378;
+  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1),0,Open,Open")
   location loc7:
-    edge Aut.c_goup_match_3_1 goto loc226;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc181;
-    edge Aut.c_goright_match_3_2 goto loc142;
-  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+    edge Aut.u_tau_goright_tau_2 goto loc185;
+    edge Aut.c_close_match_4_5 goto loc254;
+    edge Aut.c_goright_match_3_1 goto loc107;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goup_(4; 0),0,Close,Close")
   location loc8:
-    edge Aut.c_goright_match_3_1 goto loc303;
-    edge Aut.c_goright_match_3_2 goto loc306;
-    edge Aut.c_close_match_4_5 goto loc324;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
+    edge Aut.c_goright_match_3_1 goto loc261;
+    edge Aut.c_goup_match_3_2 goto loc84;
+    edge Aut.c_open_match_4_5 goto loc41;
+  @state(Aut: "(0; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
   location loc9:
-    edge Aut.c_open_match_4_5 goto loc91;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc51;
-    edge Aut.c_goright_match_3_2 goto loc292;
-  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc227;
+    edge Aut.c_goright_match_3_2 goto loc57;
+    edge Aut.c_close_match_4_5 goto loc336;
+  @state(Aut: "(3; 1),(2; 1),0,Open,Open")
   location loc10:
-    edge Aut.c_close_match_4_5 goto loc372;
-    edge Aut.c_goright_match_3_2 goto loc382;
-    edge Aut.c_goright_match_3_1 goto loc119;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+    edge Aut.u_tau_goright_tau_1 goto loc97;
+    edge Aut.c_close_match_4_5 goto loc169;
+    edge Aut.u_tau_goright_tau_2 goto loc352;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
   location loc11:
-    edge Aut.u_tau_goup_tau_1 goto loc124;
-    edge Aut.c_goright_match_3_2 goto loc343;
-    edge Aut.u_tau_goright_tau_1 goto loc127;
-    edge Aut.c_open_match_4_5 goto loc222;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0),0,Close,Close")
+    edge Aut.c_goright_match_3_2 goto loc37;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc371;
+    edge Aut.c_goright_match_3_1 goto loc313;
+  @state(Aut: "(4; 1),(1; 1),0,Close,Close")
   location loc12:
-    edge Aut.c_goright_match_3_1 goto loc363;
-    edge Aut.c_open_match_4_5 goto loc185;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc202;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+    edge Aut.u_tau_goright_tau_2 goto loc203;
+    edge Aut.c_open_match_4_5 goto loc302;
+    edge Aut.u_tau_goright_tau_1 goto loc339;
+    edge Aut.u_tau_goup_tau_1 goto loc346;
+  @state(Aut: "(4; 0),(2; 1)_goright_(3; 1),0,Open,Open")
   location loc13:
-    edge Aut.c_goright_match_3_1 goto loc230;
-    edge Aut.c_goright_match_3_2 goto loc198;
-    edge Aut.c_close_match_4_5 goto loc202;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+    edge Aut.u_tau_goright_tau_1 goto loc27;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc140;
+    edge Aut.c_goright_match_3_2 goto loc73;
+  @state(Aut: "(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
   location loc14:
-    edge Aut.c_goright_match_3_2 goto loc365;
-    edge Aut.c_close_match_4_5 goto loc15;
-    edge Aut.u_tau_goright_tau_1 goto loc10;
-  @state(Aut: "(3; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+    edge Aut.c_goright_match_3_2 goto loc343;
+    edge Aut.c_open_match_4_5 goto loc389;
+  @state(Aut: "(2; 1),(5; 1)_OUT,0,Close,Close")
   location loc15:
-    edge Aut.u_tau_goright_tau_1 goto loc372;
-    edge Aut.c_open_match_4_5 goto loc14;
-    edge Aut.c_goright_match_3_2 goto loc349;
-  @state(Aut: "(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc5;
+    edge Aut.c_open_match_4_5 goto loc224;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1),0,Open,Open")
   location loc16:
-    edge Aut.c_goright_match_3_2 goto loc289;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc312;
-  @state(Aut: "(1; 1),(3; 1),0,Close,Close")
+    edge Aut.u_tau_goright_tau_2 goto loc273;
+    edge Aut.c_close_match_4_5 goto loc130;
+    edge Aut.c_goright_match_3_1 goto loc309;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1),0,Close,Close")
   location loc17:
-    edge Aut.u_tau_goright_tau_2 goto loc241;
-    edge Aut.c_open_match_4_5 goto loc66;
-    edge Aut.u_tau_goright_tau_1 goto loc369;
-  @state(Aut: "(1; 1),(4; 1)_goup_(4; 0),0,Close,Close")
+    edge Aut.c_open_match_4_5 goto loc53;
+    edge Aut.c_goright_match_3_1 goto loc292;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc257;
+    edge Aut.u_tau_goup_tau_2 goto loc357;
+  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1)_goright_(4; 1),0,Open,Open")
   location loc18:
-    edge Aut.u_tau_goright_tau_1 goto loc118;
-    edge Aut.c_goup_match_3_2 goto loc153;
-    edge Aut.c_open_match_4_5 goto loc252;
-  @state(Aut: "(3; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+    edge Aut.c_close_match_4_5 goto loc104;
+    edge Aut.c_goright_match_3_2 goto loc277;
+    edge Aut.c_goright_match_3_1 goto loc76;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1),0,Close,Close")
   location loc19:
-    edge Aut.c_goright_match_3_2 goto loc255;
-    edge Aut.c_open_match_4_5 goto loc128;
-    edge Aut.u_tau_goright_tau_1 goto loc248;
-  @state(Aut: "(3; 1),(3; 1),0,Open,Open")
+    edge Aut.c_open_match_4_5 goto loc137;
+    edge Aut.c_goright_match_3_1 goto loc265;
+    edge Aut.u_tau_goup_tau_2 goto loc8;
+    edge Aut.u_tau_goright_tau_2 goto loc49;
+  @state(Aut: "(3; 1),(5; 1)_OUT,0,Close,Close")
   location loc20:
-    edge Aut.c_close_match_4_5 goto loc216;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc14;
-    edge Aut.u_tau_goright_tau_1 goto loc233;
-  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1),0,Open,Open")
+    edge Aut.c_open_match_4_5 goto loc55;
+    edge Aut.u_tau_goright_tau_1 goto loc58;
+  @state(Aut: "(3; 1),(5; 0)_OUT,0,Close,Close")
   location loc21:
-    edge Aut.u_tau_goright_tau_2 goto loc132;
-    edge Aut.c_goup_match_3_1 goto loc43;
-    edge Aut.c_close_match_4_5 goto loc358;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1),(5; 1)_OUT,0,Open,Open")
+    edge Aut.u_tau_goright_tau_1 goto loc170;
+    edge Aut.c_open_match_4_5 goto loc391;
+  @state(Aut: "(4; 0),(3; 1)_goright_(4; 1),0,Open,Open")
   location loc22:
-    edge Aut.u_tau_goright_tau_1 goto loc89;
-    edge Aut.c_close_match_4_5 goto loc148;
-  @state(Aut: "(2; 1),(4; 1)_goup_(4; 0),0,Close,Close")
+    edge Aut.c_goright_match_3_2 goto loc207;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc61;
+    edge Aut.c_close_match_4_5 goto loc54;
+  @state(Aut: "(0; 1),(4; 1),0,Close,Close")
   location loc23:
-    edge Aut.u_tau_goright_tau_1 goto loc356;
-    edge Aut.c_goup_match_3_2 goto loc171;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc60;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+    edge Aut.u_tau_goright_tau_2 goto loc336;
+    edge Aut.c_open_match_4_5 goto loc305;
+    edge Aut.u_tau_goup_tau_2 goto loc127;
+    edge Aut.u_tau_goright_tau_1 goto loc199;
+  @state(Aut: "(5; 0)_OUT,(4; 0),0,Open,Open")
   location loc24:
-    edge Aut.c_close_match_4_5 goto loc200;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc96;
-    edge Aut.c_goright_match_3_2 goto loc271;
-  @state(Aut: "(4; 1),(4; 1),0,Open,Open")
+    edge Aut.c_close_match_4_5 goto loc306;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc389;
+  @state(Aut: "(5; 1)_OUT,(2; 1),0,Close,Close")
   location loc25:
-    edge Aut.u_tau_goright_tau_2 goto loc140;
-    edge Aut.u_tau_goup_tau_1 goto loc385;
-    edge Aut.c_close_match_4_5 goto loc77;
-    edge Aut.u_tau_goright_tau_1 goto loc336;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_2 goto loc53;
-  @state(Aut: "(3; 1),(1; 1),0,Open,Open")
+    edge Aut.u_tau_goright_tau_2 goto loc111;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc309;
+  @state(Aut: "(0; 1),(1; 1)_goright_(2; 1),0,Open,Open")
   location loc26:
-    edge Aut.u_tau_goright_tau_1 goto loc384;
-    edge Aut.u_tau_goright_tau_2 goto loc128;
-    edge Aut.c_close_match_4_5 goto loc75;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+    edge Aut.u_tau_goright_tau_1 goto loc42;
+    edge Aut.c_close_match_4_5 goto loc264;
+    edge Aut.c_goright_match_3_2 goto loc96;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
   location loc27:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc311;
-    edge Aut.c_goright_match_3_2 goto loc56;
-    edge Aut.c_goright_match_3_1 goto loc247;
-  @state(Aut: "(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+    edge Aut.c_goright_match_3_1 goto loc232;
+    edge Aut.c_close_match_4_5 goto loc246;
+    edge Aut.c_goright_match_3_2 goto loc64;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
   location loc28:
-    edge Aut.c_open_match_4_5 goto loc126;
-    edge Aut.u_tau_goright_tau_1 goto loc144;
-    edge Aut.c_goright_match_3_2 goto loc189;
-  @state(Aut: "(1; 1),(1; 1),0,Close,Close")
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc194;
+    edge Aut.c_goright_match_3_2 goto loc125;
+    edge Aut.u_tau_goright_tau_1 goto loc371;
+  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1)_goright_(2; 1),0,Open,Open")
   location loc29:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc98;
-    edge Aut.u_tau_goright_tau_2 goto loc293;
-    edge Aut.u_tau_goright_tau_1 goto loc366;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc176;
+    edge Aut.c_goup_match_3_1 goto loc236;
+    edge Aut.c_close_match_4_5 goto loc174;
   @state(Aut: "(1; 1)_goright_(2; 1),(5; 1)_OUT,0,Close,Close")
   location loc30:
-    edge Aut.c_open_match_4_5 goto loc271;
-    edge Aut.c_goright_match_3_1 goto loc148;
-  @state(Aut: "(0; 1),(5; 1)_OUT,0,Open,Open")
-  location loc31:
-    edge Aut.u_tau_goright_tau_1 goto loc378;
-    edge Aut.c_close_match_4_5 goto loc329;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc32:
-    edge Aut.c_goright_match_3_2 goto loc362;
-    edge Aut.c_close_match_4_5 goto loc251;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc16;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc33:
-    edge Aut.c_open_match_4_5 goto loc281;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_2 goto loc12;
-    edge Aut.c_goright_match_3_1 goto loc63;
-  @state(Aut: "(4; 0),(4; 0),0,Open,Open")
-  location loc34:
-    edge Aut.u_tau_goright_tau_2 goto loc226;
-    edge Aut.c_close_match_4_5 goto loc389;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc355;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1),0,Close,Close")
-  location loc35:
-    edge Aut.u_tau_goright_tau_2 goto loc100;
-    edge Aut.c_goright_match_3_1 goto loc227;
-    edge Aut.c_open_match_4_5 goto loc156;
-  @state(Aut: "(2; 1),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc36:
-    edge Aut.c_goright_match_3_2 goto loc44;
-    edge Aut.c_close_match_4_5 goto loc269;
-    edge Aut.u_tau_goright_tau_1 goto loc162;
-  @state(Aut: "(3; 1),(5; 0)_OUT,0,Close,Close")
-  location loc37:
-    edge Aut.c_open_match_4_5 goto loc207;
-    edge Aut.u_tau_goright_tau_1 goto loc354;
-  @state(Aut: "(5; 0)_OUT,(2; 1),0,Open,Open")
-  location loc38:
-    edge Aut.c_close_match_4_5 goto loc215;
-    edge Aut.u_tau_goright_tau_2 goto loc170;
-  @state(Aut: "(0; 1),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc39:
-    edge Aut.c_open_match_4_5 goto loc238;
-    edge Aut.u_tau_goright_tau_1 goto loc133;
-    edge Aut.c_goup_match_3_2 goto loc161;
-  @state(Aut: "(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc40:
-    edge Aut.c_open_match_4_5 goto loc150;
-    edge Aut.c_goright_match_3_2 goto loc6;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0),0,Open,Open")
-  location loc41:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc283;
-    edge Aut.u_tau_goright_tau_2 goto loc54;
-    edge Aut.c_goright_match_3_1 goto loc71;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc42:
-    edge Aut.c_goright_match_3_1 goto loc28;
-    edge Aut.c_goright_match_3_2 goto loc273;
-    edge Aut.c_open_match_4_5 goto loc387;
-  @state(Aut: "(4; 0),(2; 1),0,Open,Open")
-  location loc43:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc47;
-    edge Aut.u_tau_goright_tau_1 goto loc129;
-    edge Aut.c_close_match_4_5 goto loc291;
-  @state(Aut: "(2; 1),(4; 1),0,Open,Open")
-  location loc44:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc96;
-    edge Aut.u_tau_goup_tau_2 goto loc60;
-    edge Aut.c_close_match_4_5 goto loc371;
-    edge Aut.u_tau_goright_tau_1 goto loc240;
-  @state(Aut: "(4; 0),(1; 1),0,Close,Close")
-  location loc45:
-    edge Aut.c_open_match_4_5 goto loc263;
-    edge Aut.u_tau_goright_tau_1 goto loc35;
-    edge Aut.u_tau_goright_tau_2 goto loc97;
-  @state(Aut: "(4; 1),(5; 1)_OUT,0,Open,Open")
-  location loc46:
-    edge Aut.c_close_match_4_5 goto loc332;
-    edge Aut.u_tau_goright_tau_1 goto loc362;
-    edge Aut.u_tau_goup_tau_1 goto loc300;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 0),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc47:
-    edge Aut.c_goright_match_3_2 goto loc295;
-    edge Aut.u_tau_goright_tau_1 goto loc188;
-    edge Aut.c_close_match_4_5 goto loc113;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc48:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc143;
-    edge Aut.c_close_match_4_5 goto loc147;
-    edge Aut.u_tau_goright_tau_1 goto loc298;
-  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1),0,Close,Close")
-  location loc49:
-    edge Aut.c_open_match_4_5 goto loc73;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc76;
-    edge Aut.c_goright_match_3_1 goto loc216;
-  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1),0,Open,Open")
-  location loc50:
-    edge Aut.c_goright_match_3_1 goto loc98;
-    edge Aut.u_tau_goright_tau_2 goto loc84;
-    edge Aut.c_close_match_4_5 goto loc196;
-  @state(Aut: "(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc51:
-    edge Aut.c_goright_match_3_2 goto loc199;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc139;
-  @state(Aut: "(5; 1)_OUT,(1; 1),0,Close,Close")
-  location loc52:
-    edge Aut.u_tau_goright_tau_2 goto loc166;
-    edge Aut.c_open_match_4_5 goto loc229;
-  @state(Aut: "(4; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc53:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc317;
-    edge Aut.c_goup_match_3_2 goto loc71;
-    edge Aut.u_tau_goup_tau_1 goto loc325;
-    edge Aut.u_tau_goright_tau_1 goto loc281;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc54:
-    edge Aut.c_goright_match_3_2 goto loc1;
-    edge Aut.c_close_match_4_5 goto loc353;
-    edge Aut.c_goright_match_3_1 goto loc379;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc55:
-    edge Aut.c_goright_match_3_2 goto loc233;
-    edge Aut.c_goright_match_3_1 goto loc287;
-    edge Aut.c_close_match_4_5 goto loc72;
-  @state(Aut: "(2; 1)_goright_(3; 1),(5; 1)_OUT,0,Close,Close")
-  location loc56:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc383;
-    edge Aut.c_open_match_4_5 goto loc89;
-  @state(Aut: "(0; 1),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc57:
-    edge Aut.c_goright_match_3_2 goto loc347;
-    edge Aut.u_tau_goright_tau_1 goto loc62;
-    edge Aut.c_close_match_4_5 goto loc114;
-  @state(Aut: "(0; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc58:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc210;
-    edge Aut.c_goright_match_3_2 goto loc2;
-    edge Aut.u_tau_goright_tau_1 goto loc324;
-  @state(Aut: "(1; 1),(4; 1),0,Close,Close")
-  location loc59:
-    edge Aut.u_tau_goright_tau_2 goto loc109;
-    edge Aut.c_open_match_4_5 goto loc321;
-    edge Aut.u_tau_goright_tau_1 goto loc309;
-    edge Aut.u_tau_goup_tau_2 goto loc18;
-  @state(Aut: "(2; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc60:
-    edge Aut.c_goup_match_3_2 goto loc86;
-    edge Aut.c_close_match_4_5 goto loc23;
-    edge Aut.u_tau_goright_tau_1 goto loc346;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1),(2; 1),0,Open,Open")
-  location loc61:
-    edge Aut.u_tau_goright_tau_2 goto loc157;
-    edge Aut.u_tau_goright_tau_1 goto loc201;
-    edge Aut.c_close_match_4_5 goto loc255;
-  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc62:
-    edge Aut.c_close_match_4_5 goto loc374;
-    edge Aut.c_goright_match_3_2 goto loc186;
-    edge Aut.c_goright_match_3_1 goto loc380;
-  @state(Aut: "(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc63:
-    edge Aut.c_goup_match_3_2 goto loc363;
-    edge Aut.c_open_match_4_5 goto loc190;
-  @state(Aut: "(0; 1)_goright_(1; 1),(5; 1)_OUT,0,Close,Close")
-  location loc64:
-    edge Aut.c_goright_match_3_1 goto loc339;
-    edge Aut.c_open_match_4_5 goto loc378;
-  @state(Aut: "(4; 1),(5; 0)_OUT,0,Open,Open")
-  location loc65:
-    edge Aut.c_close_match_4_5 goto loc94;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_1 goto loc142;
-    edge Aut.u_tau_goright_tau_1 goto loc198;
-  @state(Aut: "(1; 1),(3; 1),0,Open,Open")
-  location loc66:
-    edge Aut.u_tau_goright_tau_1 goto loc152;
-    edge Aut.u_tau_goright_tau_2 goto loc380;
-    edge Aut.c_close_match_4_5 goto loc17;
-  @state(Aut: "(4; 0),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc67:
-    edge Aut.c_goright_match_3_2 goto loc111;
-    edge Aut.c_close_match_4_5 goto loc254;
-    edge Aut.u_tau_goright_tau_1 goto loc69;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc68:
-    edge Aut.c_goright_match_3_2 goto loc38;
-    edge Aut.c_close_match_4_5 goto loc314;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc69:
-    edge Aut.c_goright_match_3_2 goto loc195;
-    edge Aut.c_close_match_4_5 goto loc80;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc150;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1),0,Close,Close")
-  location loc70:
-    edge Aut.c_goright_match_3_1 goto loc215;
-    edge Aut.c_open_match_4_5 goto loc129;
-    edge Aut.u_tau_goright_tau_2 goto loc377;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1),(4; 0),0,Open,Open")
-  location loc71:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc379;
-    edge Aut.c_close_match_4_5 goto loc235;
-    edge Aut.u_tau_goright_tau_1 goto loc185;
-    edge Aut.u_tau_goup_tau_1 goto loc106;
-  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc72:
-    edge Aut.c_goright_match_3_2 goto loc149;
-    edge Aut.c_open_match_4_5 goto loc55;
-    edge Aut.c_goright_match_3_1 goto loc344;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1),0,Open,Open")
-  location loc73:
-    edge Aut.u_tau_goright_tau_2 goto loc162;
-    edge Aut.c_goright_match_3_1 goto loc20;
-    edge Aut.c_close_match_4_5 goto loc49;
-  @state(Aut: "(1; 1),(5; 1)_OUT,0,Open,Open")
-  location loc74:
-    edge Aut.u_tau_goright_tau_1 goto loc271;
-    edge Aut.c_close_match_4_5 goto loc339;
-  @state(Aut: "(3; 1),(1; 1),0,Close,Close")
-  location loc75:
-    edge Aut.u_tau_goright_tau_1 goto loc87;
-    edge Aut.u_tau_goright_tau_2 goto loc19;
-    edge Aut.c_open_match_4_5 goto loc26;
-  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc76:
-    edge Aut.c_goright_match_3_2 goto loc218;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc162;
     edge Aut.c_goright_match_3_1 goto loc15;
-  @state(Aut: "(4; 1),(4; 1),0,Close,Close")
-  location loc77:
-    edge Aut.u_tau_goright_tau_2 goto loc297;
-    edge Aut.u_tau_goright_tau_1 goto loc204;
-    edge Aut.u_tau_goup_tau_1 goto loc208;
-    edge Aut.c_open_match_4_5 goto loc25;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_2 goto loc317;
-  @state(Aut: "(5; 1)_OUT,(4; 0),0,Open,Open")
-  location loc78:
-    edge Aut.u_tau_goright_tau_2 goto loc230;
-    edge Aut.c_close_match_4_5 goto loc363;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1),0,Open,Open")
-  location loc79:
-    edge Aut.c_goup_match_3_1 goto loc263;
-    edge Aut.c_close_match_4_5 goto loc231;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc359;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc80:
-    edge Aut.c_goright_match_3_1 goto loc40;
-    edge Aut.c_open_match_4_5 goto loc69;
-    edge Aut.c_goright_match_3_2 goto loc262;
-  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1),0,Close,Close")
-  location loc81:
-    edge Aut.c_open_match_4_5 goto loc306;
-    edge Aut.u_tau_goright_tau_2 goto loc374;
-    edge Aut.c_goright_match_3_1 goto loc17;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc82:
-    edge Aut.c_goright_match_3_1 goto loc250;
-    edge Aut.c_goright_match_3_2 goto loc336;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc386;
-  @state(Aut: "(2; 1)_goright_(3; 1),(5; 0)_OUT,0,Open,Open")
-  location loc83:
-    edge Aut.c_close_match_4_5 goto loc302;
-    edge Aut.c_goright_match_3_1 goto loc207;
-  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc84:
-    edge Aut.c_goright_match_3_2 goto loc102;
+    edge Aut.c_open_match_4_5 goto loc143;
+  @state(Aut: "(5; 0)_OUT,(4; 1),0,Close,Close")
+  location loc31:
+    edge Aut.c_open_match_4_5 goto loc368;
+    edge Aut.u_tau_goright_tau_2 goto loc161;
+    edge Aut.u_tau_goup_tau_2 goto loc251;
+  @state(Aut: "(2; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc32:
+    edge Aut.u_tau_goright_tau_1 goto loc38;
+    edge Aut.c_open_match_4_5 goto loc337;
+    edge Aut.c_goright_match_3_2 goto loc138;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(1; 1),(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc33:
+    edge Aut.c_goup_match_3_2 goto loc268;
+    edge Aut.u_tau_goright_tau_1 goto loc8;
+    edge Aut.c_open_match_4_5 goto loc47;
+  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1),0,Open,Open")
+  location loc34:
+    edge Aut.c_goright_match_3_1 goto loc275;
+    edge Aut.u_tau_goright_tau_2 goto loc312;
+    edge Aut.c_close_match_4_5 goto loc70;
+  @state(Aut: "(5; 1)_OUT,(3; 1),0,Open,Open")
+  location loc35:
+    edge Aut.c_close_match_4_5 goto loc255;
+    edge Aut.u_tau_goright_tau_2 goto loc379;
+  @state(Aut: "(0; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc36:
+    edge Aut.c_close_match_4_5 goto loc351;
+    edge Aut.u_tau_goright_tau_1 goto loc18;
+    edge Aut.c_goright_match_3_2 goto loc305;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 1)_OUT,0,Open,Open")
+  location loc37:
+    edge Aut.c_goright_match_3_1 goto loc376;
     edge Aut.c_close_match_4_5 goto loc220;
-    edge Aut.c_goright_match_3_1 goto loc265;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc38:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc129;
+    edge Aut.c_goright_match_3_2 goto loc229;
+    edge Aut.c_goright_match_3_1 goto loc250;
+  @state(Aut: "(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc39:
+    edge Aut.c_goright_match_3_2 goto loc35;
+    edge Aut.c_close_match_4_5 goto loc111;
+  @state(Aut: "(2; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc40:
+    edge Aut.c_goright_match_3_2 goto loc48;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc237;
+    edge Aut.u_tau_goright_tau_1 goto loc315;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc41:
+    edge Aut.c_goright_match_3_1 goto loc301;
+    edge Aut.c_close_match_4_5 goto loc8;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_2 goto loc105;
+  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc42:
+    edge Aut.c_goright_match_3_1 goto loc85;
+    edge Aut.c_goright_match_3_2 goto loc34;
+    edge Aut.c_close_match_4_5 goto loc375;
+  @state(Aut: "(3; 1),(4; 0),0,Close,Close")
+  location loc43:
+    edge Aut.c_open_match_4_5 goto loc114;
+    edge Aut.u_tau_goright_tau_2 goto loc151;
+    edge Aut.u_tau_goright_tau_1 goto loc214;
+  @state(Aut: "(1; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc44:
+    edge Aut.u_tau_goright_tau_1 goto loc185;
+    edge Aut.c_close_match_4_5 goto loc218;
+    edge Aut.c_goright_match_3_2 goto loc340;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc45:
+    edge Aut.c_goright_match_3_1 goto loc330;
+    edge Aut.c_goright_match_3_2 goto loc184;
+    edge Aut.c_open_match_4_5 goto loc227;
+  @state(Aut: "sink,sink,sink,sink,sink")
+  location loc46;
+  @state(Aut: "(1; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc47:
+    edge Aut.u_tau_goright_tau_1 goto loc41;
+    edge Aut.c_goup_match_3_2 goto loc373;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc33;
+  @state(Aut: "(2; 1),(3; 1),0,Close,Close")
+  location loc48:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc327;
+    edge Aut.c_open_match_4_5 goto loc106;
+    edge Aut.u_tau_goright_tau_2 goto loc6;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc49:
+    edge Aut.c_open_match_4_5 goto loc295;
+    edge Aut.c_goright_match_3_1 goto loc276;
+    edge Aut.c_goright_match_3_2 goto loc30;
   @state(Aut: "(2; 1),(1; 1),0,Open,Open")
-  location loc85:
-    edge Aut.u_tau_goright_tau_2 goto loc308;
-    edge Aut.c_close_match_4_5 goto loc305;
-    edge Aut.u_tau_goright_tau_1 goto loc173;
-  @state(Aut: "(2; 1),(4; 0),0,Open,Open")
-  location loc86:
-    edge Aut.c_close_match_4_5 goto loc171;
-    edge Aut.u_tau_goright_tau_1 goto loc296;
-    edge Aut.u_tau_goright_tau_2 goto loc48;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1),0,Close,Close")
-  location loc87:
-    edge Aut.u_tau_goright_tau_2 goto loc248;
-    edge Aut.c_open_match_4_5 goto loc384;
-    edge Aut.c_goright_match_3_1 goto loc319;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0),0,Close,Close")
-  location loc88:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc355;
-    edge Aut.u_tau_goright_tau_2 goto loc108;
-    edge Aut.c_goright_match_3_1 goto loc286;
-  @state(Aut: "(2; 1)_goright_(3; 1),(5; 1)_OUT,0,Open,Open")
-  location loc89:
-    edge Aut.c_close_match_4_5 goto loc56;
-    edge Aut.c_goright_match_3_1 goto loc221;
-  @state(Aut: "(0; 1),(2; 1),0,Open,Open")
-  location loc90:
-    edge Aut.c_close_match_4_5 goto loc174;
-    edge Aut.u_tau_goright_tau_2 goto loc210;
+  location loc50:
+    edge Aut.u_tau_goright_tau_1 goto loc293;
+    edge Aut.c_close_match_4_5 goto loc152;
+    edge Aut.u_tau_goright_tau_2 goto loc337;
+  @state(Aut: "(4; 1)_goup_(4; 0),(5; 0)_OUT,0,Close,Close")
+  location loc51:
+    edge Aut.c_open_match_4_5 goto loc123;
+    edge Aut.c_goup_match_3_1 goto loc163;
+  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1),0,Close,Close")
+  location loc52:
+    edge Aut.c_goright_match_3_1 goto loc48;
+    edge Aut.c_open_match_4_5 goto loc244;
+    edge Aut.u_tau_goright_tau_2 goto loc195;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1),0,Open,Open")
+  location loc53:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc249;
+    edge Aut.u_tau_goright_tau_2 goto loc388;
+    edge Aut.c_close_match_4_5 goto loc17;
+    edge Aut.u_tau_goup_tau_2 goto loc3;
+  @state(Aut: "(4; 0),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc54:
+    edge Aut.c_goright_match_3_2 goto loc304;
+    edge Aut.u_tau_goright_tau_1 goto loc333;
+    edge Aut.c_open_match_4_5 goto loc22;
+  @state(Aut: "(3; 1),(5; 1)_OUT,0,Open,Open")
+  location loc55:
+    edge Aut.c_close_match_4_5 goto loc20;
+    edge Aut.u_tau_goright_tau_1 goto loc197;
+  @state(Aut: "(5; 0)_OUT,(2; 1),0,Close,Close")
+  location loc56:
+    edge Aut.c_open_match_4_5 goto loc369;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc288;
+  @state(Aut: "(0; 1),(5; 1)_OUT,0,Open,Open")
+  location loc57:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc350;
     edge Aut.u_tau_goright_tau_1 goto loc102;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
+  @state(Aut: "(3; 1)_goright_(4; 1),(5; 1)_OUT,0,Close,Close")
+  location loc58:
+    edge Aut.c_open_match_4_5 goto loc197;
+    edge Aut.c_goright_match_3_1 goto loc205;
+  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1),0,Open,Open")
+  location loc59:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_1 goto loc385;
+    edge Aut.c_close_match_4_5 goto loc346;
+    edge Aut.u_tau_goright_tau_2 goto loc29;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0),0,Open,Open")
+  location loc60:
+    edge Aut.c_close_match_4_5 goto loc342;
+    edge Aut.c_goup_match_3_1 goto loc95;
+    edge Aut.u_tau_goright_tau_2 goto loc308;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc61:
+    edge Aut.c_close_match_4_5 goto loc333;
+    edge Aut.c_goright_match_3_2 goto loc83;
+    edge Aut.c_goright_match_3_1 goto loc71;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(0; 1)_goright_(1; 1),(5; 0)_OUT,0,Close,Close")
+  location loc62:
+    edge Aut.c_open_match_4_5 goto loc240;
+    edge Aut.c_goright_match_3_1 goto loc120;
+  @state(Aut: "(3; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc63:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc321;
+    edge Aut.c_goup_match_3_2 goto loc114;
+    edge Aut.u_tau_goright_tau_1 goto loc133;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1),0,Open,Open")
+  location loc64:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc158;
+    edge Aut.c_close_match_4_5 goto loc186;
+    edge Aut.u_tau_goright_tau_2 goto loc61;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0),0,Open,Open")
+  location loc65:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc147;
+    edge Aut.u_tau_goright_tau_2 goto loc153;
+    edge Aut.c_goright_match_3_1 goto loc303;
+  @state(Aut: "(0; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc66:
+    edge Aut.u_tau_goright_tau_1 goto loc374;
+    edge Aut.c_open_match_4_5 goto loc67;
+    edge Aut.c_goright_match_3_2 goto loc322;
+  @state(Aut: "(0; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc67:
+    edge Aut.c_goright_match_3_2 goto loc348;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc66;
+    edge Aut.u_tau_goright_tau_1 goto loc154;
+  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1),0,Open,Open")
+  location loc68:
+    edge Aut.c_close_match_4_5 goto loc327;
+    edge Aut.u_tau_goright_tau_2 goto loc269;
+    edge Aut.c_goright_match_3_1 goto loc122;
+  @state(Aut: "(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc69:
+    edge Aut.c_open_match_4_5 goto loc71;
+    edge Aut.c_goright_match_3_2 goto loc31;
+  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1),0,Close,Close")
+  location loc70:
+    edge Aut.c_open_match_4_5 goto loc34;
+    edge Aut.c_goright_match_3_1 goto loc135;
+    edge Aut.u_tau_goright_tau_2 goto loc221;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc71:
+    edge Aut.c_goright_match_3_2 goto loc368;
+    edge Aut.c_close_match_4_5 goto loc69;
+  @state(Aut: "(2; 1)_goright_(3; 1),(5; 0)_OUT,0,Close,Close")
+  location loc72:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc21;
+    edge Aut.c_open_match_4_5 goto loc245;
+  @state(Aut: "(4; 0),(3; 1),0,Open,Open")
+  location loc73:
+    edge Aut.c_close_match_4_5 goto loc363;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc22;
+    edge Aut.u_tau_goright_tau_1 goto loc64;
+  @state(Aut: "(2; 1),(4; 0),0,Open,Open")
+  location loc74:
+    edge Aut.c_close_match_4_5 goto loc270;
+    edge Aut.u_tau_goright_tau_1 goto loc159;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc228;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc75:
+    edge Aut.c_close_match_4_5 goto loc355;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc197;
+    edge Aut.c_goright_match_3_1 goto loc86;
+  @state(Aut: "(1; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc76:
+    edge Aut.u_tau_goright_tau_1 goto loc281;
+    edge Aut.c_close_match_4_5 goto loc149;
+    edge Aut.c_goright_match_3_2 goto loc156;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc77:
+    edge Aut.c_goright_match_3_1 goto loc145;
+    edge Aut.c_goright_match_3_2 goto loc170;
+    edge Aut.c_open_match_4_5 goto loc206;
+  @state(Aut: "(1; 1),(5; 1)_OUT,0,Close,Close")
+  location loc78:
+    edge Aut.u_tau_goright_tau_1 goto loc30;
+    edge Aut.c_open_match_4_5 goto loc165;
+  @state(Aut: "(2; 1),(4; 1),0,Open,Open")
+  location loc79:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc390;
+    edge Aut.c_close_match_4_5 goto loc265;
+    edge Aut.u_tau_goright_tau_2 goto loc234;
+    edge Aut.u_tau_goup_tau_2 goto loc301;
+  @state(Aut: "(4; 1),(4; 0),0,Open,Open")
+  location loc80:
+    edge Aut.u_tau_goright_tau_1 goto loc65;
+    edge Aut.u_tau_goup_tau_1 goto loc60;
+    edge Aut.c_close_match_4_5 goto loc358;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc262;
+  @state(Aut: "(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc81:
+    edge Aut.u_tau_goup_tau_1 goto loc272;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc257;
+    edge Aut.c_goright_match_3_2 goto loc205;
+    edge Aut.c_open_match_4_5 goto loc86;
+  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1),0,Close,Close")
+  location loc82:
+    edge Aut.c_open_match_4_5 goto loc320;
+    edge Aut.u_tau_goright_tau_2 goto loc104;
+    edge Aut.c_goright_match_3_1 goto loc210;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1),0,Open,Open")
+  location loc83:
+    edge Aut.u_tau_goright_tau_2 goto loc11;
+    edge Aut.c_close_match_4_5 goto loc242;
+    edge Aut.u_tau_goup_tau_2 goto loc115;
+    edge Aut.c_goright_match_3_1 goto loc368;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0),0,Close,Close")
+  location loc84:
+    edge Aut.c_goright_match_3_1 goto loc270;
+    edge Aut.u_tau_goright_tau_2 goto loc89;
+    edge Aut.c_open_match_4_5 goto loc105;
+  @state(Aut: "(1; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc85:
+    edge Aut.c_goright_match_3_2 goto loc275;
+    edge Aut.u_tau_goright_tau_1 goto loc121;
+    edge Aut.c_close_match_4_5 goto loc247;
+  @state(Aut: "(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc86:
+    edge Aut.u_tau_goright_tau_1 goto loc388;
+    edge Aut.u_tau_goup_tau_1 goto loc299;
+    edge Aut.c_close_match_4_5 goto loc81;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc334;
+  @state(Aut: "(0; 1),(4; 0),0,Open,Open")
+  location loc87:
+    edge Aut.u_tau_goright_tau_2 goto loc67;
+    edge Aut.u_tau_goright_tau_1 goto loc179;
+    edge Aut.c_close_match_4_5 goto loc222;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc88:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc231;
+    edge Aut.c_close_match_4_5 goto loc141;
+    edge Aut.c_goright_match_3_2 goto loc349;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc89:
+    edge Aut.c_goright_match_3_1 goto loc256;
+    edge Aut.c_goright_match_3_2 goto loc112;
+    edge Aut.c_open_match_4_5 goto loc331;
+  @state(Aut: "(0; 1),(2; 1),0,Close,Close")
+  location loc90:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc70;
+    edge Aut.c_open_match_4_5 goto loc96;
+    edge Aut.u_tau_goright_tau_2 goto loc168;
+  @state(Aut: "(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
   location loc91:
-    edge Aut.c_goright_match_3_2 goto loc360;
-    edge Aut.c_close_match_4_5 goto loc9;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc139;
-  @state(Aut: "(1; 1),(2; 1),0,Open,Open")
+    edge Aut.c_goright_match_3_2 goto loc109;
+    edge Aut.c_open_match_4_5 goto loc118;
+  @state(Aut: "(4; 1),(4; 1)_goup_(4; 0),0,Close,Close")
   location loc92:
-    edge Aut.c_close_match_4_5 goto loc361;
-    edge Aut.u_tau_goright_tau_2 goto loc303;
-    edge Aut.u_tau_goright_tau_1 goto loc192;
-  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc357;
+    edge Aut.u_tau_goup_tau_1 goto loc289;
+    edge Aut.c_open_match_4_5 goto loc298;
+    edge Aut.c_goup_match_3_2 goto loc358;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1)_goup_(4; 0),0,Close,Close")
   location loc93:
-    edge Aut.c_goright_match_3_1 goto loc333;
-    edge Aut.c_close_match_4_5 goto loc272;
-    edge Aut.c_goright_match_3_2 goto loc152;
-  @state(Aut: "(4; 1),(5; 0)_OUT,0,Close,Close")
+    edge Aut.c_goright_match_3_1 goto loc33;
+    edge Aut.c_open_match_4_5 goto loc372;
+    edge Aut.c_goup_match_3_2 goto loc338;
+  @state(Aut: "(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
   location loc94:
-    edge Aut.u_tau_goright_tau_1 goto loc375;
-    edge Aut.u_tau_goup_tau_1 goto loc224;
-    edge Aut.c_open_match_4_5 goto loc65;
-  @state(Aut: "(5; 1)_OUT,(5; 0)_OUT,0,Close,Close")
+    edge Aut.c_goup_match_3_2 goto loc24;
+    edge Aut.c_close_match_4_5 goto loc251;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0),(4; 0),0,Open,Open")
   location loc95:
-    marked;
-    edge Aut.c_open_match_4_5 goto loc211;
-  @state(Aut: "(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc291;
+    edge Aut.c_close_match_4_5 goto loc243;
+    edge Aut.u_tau_goright_tau_2 goto loc241;
+  @state(Aut: "(0; 1),(2; 1),0,Open,Open")
   location loc96:
-    edge Aut.u_tau_goright_tau_1 goto loc311;
-    edge Aut.c_goright_match_3_2 goto loc22;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc315;
-  @state(Aut: "(4; 0),(1; 1)_goright_(2; 1),0,Close,Close")
+    edge Aut.u_tau_goright_tau_2 goto loc233;
+    edge Aut.u_tau_goright_tau_1 goto loc34;
+    edge Aut.c_close_match_4_5 goto loc90;
+  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1),0,Open,Open")
   location loc97:
-    edge Aut.u_tau_goright_tau_1 goto loc100;
-    edge Aut.c_open_match_4_5 goto loc350;
-    edge Aut.c_goright_match_3_2 goto loc291;
+    edge Aut.c_goright_match_3_1 goto loc279;
+    edge Aut.u_tau_goright_tau_2 goto loc252;
+    edge Aut.c_close_match_4_5 goto loc259;
   @state(Aut: "(1; 1),(1; 1),0,Open,Open")
   location loc98:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc265;
-    edge Aut.u_tau_goright_tau_1 goto loc182;
-    edge Aut.c_close_match_4_5 goto loc29;
-  @state(Aut: "(4; 1),(1; 1),0,Open,Open")
-  location loc99:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc222;
-    edge Aut.c_close_match_4_5 goto loc319;
-    edge Aut.u_tau_goup_tau_1 goto loc79;
-    edge Aut.u_tau_goright_tau_1 goto loc193;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc100:
-    edge Aut.c_goright_match_3_1 goto loc314;
-    edge Aut.c_goright_match_3_2 goto loc70;
-    edge Aut.c_open_match_4_5 goto loc260;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1),0,Close,Close")
-  location loc101:
-    edge Aut.u_tau_goright_tau_2 goto loc237;
-    edge Aut.u_tau_goup_tau_2 goto loc133;
-    edge Aut.c_open_match_4_5 goto loc186;
-    edge Aut.c_goright_match_3_1 goto loc59;
-  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1),0,Open,Open")
-  location loc102:
-    edge Aut.c_goright_match_3_1 goto loc92;
-    edge Aut.c_close_match_4_5 goto loc316;
-    edge Aut.u_tau_goright_tau_2 goto loc8;
-  @state(Aut: "(0; 1)_goright_(1; 1),(5; 0)_OUT,0,Open,Open")
-  location loc103:
-    edge Aut.c_goright_match_3_1 goto loc282;
-    edge Aut.c_close_match_4_5 goto loc273;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(5; 0)_OUT,(4; 1),0,Open,Open")
-  location loc104:
-    edge Aut.c_close_match_4_5 goto loc6;
-    edge Aut.u_tau_goright_tau_2 goto loc203;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_2 goto loc180;
-  @state(Aut: "(3; 1),(4; 0),0,Close,Close")
-  location loc105:
-    edge Aut.u_tau_goright_tau_1 goto loc283;
-    edge Aut.u_tau_goright_tau_2 goto loc266;
-    edge Aut.c_open_match_4_5 goto loc209;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0),0,Open,Open")
-  location loc106:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc310;
-    edge Aut.u_tau_goright_tau_2 goto loc7;
-    edge Aut.c_goup_match_3_1 goto loc34;
-  @state(Aut: "(1; 1),(4; 0),0,Open,Open")
-  location loc107:
-    edge Aut.u_tau_goright_tau_1 goto loc165;
-    edge Aut.c_close_match_4_5 goto loc153;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc126;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc108:
-    edge Aut.c_goright_match_3_1 goto loc145;
-    edge Aut.c_open_match_4_5 goto loc168;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc120;
-  @state(Aut: "(1; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc109:
-    edge Aut.c_goright_match_3_2 goto loc339;
-    edge Aut.c_open_match_4_5 goto loc274;
-    edge Aut.u_tau_goright_tau_1 goto loc200;
-  @state(Aut: "(1; 1)_goright_(2; 1),(5; 0)_OUT,0,Close,Close")
-  location loc110:
-    edge Aut.c_goright_match_3_1 goto loc294;
-    edge Aut.c_open_match_4_5 goto loc178;
-  @state(Aut: "(4; 0),(4; 1),0,Open,Open")
-  location loc111:
-    edge Aut.u_tau_goright_tau_2 goto loc137;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc195;
-    edge Aut.c_close_match_4_5 goto loc267;
-    edge Aut.u_tau_goup_tau_2 goto loc330;
-  @state(Aut: "(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc112:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc137;
-    edge Aut.c_goright_match_3_2 goto loc243;
-    edge Aut.u_tau_goright_tau_1 goto loc169;
-  @state(Aut: "(4; 0),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc113:
-    edge Aut.c_goright_match_3_2 goto loc326;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc377;
-    edge Aut.c_open_match_4_5 goto loc47;
-  @state(Aut: "(0; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc114:
-    edge Aut.c_goright_match_3_2 goto loc328;
-    edge Aut.c_open_match_4_5 goto loc57;
-    edge Aut.u_tau_goright_tau_1 goto loc374;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1),0,Close,Close")
-  location loc115:
-    edge Aut.u_tau_goright_tau_2 goto loc253;
-    edge Aut.u_tau_goup_tau_2 goto loc125;
-    edge Aut.c_goright_match_3_1 goto loc77;
-    edge Aut.c_open_match_4_5 goto loc382;
-  @state(Aut: "(3; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc116:
-    edge Aut.u_tau_goright_tau_1 goto loc72;
-    edge Aut.c_open_match_4_5 goto loc157;
-    edge Aut.c_goright_match_3_2 goto loc216;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1),(3; 1),0,Open,Open")
-  location loc117:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc360;
-    edge Aut.c_close_match_4_5 goto loc197;
-    edge Aut.u_tau_goup_tau_1 goto loc249;
-    edge Aut.u_tau_goright_tau_2 goto loc119;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc118:
-    edge Aut.c_goright_match_3_1 goto loc23;
-    edge Aut.c_open_match_4_5 goto loc331;
-    edge Aut.c_goup_match_3_2 goto loc304;
-  @state(Aut: "(4; 1),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc119:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc206;
-    edge Aut.u_tau_goup_tau_1 goto loc327;
-    edge Aut.u_tau_goright_tau_1 goto loc82;
-    edge Aut.c_goright_match_3_2 goto loc25;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 0)_OUT,0,Close,Close")
-  location loc120:
-    edge Aut.c_goright_match_3_1 goto loc131;
-    edge Aut.c_open_match_4_5 goto loc151;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 1)_OUT,0,Close,Close")
-  location loc121:
-    edge Aut.c_open_match_4_5 goto loc184;
-    edge Aut.c_goright_match_3_1 goto loc4;
-  @state(Aut: "(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc122:
-    edge Aut.u_tau_goright_tau_1 goto loc108;
-    edge Aut.c_goright_match_3_2 goto loc244;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc226;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc123:
-    edge Aut.c_close_match_4_5 goto loc225;
-    edge Aut.c_goup_match_3_1 goto loc137;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc300;
-  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc124:
-    edge Aut.c_goup_match_3_1 goto loc97;
-    edge Aut.c_goright_match_3_2 goto loc358;
-    edge Aut.c_open_match_4_5 goto loc359;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc125:
-    edge Aut.c_open_match_4_5 goto loc239;
-    edge Aut.c_goright_match_3_1 goto loc317;
-    edge Aut.c_goup_match_3_2 goto loc283;
-  @state(Aut: "(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc126:
-    edge Aut.u_tau_goright_tau_1 goto loc191;
-    edge Aut.c_close_match_4_5 goto loc28;
-    edge Aut.c_goright_match_3_2 goto loc282;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc127:
-    edge Aut.c_open_match_4_5 goto loc163;
-    edge Aut.c_goright_match_3_1 goto loc166;
-    edge Aut.c_goright_match_3_2 goto loc275;
-  @state(Aut: "(3; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc128:
-    edge Aut.u_tau_goright_tau_1 goto loc219;
-    edge Aut.c_goright_match_3_2 goto loc61;
-    edge Aut.c_close_match_4_5 goto loc19;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1),0,Open,Open")
-  location loc129:
-    edge Aut.c_goright_match_3_1 goto loc38;
-    edge Aut.c_close_match_4_5 goto loc70;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc188;
-  @state(Aut: "(5; 0)_OUT,(5; 0)_OUT,0,Open,Open")
-  location loc130:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc131;
-  @state(Aut: "(5; 0)_OUT,(5; 0)_OUT,0,Close,Close")
-  location loc131:
-    marked;
-    edge Aut.c_open_match_4_5 goto loc130;
-  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc132:
-    edge Aut.c_close_match_4_5 goto loc288;
-    edge Aut.c_goright_match_3_2 goto loc249;
-    edge Aut.c_goup_match_3_1 goto loc47;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc133:
-    edge Aut.c_goright_match_3_1 goto loc18;
-    edge Aut.c_goup_match_3_2 goto loc259;
-    edge Aut.c_open_match_4_5 goto loc175;
-  @state(Aut: "(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc134:
-    edge Aut.c_goright_match_3_2 goto loc221;
-    edge Aut.u_tau_goright_tau_1 goto loc217;
-    edge Aut.c_close_match_4_5 goto loc247;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "sink,sink,sink,sink,sink")
-  location loc135;
-  @state(Aut: "(0; 1),(5; 0)_OUT,0,Close,Close")
-  location loc136:
-    edge Aut.u_tau_goright_tau_1 goto loc273;
-    edge Aut.c_open_match_4_5 goto loc214;
-  @state(Aut: "(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc137:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc112;
-    edge Aut.c_goright_match_3_2 goto loc236;
-    edge Aut.u_tau_goright_tau_1 goto loc337;
-  @state(Aut: "(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc138:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc379;
-    edge Aut.u_tau_goup_tau_1 goto loc181;
-    edge Aut.u_tau_goright_tau_1 goto loc202;
-    edge Aut.c_goright_match_3_2 goto loc94;
-  @state(Aut: "(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc139:
-    edge Aut.c_close_match_4_5 goto loc51;
-    edge Aut.c_goright_match_3_2 goto loc335;
-  @state(Aut: "(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc140:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_1 goto loc123;
-    edge Aut.c_goright_match_3_2 goto loc46;
-    edge Aut.u_tau_goright_tau_1 goto loc32;
-    edge Aut.c_close_match_4_5 goto loc297;
-  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc141:
-    edge Aut.c_open_match_4_5 goto loc327;
-    edge Aut.c_goright_match_3_2 goto loc208;
-    edge Aut.c_goup_match_3_1 goto loc254;
-  @state(Aut: "(4; 1)_goup_(4; 0),(5; 0)_OUT,0,Open,Open")
-  location loc142:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc224;
-    edge Aut.c_goup_match_3_1 goto loc172;
-  @state(Aut: "(2; 1),(5; 0)_OUT,0,Open,Open")
-  location loc143:
-    edge Aut.c_close_match_4_5 goto loc294;
-    edge Aut.u_tau_goright_tau_1 goto loc83;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc144:
-    edge Aut.c_open_match_4_5 goto loc191;
-    edge Aut.c_goright_match_3_2 goto loc110;
-    edge Aut.c_goright_match_3_1 goto loc147;
-  @state(Aut: "(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc145:
-    edge Aut.c_goright_match_3_2 goto loc131;
-    edge Aut.c_open_match_4_5 goto loc364;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc146:
-    edge Aut.c_goup_match_3_2 goto loc310;
-    edge Aut.c_open_match_4_5 goto loc325;
-    edge Aut.c_goup_match_3_1 goto loc280;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc147:
-    edge Aut.c_open_match_4_5 goto loc48;
-    edge Aut.c_goright_match_3_2 goto loc294;
-    edge Aut.u_tau_goright_tau_1 goto loc290;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1),(5; 1)_OUT,0,Close,Close")
-  location loc148:
-    edge Aut.u_tau_goright_tau_1 goto loc56;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc22;
-  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1),0,Close,Close")
-  location loc149:
-    edge Aut.c_open_match_4_5 goto loc233;
-    edge Aut.c_goright_match_3_1 goto loc197;
-    edge Aut.u_tau_goright_tau_2 goto loc372;
-  @state(Aut: "(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc150:
-    edge Aut.c_goright_match_3_2 goto loc104;
-    edge Aut.c_close_match_4_5 goto loc40;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 0)_OUT,0,Open,Open")
-  location loc151:
-    edge Aut.c_goright_match_3_1 goto loc130;
-    edge Aut.c_close_match_4_5 goto loc120;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1),0,Open,Open")
-  location loc152:
-    edge Aut.c_close_match_4_5 goto loc369;
-    edge Aut.u_tau_goright_tau_2 goto loc301;
-    edge Aut.c_goright_match_3_1 goto loc164;
-  @state(Aut: "(1; 1),(4; 0),0,Close,Close")
-  location loc153:
-    edge Aut.c_open_match_4_5 goto loc107;
-    edge Aut.u_tau_goright_tau_1 goto loc304;
-    edge Aut.u_tau_goright_tau_2 goto loc28;
-  @state(Aut: "(0; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc154:
-    edge Aut.c_close_match_4_5 goto loc367;
-    edge Aut.c_goright_match_3_2 goto loc214;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc387;
-  @state(Aut: "(5; 1)_OUT,(5; 1)_OUT,0,Close,Close")
-  location loc155:
-    marked;
-    edge Aut.c_open_match_4_5 goto loc289;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1),0,Open,Open")
-  location loc156:
-    edge Aut.u_tau_goright_tau_2 goto loc260;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc228;
-    edge Aut.c_close_match_4_5 goto loc35;
-  @state(Aut: "(3; 1),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc157:
-    edge Aut.u_tau_goright_tau_1 goto loc55;
-    edge Aut.c_goright_match_3_2 goto loc20;
-    edge Aut.c_close_match_4_5 goto loc116;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1),0,Close,Close")
-  location loc158:
-    edge Aut.u_tau_goright_tau_2 goto loc127;
-    edge Aut.c_goright_match_3_1 goto loc52;
-    edge Aut.c_open_match_4_5 goto loc193;
-  @state(Aut: "(1; 1)_goright_(2; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc159:
-    edge Aut.c_close_match_4_5 goto loc352;
-    edge Aut.c_goright_match_3_1 goto loc308;
-    edge Aut.c_goright_match_3_2 goto loc192;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(0; 1),(1; 1),0,Open,Open")
-  location loc160:
-    edge Aut.u_tau_goright_tau_2 goto loc320;
-    edge Aut.u_tau_goright_tau_1 goto loc50;
-    edge Aut.c_close_match_4_5 goto loc279;
-  @state(Aut: "(0; 1),(4; 0),0,Close,Close")
-  location loc161:
-    edge Aut.c_open_match_4_5 goto loc318;
-    edge Aut.u_tau_goright_tau_2 goto loc367;
-    edge Aut.u_tau_goright_tau_1 goto loc259;
-  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc162:
-    edge Aut.c_goright_match_3_2 goto loc240;
-    edge Aut.c_close_match_4_5 goto loc76;
-    edge Aut.c_goright_match_3_1 goto loc14;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc163:
-    edge Aut.c_goright_match_3_1 goto loc299;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc127;
-    edge Aut.c_goright_match_3_2 goto loc277;
-  @state(Aut: "(2; 1),(3; 1),0,Open,Open")
-  location loc164:
-    edge Aut.u_tau_goright_tau_1 goto loc73;
-    edge Aut.c_close_match_4_5 goto loc205;
-    edge Aut.u_tau_goright_tau_2 goto loc36;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0),0,Open,Open")
-  location loc165:
-    edge Aut.u_tau_goright_tau_2 goto loc191;
-    edge Aut.c_goright_match_3_1 goto loc86;
-    edge Aut.c_close_match_4_5 goto loc304;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc166:
-    edge Aut.c_open_match_4_5 goto loc299;
-    edge Aut.c_goright_match_3_2 goto loc338;
-  @state(Aut: "(5; 1)_OUT,(4; 1),0,Open,Open")
-  location loc167:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc16;
-    edge Aut.u_tau_goup_tau_2 goto loc190;
-    edge Aut.c_close_match_4_5 goto loc322;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc168:
-    edge Aut.c_goright_match_3_2 goto loc151;
-    edge Aut.c_goright_match_3_1 goto loc364;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc108;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc169:
-    edge Aut.c_goright_match_3_2 goto loc121;
-    edge Aut.c_goright_match_3_1 goto loc285;
-    edge Aut.c_open_match_4_5 goto loc337;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc170:
-    edge Aut.c_goright_match_3_2 goto loc258;
-    edge Aut.c_close_match_4_5 goto loc388;
-  @state(Aut: "(2; 1),(4; 0),0,Close,Close")
-  location loc171:
-    edge Aut.c_open_match_4_5 goto loc86;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc147;
-    edge Aut.u_tau_goright_tau_1 goto loc183;
-  @state(Aut: "(4; 0),(5; 0)_OUT,0,Open,Open")
-  location loc172:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc151;
-    edge Aut.c_close_match_4_5 goto loc244;
-  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1),0,Open,Open")
-  location loc173:
-    edge Aut.u_tau_goright_tau_2 goto loc334;
-    edge Aut.c_goright_match_3_1 goto loc26;
-    edge Aut.c_close_match_4_5 goto loc276;
-  @state(Aut: "(0; 1),(2; 1),0,Close,Close")
-  location loc174:
-    edge Aut.c_open_match_4_5 goto loc90;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc316;
-    edge Aut.u_tau_goright_tau_2 goto loc58;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc175:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc133;
-    edge Aut.c_goright_match_3_1 goto loc252;
-    edge Aut.c_goup_match_3_2 goto loc5;
-  @state(Aut: "(4; 1)_goup_(4; 0),(5; 1)_OUT,0,Close,Close")
-  location loc176:
-    edge Aut.c_goup_match_3_1 goto loc243;
-    edge Aut.c_open_match_4_5 goto loc300;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1),0,Close,Close")
-  location loc177:
-    edge Aut.c_goright_match_3_1 goto loc340;
-    edge Aut.u_tau_goright_tau_2 goto loc80;
-    edge Aut.c_open_match_4_5 goto loc390;
-  @state(Aut: "(1; 1)_goright_(2; 1),(5; 0)_OUT,0,Open,Open")
-  location loc178:
-    edge Aut.c_close_match_4_5 goto loc110;
-    edge Aut.c_goright_match_3_1 goto loc143;
-  @state(Aut: "(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc179:
-    edge Aut.c_open_match_4_5 goto loc230;
-    edge Aut.c_goright_match_3_2 goto loc95;
-  @state(Aut: "(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc180:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc3;
-    edge Aut.c_goup_match_3_2 goto loc223;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc181:
-    edge Aut.c_goright_match_3_2 goto loc224;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc7;
-    edge Aut.c_goup_match_3_1 goto loc122;
-  @state(Aut: "(1; 1)_goright_(2; 1),(1; 1),0,Open,Open")
-  location loc182:
-    edge Aut.c_goright_match_3_1 goto loc85;
-    edge Aut.c_close_match_4_5 goto loc366;
-    edge Aut.u_tau_goright_tau_2 goto loc159;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0),0,Close,Close")
-  location loc183:
-    edge Aut.c_open_match_4_5 goto loc296;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc290;
-    edge Aut.c_goright_match_3_1 goto loc105;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 1)_OUT,0,Open,Open")
-  location loc184:
-    edge Aut.c_close_match_4_5 goto loc121;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc187;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0),0,Open,Open")
-  location loc185:
-    edge Aut.u_tau_goright_tau_2 goto loc13;
-    edge Aut.c_close_match_4_5 goto loc12;
-    edge Aut.c_goright_match_3_1 goto loc78;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1),0,Open,Open")
-  location loc186:
-    edge Aut.c_goright_match_3_1 goto loc321;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc391;
-    edge Aut.u_tau_goup_tau_2 goto loc175;
-    edge Aut.c_close_match_4_5 goto loc101;
-  @state(Aut: "(5; 0)_OUT,(5; 1)_OUT,0,Open,Open")
-  location loc187:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc4;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc188:
-    edge Aut.c_goright_match_3_1 goto loc170;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc390;
-    edge Aut.c_close_match_4_5 goto loc377;
-  @state(Aut: "(1; 1),(5; 0)_OUT,0,Close,Close")
-  location loc189:
-    edge Aut.c_open_match_4_5 goto loc282;
-    edge Aut.u_tau_goright_tau_1 goto loc110;
-  @state(Aut: "(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc190:
-    edge Aut.c_goup_match_3_2 goto loc78;
-    edge Aut.c_close_match_4_5 goto loc63;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc191:
-    edge Aut.c_goright_match_3_2 goto loc178;
-    edge Aut.c_goright_match_3_1 goto loc48;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc144;
-  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1),0,Open,Open")
-  location loc192:
-    edge Aut.c_goright_match_3_1 goto loc345;
-    edge Aut.u_tau_goright_tau_2 goto loc93;
-    edge Aut.c_close_match_4_5 goto loc257;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1),0,Open,Open")
-  location loc193:
-    edge Aut.u_tau_goright_tau_2 goto loc163;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc158;
-    edge Aut.c_goright_match_3_1 goto loc229;
-  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc194:
-    edge Aut.c_goright_match_3_2 goto loc49;
-    edge Aut.c_goright_match_3_1 goto loc116;
-    edge Aut.c_open_match_4_5 goto loc268;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1),0,Open,Open")
-  location loc195:
-    edge Aut.c_close_match_4_5 goto loc262;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc104;
-    edge Aut.u_tau_goup_tau_2 goto loc234;
-    edge Aut.u_tau_goright_tau_2 goto loc337;
-  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1),0,Close,Close")
-  location loc196:
-    edge Aut.c_goright_match_3_1 goto loc29;
-    edge Aut.u_tau_goright_tau_2 goto loc220;
-    edge Aut.c_open_match_4_5 goto loc50;
-  @state(Aut: "(4; 1),(3; 1),0,Close,Close")
-  location loc197:
-    edge Aut.u_tau_goright_tau_2 goto loc206;
-    edge Aut.c_open_match_4_5 goto loc117;
-    edge Aut.u_tau_goright_tau_1 goto loc292;
-    edge Aut.u_tau_goup_tau_1 goto loc381;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 0)_OUT,0,Open,Open")
-  location loc198:
-    edge Aut.c_close_match_4_5 goto loc375;
-    edge Aut.c_goright_match_3_1 goto loc211;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(5; 1)_OUT,(3; 1),0,Close,Close")
-  location loc199:
-    edge Aut.c_open_match_4_5 goto loc335;
-    edge Aut.u_tau_goright_tau_2 goto loc307;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc200:
-    edge Aut.c_open_match_4_5 goto loc24;
-    edge Aut.c_goright_match_3_1 goto loc315;
-    edge Aut.c_goright_match_3_2 goto loc30;
-  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1),0,Open,Open")
-  location loc201:
-    edge Aut.u_tau_goright_tau_2 goto loc55;
-    edge Aut.c_goright_match_3_1 goto loc278;
-    edge Aut.c_close_match_4_5 goto loc264;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc202:
-    edge Aut.c_goright_match_3_1 goto loc179;
-    edge Aut.c_goright_match_3_2 goto loc375;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc13;
-  @state(Aut: "(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc203:
-    edge Aut.c_goright_match_3_2 goto loc187;
-    edge Aut.c_close_match_4_5 goto loc285;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1),0,Close,Close")
-  location loc204:
-    edge Aut.c_goright_match_3_1 goto loc322;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc251;
-    edge Aut.c_open_match_4_5 goto loc336;
-    edge Aut.u_tau_goup_tau_2 goto loc33;
-  @state(Aut: "(2; 1),(3; 1),0,Close,Close")
-  location loc205:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc164;
-    edge Aut.u_tau_goright_tau_1 goto loc49;
-    edge Aut.u_tau_goright_tau_2 goto loc269;
-  @state(Aut: "(4; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc206:
-    edge Aut.c_open_match_4_5 goto loc119;
-    edge Aut.c_goright_match_3_2 goto loc77;
-    edge Aut.u_tau_goright_tau_1 goto loc386;
-    edge Aut.u_tau_goup_tau_1 goto loc141;
-  @state(Aut: "(3; 1),(5; 0)_OUT,0,Open,Open")
-  location loc207:
-    edge Aut.c_close_match_4_5 goto loc37;
-    edge Aut.u_tau_goright_tau_1 goto loc1;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1),0,Close,Close")
-  location loc208:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_1 goto loc267;
-    edge Aut.u_tau_goup_tau_2 goto loc146;
-    edge Aut.c_open_match_4_5 goto loc385;
-    edge Aut.u_tau_goright_tau_2 goto loc225;
-  @state(Aut: "(3; 1),(4; 0),0,Open,Open")
-  location loc209:
-    edge Aut.u_tau_goright_tau_2 goto loc323;
-    edge Aut.c_close_match_4_5 goto loc105;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc41;
-  @state(Aut: "(0; 1),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc210:
-    edge Aut.u_tau_goright_tau_1 goto loc8;
-    edge Aut.c_goright_match_3_2 goto loc313;
-    edge Aut.c_close_match_4_5 goto loc58;
-  @state(Aut: "(5; 1)_OUT,(5; 0)_OUT,0,Open,Open")
-  location loc211:
-    edge Aut.c_close_match_4_5 goto loc95;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc212:
-    edge Aut.u_tau_goright_tau_1 goto loc239;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_2 goto loc209;
-    edge Aut.c_close_match_4_5 goto loc342;
-  @state(Aut: "(0; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc213:
-    edge Aut.c_open_match_4_5 goto loc246;
-    edge Aut.c_goright_match_3_2 goto loc329;
-    edge Aut.u_tau_goright_tau_1 goto loc237;
-  @state(Aut: "(0; 1),(5; 0)_OUT,0,Open,Open")
-  location loc214:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc136;
-    edge Aut.u_tau_goright_tau_1 goto loc103;
-  @state(Aut: "(5; 0)_OUT,(2; 1),0,Close,Close")
-  location loc215:
-    edge Aut.u_tau_goright_tau_2 goto loc388;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc38;
-  @state(Aut: "(3; 1),(3; 1),0,Close,Close")
-  location loc216:
-    edge Aut.c_open_match_4_5 goto loc20;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc149;
-    edge Aut.u_tau_goright_tau_2 goto loc15;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc217:
-    edge Aut.c_goright_match_3_2 goto loc370;
-    edge Aut.c_goright_match_3_1 goto loc140;
-    edge Aut.c_close_match_4_5 goto loc253;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1),0,Close,Close")
-  location loc218:
-    edge Aut.u_tau_goup_tau_2 goto loc356;
-    edge Aut.c_open_match_4_5 goto loc240;
-    edge Aut.u_tau_goright_tau_2 goto loc27;
-    edge Aut.c_goright_match_3_1 goto loc349;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc219:
-    edge Aut.c_goright_match_3_2 goto loc201;
-    edge Aut.c_close_match_4_5 goto loc248;
-    edge Aut.c_goright_match_3_1 goto loc222;
-  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc220:
-    edge Aut.c_goright_match_3_2 goto loc316;
-    edge Aut.c_goright_match_3_1 goto loc293;
-    edge Aut.c_open_match_4_5 goto loc84;
-  @state(Aut: "(3; 1),(5; 1)_OUT,0,Open,Open")
-  location loc221:
-    edge Aut.u_tau_goright_tau_1 goto loc370;
-    edge Aut.c_close_match_4_5 goto loc383;
-  @state(Aut: "(4; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc222:
-    edge Aut.u_tau_goup_tau_1 goto loc359;
-    edge Aut.c_goright_match_3_2 goto loc278;
-    edge Aut.u_tau_goright_tau_1 goto loc163;
-    edge Aut.c_close_match_4_5 goto loc11;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(5; 0)_OUT,(4; 0),0,Open,Open")
-  location loc223:
-    edge Aut.u_tau_goright_tau_2 goto loc364;
-    edge Aut.c_close_match_4_5 goto loc286;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goup_(4; 0),(5; 0)_OUT,0,Close,Close")
-  location loc224:
-    edge Aut.c_goup_match_3_1 goto loc244;
-    edge Aut.c_open_match_4_5 goto loc142;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc225:
-    edge Aut.c_goright_match_3_2 goto loc176;
-    edge Aut.c_open_match_4_5 goto loc123;
-    edge Aut.c_goup_match_3_1 goto loc112;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc226:
-    edge Aut.c_close_match_4_5 goto loc122;
-    edge Aut.u_tau_goright_tau_1 goto loc168;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc172;
-  @state(Aut: "(5; 0)_OUT,(1; 1),0,Close,Close")
-  location loc227:
-    edge Aut.c_open_match_4_5 goto loc228;
-    edge Aut.u_tau_goright_tau_2 goto loc314;
-  @state(Aut: "(5; 0)_OUT,(1; 1),0,Open,Open")
-  location loc228:
-    edge Aut.u_tau_goright_tau_2 goto loc68;
-    edge Aut.c_close_match_4_5 goto loc227;
-  @state(Aut: "(5; 1)_OUT,(1; 1),0,Open,Open")
-  location loc229:
-    edge Aut.c_close_match_4_5 goto loc52;
-    edge Aut.u_tau_goright_tau_2 goto loc299;
-  @state(Aut: "(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc230:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc211;
-    edge Aut.c_close_match_4_5 goto loc179;
-  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1),0,Close,Close")
-  location loc231:
-    edge Aut.c_goup_match_3_1 goto loc45;
-    edge Aut.u_tau_goright_tau_2 goto loc124;
-    edge Aut.c_open_match_4_5 goto loc79;
-  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1),0,Open,Open")
-  location loc232:
-    edge Aut.c_goright_match_3_1 goto loc61;
-    edge Aut.u_tau_goright_tau_2 goto loc268;
-    edge Aut.c_close_match_4_5 goto loc341;
-  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1),0,Open,Open")
-  location loc233:
-    edge Aut.c_goright_match_3_1 goto loc117;
-    edge Aut.c_close_match_4_5 goto loc149;
-    edge Aut.u_tau_goright_tau_2 goto loc10;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc234:
-    edge Aut.c_close_match_4_5 goto loc242;
-    edge Aut.c_goright_match_3_1 goto loc180;
-    edge Aut.c_goup_match_3_2 goto loc355;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1),(4; 0),0,Close,Close")
-  location loc235:
-    edge Aut.c_open_match_4_5 goto loc71;
-    edge Aut.u_tau_goright_tau_1 goto loc12;
-    edge Aut.u_tau_goup_tau_1 goto loc310;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc138;
-  @state(Aut: "(4; 0),(5; 1)_OUT,0,Open,Open")
-  location loc236:
-    edge Aut.c_close_match_4_5 goto loc243;
-    edge Aut.u_tau_goright_tau_1 goto loc184;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc237:
-    edge Aut.c_goright_match_3_1 goto loc109;
-    edge Aut.c_open_match_4_5 goto loc391;
-    edge Aut.c_goright_match_3_2 goto loc64;
-  @state(Aut: "(0; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc238:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc175;
-    edge Aut.c_goup_match_3_2 goto loc318;
-    edge Aut.c_close_match_4_5 goto loc39;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc239:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_2 goto loc41;
-    edge Aut.c_goright_match_3_1 goto loc53;
-    edge Aut.c_close_match_4_5 goto loc125;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1),0,Open,Open")
-  location loc240:
-    edge Aut.c_close_match_4_5 goto loc218;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_2 goto loc346;
-    edge Aut.c_goright_match_3_1 goto loc365;
-    edge Aut.u_tau_goright_tau_2 goto loc311;
-  @state(Aut: "(1; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc241:
-    edge Aut.c_open_match_4_5 goto loc380;
-    edge Aut.c_goright_match_3_2 goto loc59;
-    edge Aut.u_tau_goright_tau_1 goto loc368;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc242:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_2 goto loc88;
-    edge Aut.c_open_match_4_5 goto loc234;
-    edge Aut.c_goright_match_3_1 goto loc3;
-  @state(Aut: "(4; 0),(5; 1)_OUT,0,Close,Close")
-  location loc243:
-    edge Aut.u_tau_goright_tau_1 goto loc121;
-    edge Aut.c_open_match_4_5 goto loc236;
-  @state(Aut: "(4; 0),(5; 0)_OUT,0,Close,Close")
-  location loc244:
-    edge Aut.u_tau_goright_tau_1 goto loc120;
-    edge Aut.c_open_match_4_5 goto loc172;
-  @state(Aut: "(0; 1),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc245:
-    edge Aut.c_open_match_4_5 goto loc320;
-    edge Aut.c_goright_match_3_2 goto loc174;
-    edge Aut.u_tau_goright_tau_1 goto loc220;
-  @state(Aut: "(0; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc246:
-    edge Aut.c_close_match_4_5 goto loc213;
-    edge Aut.c_goright_match_3_2 goto loc31;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc391;
-  @state(Aut: "(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc247:
-    edge Aut.c_goright_match_3_2 goto loc383;
-    edge Aut.u_tau_goright_tau_1 goto loc253;
-    edge Aut.c_open_match_4_5 goto loc134;
-  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc248:
-    edge Aut.c_goright_match_3_1 goto loc11;
-    edge Aut.c_goright_match_3_2 goto loc264;
-    edge Aut.c_open_match_4_5 goto loc219;
-  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1),0,Open,Open")
-  location loc249:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc381;
-    edge Aut.u_tau_goright_tau_2 goto loc327;
-    edge Aut.c_goup_match_3_1 goto loc295;
-  @state(Aut: "(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc250:
-    edge Aut.c_close_match_4_5 goto loc307;
-    edge Aut.c_goright_match_3_2 goto loc167;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc251:
-    edge Aut.c_goright_match_3_2 goto loc373;
-    edge Aut.c_goright_match_3_1 goto loc312;
-    edge Aut.c_open_match_4_5 goto loc32;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(1; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc252:
-    edge Aut.u_tau_goright_tau_1 goto loc331;
-    edge Aut.c_close_match_4_5 goto loc18;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_2 goto loc107;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc253:
-    edge Aut.c_goright_match_3_2 goto loc357;
-    edge Aut.c_open_match_4_5 goto loc217;
-    edge Aut.c_goright_match_3_1 goto loc297;
-  @state(Aut: "(4; 0),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc254:
-    edge Aut.c_goright_match_3_2 goto loc267;
-    edge Aut.c_open_match_4_5 goto loc67;
-    edge Aut.u_tau_goright_tau_1 goto loc80;
-  @state(Aut: "(3; 1),(2; 1),0,Close,Close")
-  location loc255:
-    edge Aut.u_tau_goright_tau_1 goto loc264;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc116;
-    edge Aut.c_open_match_4_5 goto loc61;
-  @state(Aut: "(1; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc256:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc272;
-    edge Aut.c_open_match_4_5 goto loc303;
-    edge Aut.c_goright_match_3_2 goto loc17;
-  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1),0,Close,Close")
-  location loc257:
-    edge Aut.u_tau_goright_tau_2 goto loc272;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc192;
-    edge Aut.c_goright_match_3_1 goto loc376;
-  @state(Aut: "(5; 0)_OUT,(3; 1),0,Open,Open")
-  location loc258:
-    edge Aut.u_tau_goright_tau_2 goto loc150;
-    edge Aut.c_close_match_4_5 goto loc340;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0),0,Close,Close")
-  location loc259:
-    edge Aut.c_goright_match_3_1 goto loc153;
-    edge Aut.u_tau_goright_tau_2 goto loc42;
-    edge Aut.c_open_match_4_5 goto loc5;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc260:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc68;
-    edge Aut.c_goright_match_3_2 goto loc129;
-    edge Aut.c_close_match_4_5 goto loc100;
-  @state(Aut: "(5; 1)_OUT,(2; 1),0,Open,Open")
-  location loc261:
-    edge Aut.u_tau_goright_tau_2 goto loc139;
-    edge Aut.c_close_match_4_5 goto loc338;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1),0,Close,Close")
-  location loc262:
-    edge Aut.u_tau_goright_tau_2 goto loc169;
-    edge Aut.c_open_match_4_5 goto loc195;
-    edge Aut.u_tau_goup_tau_2 goto loc242;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc6;
-  @state(Aut: "(4; 0),(1; 1),0,Open,Open")
-  location loc263:
-    edge Aut.u_tau_goright_tau_1 goto loc156;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc45;
-    edge Aut.u_tau_goright_tau_2 goto loc350;
-  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1),0,Close,Close")
-  location loc264:
-    edge Aut.c_open_match_4_5 goto loc201;
-    edge Aut.c_goright_match_3_1 goto loc343;
-    edge Aut.u_tau_goright_tau_2 goto loc72;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(1; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc265:
-    edge Aut.c_close_match_4_5 goto loc293;
-    edge Aut.u_tau_goright_tau_1 goto loc159;
-    edge Aut.c_goright_match_3_2 goto loc92;
-  @state(Aut: "(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc266:
-    edge Aut.u_tau_goright_tau_1 goto loc353;
-    edge Aut.c_goright_match_3_2 goto loc37;
-    edge Aut.c_open_match_4_5 goto loc323;
-  @state(Aut: "(4; 0),(4; 1),0,Close,Close")
-  location loc267:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_2 goto loc280;
-    edge Aut.u_tau_goright_tau_1 goto loc262;
-    edge Aut.u_tau_goright_tau_2 goto loc112;
-    edge Aut.c_open_match_4_5 goto loc111;
-  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc268:
-    edge Aut.c_close_match_4_5 goto loc194;
-    edge Aut.c_goright_match_3_1 goto loc157;
-    edge Aut.c_goright_match_3_2 goto loc73;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc269:
-    edge Aut.c_goright_match_3_2 goto loc371;
-    edge Aut.u_tau_goright_tau_1 goto loc76;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc36;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1),0,Open,Open")
-  location loc270:
-    edge Aut.c_goright_match_3_1 goto loc44;
-    edge Aut.u_tau_goright_tau_2 goto loc24;
-    edge Aut.c_close_match_4_5 goto loc309;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_2 goto loc331;
-  @state(Aut: "(1; 1)_goright_(2; 1),(5; 1)_OUT,0,Open,Open")
-  location loc271:
-    edge Aut.c_goright_match_3_1 goto loc22;
-    edge Aut.c_close_match_4_5 goto loc30;
-  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc272:
-    edge Aut.c_goright_match_3_1 goto loc348;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc369;
-    edge Aut.c_open_match_4_5 goto loc93;
-  @state(Aut: "(0; 1)_goright_(1; 1),(5; 0)_OUT,0,Close,Close")
-  location loc273:
-    edge Aut.c_goright_match_3_1 goto loc189;
-    edge Aut.c_open_match_4_5 goto loc103;
-  @state(Aut: "(1; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc274:
-    edge Aut.c_goright_match_3_2 goto loc74;
-    edge Aut.c_close_match_4_5 goto loc109;
-    edge Aut.u_tau_goright_tau_1 goto loc24;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1),0,Close,Close")
-  location loc275:
-    edge Aut.c_goright_match_3_1 goto loc338;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc277;
-    edge Aut.u_tau_goright_tau_2 goto loc9;
-  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1),0,Close,Close")
-  location loc276:
-    edge Aut.c_goright_match_3_1 goto loc75;
-    edge Aut.u_tau_goright_tau_2 goto loc284;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc173;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1),0,Open,Open")
-  location loc277:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc261;
-    edge Aut.u_tau_goright_tau_2 goto loc91;
-    edge Aut.c_close_match_4_5 goto loc275;
-  @state(Aut: "(4; 1),(2; 1),0,Open,Open")
-  location loc278:
-    edge Aut.u_tau_goup_tau_1 goto loc21;
-    edge Aut.u_tau_goright_tau_1 goto loc277;
-    edge Aut.c_close_match_4_5 goto loc343;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc287;
-  @state(Aut: "(0; 1),(1; 1),0,Close,Close")
-  location loc279:
-    initial;
-    edge Aut.u_tau_goright_tau_2 goto loc245;
-    edge Aut.u_tau_goright_tau_1 goto loc196;
-    edge Aut.c_open_match_4_5 goto loc160;
-  @state(Aut: "(4; 0),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc280:
-    edge Aut.c_goup_match_3_2 goto loc389;
-    edge Aut.u_tau_goright_tau_1 goto loc242;
-    edge Aut.c_open_match_4_5 goto loc330;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc281:
-    edge Aut.c_close_match_4_5 goto loc33;
-    edge Aut.c_goup_match_3_2 goto loc185;
-    edge Aut.c_goright_match_3_1 goto loc190;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(1; 1),(5; 0)_OUT,0,Open,Open")
-  location loc282:
-    edge Aut.c_close_match_4_5 goto loc189;
-    edge Aut.u_tau_goright_tau_1 goto loc178;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0),0,Close,Close")
-  location loc283:
-    edge Aut.c_goright_match_3_1 goto loc235;
-    edge Aut.c_open_match_4_5 goto loc41;
-    edge Aut.u_tau_goright_tau_2 goto loc353;
-  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc284:
-    edge Aut.c_goright_match_3_2 goto loc341;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc19;
-    edge Aut.c_open_match_4_5 goto loc334;
-  @state(Aut: "(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc285:
-    edge Aut.c_goright_match_3_2 goto loc4;
-    edge Aut.c_open_match_4_5 goto loc203;
-  @state(Aut: "(5; 0)_OUT,(4; 0),0,Close,Close")
-  location loc286:
-    edge Aut.u_tau_goright_tau_2 goto loc145;
-    edge Aut.c_open_match_4_5 goto loc223;
-  @state(Aut: "(4; 1),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc287:
-    edge Aut.c_close_match_4_5 goto loc344;
-    edge Aut.c_goright_match_3_2 goto loc117;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_1 goto loc132;
-    edge Aut.u_tau_goright_tau_1 goto loc91;
-  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc288:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc132;
-    edge Aut.c_goright_match_3_2 goto loc381;
-    edge Aut.c_goup_match_3_1 goto loc113;
-  @state(Aut: "(5; 1)_OUT,(5; 1)_OUT,0,Open,Open")
-  location loc289:
-    edge Aut.c_close_match_4_5 goto loc155;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc290:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc266;
-    edge Aut.c_goright_match_3_2 goto loc302;
-    edge Aut.c_open_match_4_5 goto loc298;
-  @state(Aut: "(4; 0),(2; 1),0,Close,Close")
-  location loc291:
-    edge Aut.c_open_match_4_5 goto loc43;
-    edge Aut.u_tau_goright_tau_2 goto loc113;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc70;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1),0,Close,Close")
-  location loc292:
-    edge Aut.c_open_match_4_5 goto loc360;
-    edge Aut.c_goright_match_3_1 goto loc199;
-    edge Aut.u_tau_goright_tau_2 goto loc386;
-  @state(Aut: "(1; 1),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc293:
-    edge Aut.c_open_match_4_5 goto loc265;
-    edge Aut.u_tau_goright_tau_1 goto loc352;
-    edge Aut.c_goright_match_3_2 goto loc361;
-  @state(Aut: "(2; 1),(5; 0)_OUT,0,Close,Close")
-  location loc294:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc302;
-    edge Aut.c_open_match_4_5 goto loc143;
-  @state(Aut: "(4; 0),(3; 1),0,Open,Open")
-  location loc295:
-    edge Aut.u_tau_goright_tau_2 goto loc67;
-    edge Aut.c_close_match_4_5 goto loc326;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc390;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0),0,Open,Open")
-  location loc296:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc183;
-    edge Aut.u_tau_goright_tau_2 goto loc298;
-    edge Aut.c_goright_match_3_1 goto loc209;
-  @state(Aut: "(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc297:
-    edge Aut.u_tau_goup_tau_1 goto loc225;
-    edge Aut.c_open_match_4_5 goto loc140;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc251;
-    edge Aut.c_goright_match_3_2 goto loc332;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc298:
-    edge Aut.c_goright_match_3_2 goto loc83;
-    edge Aut.c_goright_match_3_1 goto loc323;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc290;
-  @state(Aut: "(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc299:
-    edge Aut.c_goright_match_3_2 goto loc261;
-    edge Aut.c_close_match_4_5 goto loc166;
-  @state(Aut: "(4; 1)_goup_(4; 0),(5; 1)_OUT,0,Open,Open")
-  location loc300:
-    edge Aut.c_goup_match_3_1 goto loc236;
-    edge Aut.c_close_match_4_5 goto loc176;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc301:
-    edge Aut.c_goright_match_3_2 goto loc270;
-    edge Aut.c_close_match_4_5 goto loc368;
-    edge Aut.c_goright_match_3_1 goto loc36;
-  @state(Aut: "(2; 1)_goright_(3; 1),(5; 0)_OUT,0,Close,Close")
-  location loc302:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc37;
-    edge Aut.c_open_match_4_5 goto loc83;
-  @state(Aut: "(1; 1),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc303:
-    edge Aut.c_goright_match_3_2 goto loc66;
-    edge Aut.c_close_match_4_5 goto loc256;
-    edge Aut.u_tau_goright_tau_1 goto loc93;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0),0,Close,Close")
-  location loc304:
-    edge Aut.c_goright_match_3_1 goto loc171;
-    edge Aut.c_open_match_4_5 goto loc165;
-    edge Aut.u_tau_goright_tau_2 goto loc144;
-  @state(Aut: "(2; 1),(1; 1),0,Close,Close")
-  location loc305:
-    edge Aut.u_tau_goright_tau_2 goto loc351;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc85;
-    edge Aut.u_tau_goright_tau_1 goto loc276;
-  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1),0,Open,Open")
-  location loc306:
-    edge Aut.u_tau_goright_tau_2 goto loc62;
-    edge Aut.c_goright_match_3_1 goto loc66;
-    edge Aut.c_close_match_4_5 goto loc81;
-  @state(Aut: "(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc307:
-    edge Aut.c_open_match_4_5 goto loc250;
-    edge Aut.c_goright_match_3_2 goto loc322;
-  @state(Aut: "(2; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc308:
-    edge Aut.c_goright_match_3_2 goto loc345;
-    edge Aut.c_close_match_4_5 goto loc351;
-    edge Aut.u_tau_goright_tau_1 goto loc334;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1),0,Close,Close")
-  location loc309:
-    edge Aut.c_goright_match_3_1 goto loc371;
-    edge Aut.c_open_match_4_5 goto loc270;
-    edge Aut.u_tau_goup_tau_2 goto loc118;
-    edge Aut.u_tau_goright_tau_2 goto loc200;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0),0,Close,Close")
-  location loc310:
-    edge Aut.u_tau_goright_tau_2 goto loc181;
-    edge Aut.c_goup_match_3_1 goto loc389;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc106;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc311:
-    edge Aut.c_goright_match_3_1 goto loc134;
-    edge Aut.c_goright_match_3_2 goto loc89;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc27;
-  @state(Aut: "(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc312:
-    edge Aut.c_open_match_4_5 goto loc16;
-    edge Aut.c_goright_match_3_2 goto loc155;
-  @state(Aut: "(0; 1),(3; 1),0,Open,Open")
-  location loc313:
-    edge Aut.u_tau_goright_tau_2 goto loc57;
-    edge Aut.c_close_match_4_5 goto loc2;
-    edge Aut.u_tau_goright_tau_1 goto loc306;
-  @state(Aut: "(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc314:
-    edge Aut.c_goright_match_3_2 goto loc215;
-    edge Aut.c_open_match_4_5 goto loc68;
-  @state(Aut: "(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
-  location loc315:
-    edge Aut.u_tau_goright_tau_1 goto loc27;
-    edge Aut.c_open_match_4_5 goto loc96;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc148;
-  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1),0,Close,Close")
-  location loc316:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc361;
-    edge Aut.c_open_match_4_5 goto loc102;
-    edge Aut.u_tau_goright_tau_2 goto loc324;
-  @state(Aut: "(4; 1),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc317:
-    edge Aut.u_tau_goup_tau_1 goto loc146;
-    edge Aut.c_open_match_4_5 goto loc53;
-    edge Aut.u_tau_goright_tau_1 goto loc33;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_2 goto loc235;
-  @state(Aut: "(0; 1),(4; 0),0,Open,Open")
-  location loc318:
-    edge Aut.u_tau_goright_tau_2 goto loc154;
-    edge Aut.c_close_match_4_5 goto loc161;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_1 goto loc5;
-  @state(Aut: "(4; 1),(1; 1),0,Close,Close")
-  location loc319:
-    edge Aut.u_tau_goup_tau_1 goto loc231;
-    edge Aut.u_tau_goright_tau_2 goto loc11;
-    edge Aut.c_open_match_4_5 goto loc99;
-    edge Aut.u_tau_goright_tau_1 goto loc158;
-  @state(Aut: "(0; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc320:
-    edge Aut.u_tau_goright_tau_1 goto loc84;
-    edge Aut.c_goright_match_3_2 goto loc90;
-    edge Aut.c_close_match_4_5 goto loc245;
-  @state(Aut: "(1; 1),(4; 1),0,Open,Open")
-  location loc321:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc274;
-    edge Aut.u_tau_goright_tau_1 goto loc270;
-    edge Aut.u_tau_goup_tau_2 goto loc252;
-    edge Aut.c_close_match_4_5 goto loc59;
-  @state(Aut: "(5; 1)_OUT,(4; 1),0,Close,Close")
-  location loc322:
-    edge Aut.u_tau_goright_tau_2 goto loc312;
-    edge Aut.u_tau_goup_tau_2 goto loc63;
-    edge Aut.c_open_match_4_5 goto loc167;
-  @state(Aut: "(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc323:
-    edge Aut.u_tau_goright_tau_1 goto loc54;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc207;
-    edge Aut.c_close_match_4_5 goto loc266;
-  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc324:
-    edge Aut.c_goright_match_3_1 goto loc256;
-    edge Aut.c_open_match_4_5 goto loc8;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc81;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc325:
-    edge Aut.c_goup_match_3_2 goto loc106;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc146;
-    edge Aut.c_goup_match_3_1 goto loc330;
-  @state(Aut: "(4; 0),(3; 1),0,Close,Close")
-  location loc326:
-    edge Aut.u_tau_goright_tau_1 goto loc177;
-    edge Aut.c_open_match_4_5 goto loc295;
-    edge Aut.u_tau_goright_tau_2 goto loc254;
-  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc327:
-    edge Aut.c_goright_match_3_2 goto loc385;
-    edge Aut.c_goup_match_3_1 goto loc67;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc141;
-  @state(Aut: "(0; 1),(4; 1),0,Close,Close")
-  location loc328:
-    edge Aut.c_open_match_4_5 goto loc347;
-    edge Aut.u_tau_goright_tau_2 goto loc213;
-    edge Aut.u_tau_goup_tau_2 goto loc39;
-    edge Aut.u_tau_goright_tau_1 goto loc101;
-  @state(Aut: "(0; 1),(5; 1)_OUT,0,Close,Close")
-  location loc329:
-    edge Aut.c_open_match_4_5 goto loc31;
-    edge Aut.u_tau_goright_tau_1 goto loc64;
-  @state(Aut: "(4; 0),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc330:
-    edge Aut.c_close_match_4_5 goto loc280;
-    edge Aut.u_tau_goright_tau_1 goto loc234;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goup_match_3_2 goto loc34;
-  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc331:
-    edge Aut.c_close_match_4_5 goto loc118;
-    edge Aut.c_goup_match_3_2 goto loc165;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc60;
-  @state(Aut: "(4; 1),(5; 1)_OUT,0,Close,Close")
-  location loc332:
-    edge Aut.c_open_match_4_5 goto loc46;
-    edge Aut.u_tau_goright_tau_1 goto loc373;
-    edge Aut.u_tau_goup_tau_1 goto loc176;
-  @state(Aut: "(2; 1),(2; 1)_goright_(3; 1),0,Open,Open")
-  location loc333:
-    edge Aut.c_goright_match_3_2 goto loc164;
-    edge Aut.c_close_match_4_5 goto loc348;
-    edge Aut.u_tau_goright_tau_1 goto loc268;
-  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc334:
-    edge Aut.c_goright_match_3_1 goto loc128;
-    edge Aut.c_close_match_4_5 goto loc284;
-    edge Aut.c_goright_match_3_2 goto loc232;
-  @state(Aut: "(5; 1)_OUT,(3; 1),0,Open,Open")
-  location loc335:
-    edge Aut.c_close_match_4_5 goto loc199;
-    edge Aut.u_tau_goright_tau_2 goto loc250;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1),0,Open,Open")
-  location loc336:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc204;
-    edge Aut.u_tau_goright_tau_2 goto loc32;
-    edge Aut.u_tau_goup_tau_2 goto loc281;
-    edge Aut.c_goright_match_3_1 goto loc167;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc337:
-    edge Aut.c_goright_match_3_2 goto loc184;
-    edge Aut.c_goright_match_3_1 goto loc203;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc169;
-  @state(Aut: "(5; 1)_OUT,(2; 1),0,Close,Close")
-  location loc338:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc51;
-    edge Aut.c_open_match_4_5 goto loc261;
-  @state(Aut: "(1; 1),(5; 1)_OUT,0,Close,Close")
-  location loc339:
-    edge Aut.u_tau_goright_tau_1 goto loc30;
-    edge Aut.c_open_match_4_5 goto loc74;
-  @state(Aut: "(5; 0)_OUT,(3; 1),0,Close,Close")
-  location loc340:
-    edge Aut.u_tau_goright_tau_2 goto loc40;
-    edge Aut.c_open_match_4_5 goto loc258;
-  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1),0,Close,Close")
-  location loc341:
-    edge Aut.u_tau_goright_tau_2 goto loc194;
-    edge Aut.c_goright_match_3_1 goto loc255;
-    edge Aut.c_open_match_4_5 goto loc232;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc342:
-    edge Aut.c_goup_match_3_2 goto loc105;
-    edge Aut.c_open_match_4_5 goto loc212;
-    edge Aut.u_tau_goright_tau_1 goto loc125;
-  @state(Aut: "(4; 1),(2; 1),0,Close,Close")
-  location loc343:
-    edge Aut.u_tau_goup_tau_1 goto loc358;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc278;
-    edge Aut.u_tau_goright_tau_1 goto loc275;
-    edge Aut.u_tau_goright_tau_2 goto loc344;
-  @state(Aut: "(4; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc344:
-    edge Aut.u_tau_goup_tau_1 goto loc288;
-    edge Aut.c_goright_match_3_2 goto loc197;
-    edge Aut.u_tau_goright_tau_1 goto loc9;
-    edge Aut.c_open_match_4_5 goto loc287;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1),(2; 1),0,Open,Open")
-  location loc345:
-    edge Aut.u_tau_goright_tau_1 goto loc232;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc333;
-    edge Aut.c_close_match_4_5 goto loc376;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goup_(4; 0),0,Open,Open")
-  location loc346:
-    edge Aut.c_goup_match_3_2 goto loc296;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc356;
-    edge Aut.c_goright_match_3_1 goto loc212;
-  @state(Aut: "(0; 1),(4; 1),0,Open,Open")
-  location loc347:
-    edge Aut.u_tau_goright_tau_1 goto loc186;
-    edge Aut.u_tau_goright_tau_2 goto loc246;
-    edge Aut.c_close_match_4_5 goto loc328;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_2 goto loc238;
-  @state(Aut: "(2; 1),(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc348:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc205;
-    edge Aut.c_open_match_4_5 goto loc333;
-    edge Aut.u_tau_goright_tau_1 goto loc194;
-  @state(Aut: "(3; 1),(4; 1),0,Close,Close")
-  location loc349:
-    edge Aut.u_tau_goright_tau_2 goto loc247;
-    edge Aut.c_open_match_4_5 goto loc365;
-    edge Aut.u_tau_goright_tau_1 goto loc115;
-    edge Aut.u_tau_goup_tau_2 goto loc342;
-  @state(Aut: "(4; 0),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc350:
-    edge Aut.c_close_match_4_5 goto loc97;
-    edge Aut.c_goright_match_3_2 goto loc43;
-    edge Aut.u_tau_goright_tau_1 goto loc260;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(2; 1),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc351:
-    edge Aut.c_open_match_4_5 goto loc308;
-    edge Aut.u_tau_goright_tau_1 goto loc284;
-    edge Aut.c_goright_match_3_2 goto loc376;
-    edge Aut.u_sink_off_2 goto loc135;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc171;
+    edge Aut.u_tau_goright_tau_1 goto loc335;
+    edge Aut.u_tau_goright_tau_2 goto loc85;
   @state(Aut: "(1; 1)_goright_(2; 1),(1; 1)_goright_(2; 1),0,Close,Close")
-  location loc352:
-    edge Aut.c_goright_match_3_2 goto loc257;
-    edge Aut.c_goright_match_3_1 goto loc351;
-    edge Aut.c_open_match_4_5 goto loc159;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc353:
-    edge Aut.c_open_match_4_5 goto loc54;
-    edge Aut.c_goright_match_3_1 goto loc138;
-    edge Aut.c_goright_match_3_2 goto loc354;
-  @state(Aut: "(3; 1)_goright_(4; 1),(5; 0)_OUT,0,Close,Close")
-  location loc354:
-    edge Aut.c_goright_match_3_1 goto loc94;
-    edge Aut.c_open_match_4_5 goto loc1;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0),0,Open,Open")
-  location loc355:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc223;
-    edge Aut.u_tau_goright_tau_2 goto loc168;
-    edge Aut.c_close_match_4_5 goto loc88;
-  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goup_(4; 0),0,Close,Close")
-  location loc356:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc346;
-    edge Aut.c_goup_match_3_2 goto loc183;
-    edge Aut.c_goright_match_3_1 goto loc342;
-  @state(Aut: "(3; 1)_goright_(4; 1),(5; 1)_OUT,0,Close,Close")
-  location loc357:
-    edge Aut.c_goright_match_3_1 goto loc332;
-    edge Aut.c_open_match_4_5 goto loc370;
-  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1),0,Close,Close")
-  location loc358:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc288;
-    edge Aut.c_goup_match_3_1 goto loc291;
-    edge Aut.c_open_match_4_5 goto loc21;
-  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1)_goright_(2; 1),0,Open,Open")
-  location loc359:
-    edge Aut.c_goright_match_3_2 goto loc21;
-    edge Aut.c_goup_match_3_1 goto loc350;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc124;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1),0,Open,Open")
-  location loc360:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc82;
-    edge Aut.c_close_match_4_5 goto loc292;
-    edge Aut.c_goright_match_3_1 goto loc335;
-  @state(Aut: "(1; 1),(2; 1),0,Close,Close")
-  location loc361:
-    edge Aut.u_tau_goright_tau_1 goto loc257;
-    edge Aut.u_tau_goright_tau_2 goto loc256;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc92;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 1)_OUT,0,Open,Open")
-  location loc362:
-    edge Aut.c_close_match_4_5 goto loc373;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc289;
-  @state(Aut: "(5; 1)_OUT,(4; 0),0,Close,Close")
-  location loc363:
-    edge Aut.c_open_match_4_5 goto loc78;
-    edge Aut.u_tau_goright_tau_2 goto loc179;
-  @state(Aut: "(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc364:
-    edge Aut.c_goright_match_3_2 goto loc130;
-    edge Aut.c_close_match_4_5 goto loc145;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(3; 1),(4; 1),0,Open,Open")
-  location loc365:
-    edge Aut.u_tau_goright_tau_1 goto loc382;
-    edge Aut.u_tau_goright_tau_2 goto loc134;
-    edge Aut.c_close_match_4_5 goto loc349;
-    edge Aut.u_tau_goup_tau_2 goto loc212;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(1; 1)_goright_(2; 1),(1; 1),0,Close,Close")
-  location loc366:
-    edge Aut.u_tau_goright_tau_2 goto loc352;
-    edge Aut.c_goright_match_3_1 goto loc305;
-    edge Aut.c_open_match_4_5 goto loc182;
-  @state(Aut: "(0; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
-  location loc367:
-    edge Aut.c_goright_match_3_2 goto loc136;
-    edge Aut.c_open_match_4_5 goto loc154;
-    edge Aut.u_tau_goright_tau_1 goto loc42;
-  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc368:
-    edge Aut.c_goright_match_3_2 goto loc309;
-    edge Aut.c_open_match_4_5 goto loc301;
-    edge Aut.c_goright_match_3_1 goto loc269;
-  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1),0,Close,Close")
-  location loc369:
-    edge Aut.c_open_match_4_5 goto loc152;
-    edge Aut.c_goright_match_3_1 goto loc205;
-    edge Aut.u_tau_goright_tau_2 goto loc368;
-  @state(Aut: "(3; 1)_goright_(4; 1),(5; 1)_OUT,0,Open,Open")
-  location loc370:
-    edge Aut.c_close_match_4_5 goto loc357;
-    edge Aut.c_goright_match_3_1 goto loc46;
-  @state(Aut: "(2; 1),(4; 1),0,Close,Close")
-  location loc371:
-    edge Aut.u_tau_goright_tau_1 goto loc218;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_open_match_4_5 goto loc44;
-    edge Aut.u_tau_goup_tau_2 goto loc23;
-    edge Aut.u_tau_goright_tau_2 goto loc315;
-  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc372:
-    edge Aut.c_goright_match_3_2 goto loc115;
-    edge Aut.c_open_match_4_5 goto loc10;
-    edge Aut.c_goright_match_3_1 goto loc206;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 1)_OUT,0,Close,Close")
-  location loc373:
-    edge Aut.c_open_match_4_5 goto loc362;
-    edge Aut.c_goright_match_3_1 goto loc155;
-  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc374:
-    edge Aut.c_goright_match_3_1 goto loc241;
-    edge Aut.c_goright_match_3_2 goto loc101;
-    edge Aut.c_open_match_4_5 goto loc62;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 0)_OUT,0,Close,Close")
-  location loc375:
-    edge Aut.c_open_match_4_5 goto loc198;
-    edge Aut.c_goright_match_3_1 goto loc95;
-  @state(Aut: "(2; 1),(2; 1),0,Close,Close")
-  location loc376:
-    edge Aut.c_open_match_4_5 goto loc345;
-    edge Aut.u_tau_goright_tau_1 goto loc341;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc348;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc377:
-    edge Aut.c_open_match_4_5 goto loc188;
-    edge Aut.c_goright_match_3_2 goto loc177;
-    edge Aut.c_goright_match_3_1 goto loc388;
-    edge Aut.u_sink_off_2 goto loc135;
+  location loc99:
+    edge Aut.c_goright_match_3_2 goto loc254;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc32;
+    edge Aut.c_open_match_4_5 goto loc121;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1),0,Close,Close")
+  location loc100:
+    edge Aut.u_tau_goright_tau_2 goto loc344;
+    edge Aut.c_open_match_4_5 goto loc300;
+    edge Aut.c_goright_match_3_1 goto loc255;
+  @state(Aut: "(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc101:
+    edge Aut.c_goright_match_3_2 goto loc56;
+    edge Aut.c_open_match_4_5 goto loc231;
   @state(Aut: "(0; 1)_goright_(1; 1),(5; 1)_OUT,0,Open,Open")
-  location loc378:
-    edge Aut.c_close_match_4_5 goto loc64;
+  location loc102:
+    edge Aut.c_goright_match_3_1 goto loc165;
+    edge Aut.c_close_match_4_5 goto loc184;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc103:
+    edge Aut.c_open_match_4_5 goto loc4;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goup_tau_1 goto loc238;
+    edge Aut.u_tau_goright_tau_1 goto loc318;
+    edge Aut.c_goright_match_3_2 goto loc201;
+  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc104:
+    edge Aut.c_goright_match_3_1 goto loc149;
+    edge Aut.c_open_match_4_5 goto loc18;
+    edge Aut.c_goright_match_3_2 goto loc199;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0),0,Open,Open")
+  location loc105:
     edge Aut.c_goright_match_3_1 goto loc74;
-    edge Aut.u_sink_off_2 goto loc135;
-  @state(Aut: "(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc379:
-    edge Aut.u_tau_goright_tau_1 goto loc13;
-    edge Aut.c_goright_match_3_2 goto loc65;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goup_tau_1 goto loc7;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc84;
+    edge Aut.u_tau_goright_tau_2 goto loc331;
+  @state(Aut: "(2; 1),(3; 1),0,Open,Open")
+  location loc106:
+    edge Aut.c_close_match_4_5 goto loc48;
+    edge Aut.u_tau_goright_tau_2 goto loc160;
+    edge Aut.u_tau_goright_tau_1 goto loc68;
+  @state(Aut: "(2; 1),(2; 1),0,Open,Open")
+  location loc107:
+    edge Aut.u_tau_goright_tau_2 goto loc237;
+    edge Aut.u_sink_off_2 goto loc46;
     edge Aut.c_close_match_4_5 goto loc138;
-  @state(Aut: "(1; 1),(3; 1)_goright_(4; 1),0,Open,Open")
-  location loc380:
-    edge Aut.u_tau_goright_tau_1 goto loc301;
-    edge Aut.c_goright_match_3_2 goto loc321;
-    edge Aut.c_close_match_4_5 goto loc241;
-  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1),0,Close,Close")
-  location loc381:
-    edge Aut.c_open_match_4_5 goto loc249;
-    edge Aut.u_tau_goright_tau_2 goto loc141;
-    edge Aut.c_goup_match_3_1 goto loc326;
-  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1),0,Open,Open")
-  location loc382:
-    edge Aut.u_tau_goup_tau_2 goto loc239;
-    edge Aut.u_tau_goright_tau_2 goto loc217;
-    edge Aut.u_sink_off_2 goto loc135;
+    edge Aut.u_tau_goright_tau_1 goto loc189;
+  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc108:
+    edge Aut.c_goright_match_3_2 goto loc52;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc40;
+    edge Aut.c_open_match_4_5 goto loc185;
+  @state(Aut: "(5; 1)_OUT,(5; 1)_OUT,0,Close,Close")
+  location loc109:
+    marked;
+    edge Aut.c_open_match_4_5 goto loc208;
+  @state(Aut: "(0; 1),(1; 1),0,Close,Close")
+  location loc110:
+    initial;
+    edge Aut.u_tau_goright_tau_1 goto loc386;
+    edge Aut.u_tau_goright_tau_2 goto loc264;
+    edge Aut.c_open_match_4_5 goto loc328;
+  @state(Aut: "(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc111:
+    edge Aut.c_goright_match_3_2 goto loc255;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc39;
+  @state(Aut: "(1; 1)_goright_(2; 1),(5; 0)_OUT,0,Close,Close")
+  location loc112:
+    edge Aut.c_open_match_4_5 goto loc209;
+    edge Aut.c_goright_match_3_1 goto loc178;
+  @state(Aut: "(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc113:
+    edge Aut.c_open_match_4_5 goto loc367;
+    edge Aut.c_goright_match_3_2 goto loc25;
+  @state(Aut: "(3; 1),(4; 0),0,Open,Open")
+  location loc114:
+    edge Aut.u_tau_goright_tau_1 goto loc190;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc43;
+    edge Aut.u_tau_goright_tau_2 goto loc223;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc115:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_2 goto loc291;
+    edge Aut.c_goright_match_3_1 goto loc94;
+    edge Aut.c_close_match_4_5 goto loc116;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc116:
+    edge Aut.c_goup_match_3_2 goto loc146;
+    edge Aut.c_open_match_4_5 goto loc115;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc251;
+  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc117:
+    edge Aut.c_open_match_4_5 goto loc325;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc324;
+    edge Aut.c_goright_match_3_1 goto loc332;
+  @state(Aut: "(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc118:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc208;
+    edge Aut.c_close_match_4_5 goto loc91;
+  @state(Aut: "(4; 0),(2; 1),0,Open,Open")
+  location loc119:
+    edge Aut.u_tau_goright_tau_2 goto loc13;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc353;
+    edge Aut.u_tau_goright_tau_1 goto loc349;
+  @state(Aut: "(1; 1),(5; 0)_OUT,0,Close,Close")
+  location loc120:
+    edge Aut.c_open_match_4_5 goto loc381;
+    edge Aut.u_tau_goright_tau_1 goto loc112;
+  @state(Aut: "(1; 1)_goright_(2; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc121:
+    edge Aut.c_close_match_4_5 goto loc99;
+    edge Aut.c_goright_match_3_1 goto loc337;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc7;
+  @state(Aut: "(3; 1),(3; 1),0,Open,Open")
+  location loc122:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc132;
+    edge Aut.u_tau_goright_tau_2 goto loc226;
+    edge Aut.c_close_match_4_5 goto loc286;
+  @state(Aut: "(4; 1)_goup_(4; 0),(5; 0)_OUT,0,Open,Open")
+  location loc123:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_1 goto loc2;
+    edge Aut.c_close_match_4_5 goto loc51;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 1)_OUT,0,Open,Open")
+  location loc124:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc370;
+    edge Aut.c_goright_match_3_1 goto loc208;
+  @state(Aut: "(4; 0),(5; 1)_OUT,0,Close,Close")
+  location loc125:
+    edge Aut.u_tau_goright_tau_1 goto loc220;
+    edge Aut.c_open_match_4_5 goto loc319;
+  @state(Aut: "(5; 1)_OUT,(4; 0),0,Close,Close")
+  location loc126:
+    edge Aut.u_tau_goright_tau_2 goto loc183;
+    edge Aut.c_open_match_4_5 goto loc303;
+  @state(Aut: "(0; 1),(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc127:
+    edge Aut.u_tau_goright_tau_1 goto loc93;
+    edge Aut.c_open_match_4_5 goto loc317;
+    edge Aut.c_goup_match_3_2 goto loc222;
+  @state(Aut: "(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc128:
+    edge Aut.c_goup_match_3_2 goto loc303;
+    edge Aut.c_close_match_4_5 goto loc323;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc129:
+    edge Aut.c_close_match_4_5 goto loc38;
+    edge Aut.c_goright_match_3_1 goto loc148;
+    edge Aut.c_goright_match_3_2 goto loc189;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1),0,Close,Close")
+  location loc130:
+    edge Aut.c_open_match_4_5 goto loc16;
     edge Aut.c_goright_match_3_1 goto loc25;
-    edge Aut.c_close_match_4_5 goto loc115;
-  @state(Aut: "(3; 1),(5; 1)_OUT,0,Close,Close")
-  location loc383:
-    edge Aut.c_open_match_4_5 goto loc221;
-    edge Aut.u_tau_goright_tau_1 goto loc357;
-  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1),0,Open,Open")
-  location loc384:
-    edge Aut.u_tau_goright_tau_2 goto loc219;
-    edge Aut.c_goright_match_3_1 goto loc99;
-    edge Aut.c_close_match_4_5 goto loc87;
-  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1),0,Open,Open")
-  location loc385:
-    edge Aut.c_close_match_4_5 goto loc208;
-    edge Aut.c_goup_match_3_1 goto loc111;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc123;
-    edge Aut.u_tau_goup_tau_2 goto loc325;
-  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
-  location loc386:
-    edge Aut.c_goright_match_3_1 goto loc307;
-    edge Aut.c_open_match_4_5 goto loc82;
-    edge Aut.c_goright_match_3_2 goto loc204;
-  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
-  location loc387:
-    edge Aut.c_close_match_4_5 goto loc42;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc103;
+    edge Aut.u_tau_goright_tau_2 goto loc318;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1),0,Close,Close")
+  location loc131:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc382;
+    edge Aut.c_open_match_4_5 goto loc293;
+    edge Aut.u_tau_goright_tau_2 goto loc38;
+  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1),0,Open,Open")
+  location loc132:
+    edge Aut.u_tau_goright_tau_2 goto loc325;
+    edge Aut.c_goright_match_3_1 goto loc280;
+    edge Aut.c_close_match_4_5 goto loc192;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc133:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc298;
+    edge Aut.c_goup_match_3_2 goto loc190;
+    edge Aut.c_close_match_4_5 goto loc329;
+  @state(Aut: "(5; 1)_OUT,(1; 1),0,Open,Open")
+  location loc134:
+    edge Aut.c_close_match_4_5 goto loc162;
+    edge Aut.u_tau_goright_tau_2 goto loc367;
+  @state(Aut: "(1; 1),(2; 1),0,Close,Close")
+  location loc135:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc275;
+    edge Aut.u_tau_goright_tau_1 goto loc254;
+    edge Aut.u_tau_goright_tau_2 goto loc218;
+  @state(Aut: "(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc136:
+    edge Aut.c_open_match_4_5 goto loc379;
+    edge Aut.c_goright_match_3_2 goto loc292;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1),0,Open,Open")
+  location loc137:
+    edge Aut.c_close_match_4_5 goto loc19;
+    edge Aut.u_tau_goright_tau_2 goto loc295;
+    edge Aut.u_tau_goup_tau_2 goto loc41;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc79;
+  @state(Aut: "(2; 1),(2; 1),0,Close,Close")
+  location loc138:
+    edge Aut.u_tau_goright_tau_2 goto loc40;
+    edge Aut.c_open_match_4_5 goto loc107;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc229;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 0)_OUT,0,Open,Open")
+  location loc139:
+    edge Aut.c_close_match_4_5 goto loc248;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc364;
+  @state(Aut: "(4; 0),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc140:
+    edge Aut.c_open_match_4_5 goto loc13;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc363;
+    edge Aut.u_tau_goright_tau_1 goto loc246;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc141:
+    edge Aut.c_open_match_4_5 goto loc88;
+    edge Aut.c_goright_match_3_1 goto loc101;
+    edge Aut.c_goright_match_3_2 goto loc219;
+  @state(Aut: "(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc142:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc167;
+    edge Aut.u_tau_goright_tau_1 goto loc75;
+    edge Aut.c_goright_match_3_2 goto loc55;
+  @state(Aut: "(1; 1)_goright_(2; 1),(5; 1)_OUT,0,Open,Open")
+  location loc143:
+    edge Aut.c_goright_match_3_1 goto loc224;
+    edge Aut.c_close_match_4_5 goto loc30;
+  @state(Aut: "(4; 0),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc144:
+    edge Aut.c_goright_match_3_2 goto loc353;
+    edge Aut.u_tau_goright_tau_1 goto loc141;
+    edge Aut.c_open_match_4_5 goto loc236;
+  @state(Aut: "(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc145:
+    edge Aut.c_goright_match_3_2 goto loc211;
+    edge Aut.c_open_match_4_5 goto loc262;
+    edge Aut.u_tau_goup_tau_1 goto loc347;
+    edge Aut.u_tau_goright_tau_1 goto loc266;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0),0,Close,Close")
+  location loc146:
+    edge Aut.u_tau_goright_tau_2 goto loc180;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc291;
+    edge Aut.c_goright_match_3_1 goto loc306;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0),0,Close,Close")
+  location loc147:
     edge Aut.c_goright_match_3_1 goto loc126;
-  @state(Aut: "(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
-  location loc388:
-    edge Aut.c_open_match_4_5 goto loc170;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_2 goto loc340;
-  @state(Aut: "(4; 0),(4; 0),0,Close,Close")
-  location loc389:
-    edge Aut.c_open_match_4_5 goto loc34;
-    edge Aut.u_tau_goright_tau_1 goto loc88;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.u_tau_goright_tau_2 goto loc122;
-  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1),0,Open,Open")
-  location loc390:
-    edge Aut.c_close_match_4_5 goto loc177;
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_goright_match_3_1 goto loc258;
+    edge Aut.u_tau_goright_tau_2 goto loc266;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc65;
+  @state(Aut: "(3; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc148:
+    edge Aut.c_close_match_4_5 goto loc250;
+    edge Aut.c_goright_match_3_2 goto loc10;
+    edge Aut.u_tau_goright_tau_1 goto loc296;
+  @state(Aut: "(1; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc149:
+    edge Aut.u_tau_goright_tau_1 goto loc195;
+    edge Aut.c_open_match_4_5 goto loc76;
+    edge Aut.c_goright_match_3_2 goto loc263;
+  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1),0,Close,Close")
+  location loc150:
+    edge Aut.c_open_match_4_5 goto loc176;
+    edge Aut.c_goup_match_3_1 goto loc353;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc238;
+  @state(Aut: "(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc151:
+    edge Aut.u_tau_goright_tau_1 goto loc77;
+    edge Aut.c_goright_match_3_2 goto loc21;
+    edge Aut.c_open_match_4_5 goto loc223;
+  @state(Aut: "(2; 1),(1; 1),0,Close,Close")
+  location loc152:
+    edge Aut.c_open_match_4_5 goto loc50;
+    edge Aut.u_tau_goright_tau_1 goto loc131;
+    edge Aut.u_tau_goright_tau_2 goto loc32;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc153:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc213;
+    edge Aut.c_goright_match_3_2 goto loc139;
+    edge Aut.c_close_match_4_5 goto loc266;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc154:
+    edge Aut.c_close_match_4_5 goto loc374;
+    edge Aut.c_goright_match_3_1 goto loc354;
+    edge Aut.c_goright_match_3_2 goto loc240;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1),0,Close,Close")
+  location loc155:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc272;
+    edge Aut.u_tau_goup_tau_2 goto loc289;
+    edge Aut.c_goup_match_3_1 goto loc304;
+    edge Aut.c_open_match_4_5 goto loc239;
+  @state(Aut: "(1; 1),(4; 1),0,Open,Open")
+  location loc156:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc263;
+    edge Aut.u_tau_goup_tau_2 goto loc47;
+    edge Aut.u_tau_goright_tau_1 goto loc137;
+    edge Aut.u_tau_goright_tau_2 goto loc307;
+  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc157:
+    edge Aut.c_open_match_4_5 goto loc361;
+    edge Aut.c_goup_match_3_1 goto loc54;
+    edge Aut.c_goright_match_3_2 goto loc155;
+  @state(Aut: "(5; 0)_OUT,(3; 1),0,Open,Open")
+  location loc158:
+    edge Aut.u_tau_goright_tau_2 goto loc71;
+    edge Aut.c_close_match_4_5 goto loc187;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0),0,Open,Open")
+  location loc159:
+    edge Aut.c_goright_match_3_1 goto loc114;
+    edge Aut.u_tau_goright_tau_2 goto loc225;
+    edge Aut.c_close_match_4_5 goto loc253;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(2; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc160:
+    edge Aut.u_tau_goright_tau_1 goto loc269;
+    edge Aut.c_close_match_4_5 goto loc6;
+    edge Aut.c_goright_match_3_2 goto loc79;
+  @state(Aut: "(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc161:
+    edge Aut.c_goright_match_3_2 goto loc175;
+    edge Aut.c_open_match_4_5 goto loc313;
+  @state(Aut: "(5; 1)_OUT,(1; 1),0,Close,Close")
+  location loc162:
+    edge Aut.c_open_match_4_5 goto loc134;
+    edge Aut.u_tau_goright_tau_2 goto loc113;
+  @state(Aut: "(4; 0),(5; 0)_OUT,0,Close,Close")
+  location loc163:
+    edge Aut.c_open_match_4_5 goto loc2;
+    edge Aut.u_tau_goright_tau_1 goto loc356;
+  @state(Aut: "(3; 1),(4; 1),0,Open,Open")
+  location loc164:
+    edge Aut.u_tau_goup_tau_2 goto loc63;
+    edge Aut.u_tau_goright_tau_2 goto loc142;
+    edge Aut.u_tau_goright_tau_1 goto loc284;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc387;
+  @state(Aut: "(1; 1),(5; 1)_OUT,0,Open,Open")
+  location loc165:
+    edge Aut.u_tau_goright_tau_1 goto loc143;
+    edge Aut.c_close_match_4_5 goto loc78;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc166:
+    edge Aut.c_goright_match_3_1 goto loc367;
+    edge Aut.c_goright_match_3_2 goto loc16;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc341;
+  @state(Aut: "(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc167:
+    edge Aut.c_open_match_4_5 goto loc142;
+    edge Aut.c_goright_match_3_2 goto loc20;
+    edge Aut.u_tau_goright_tau_1 goto loc355;
+  @state(Aut: "(0; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc168:
+    edge Aut.c_open_match_4_5 goto loc233;
+    edge Aut.c_goright_match_3_2 goto loc366;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc221;
+  @state(Aut: "(3; 1),(2; 1),0,Close,Close")
+  location loc169:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc294;
+    edge Aut.u_tau_goright_tau_1 goto loc259;
+    edge Aut.c_open_match_4_5 goto loc10;
+  @state(Aut: "(3; 1)_goright_(4; 1),(5; 0)_OUT,0,Close,Close")
+  location loc170:
+    edge Aut.c_open_match_4_5 goto loc196;
+    edge Aut.c_goright_match_3_1 goto loc211;
+  @state(Aut: "(1; 1),(1; 1),0,Close,Close")
+  location loc171:
+    edge Aut.c_open_match_4_5 goto loc98;
+    edge Aut.u_tau_goright_tau_2 goto loc247;
+    edge Aut.u_tau_goright_tau_1 goto loc193;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1),(2; 1),0,Close,Close")
+  location loc172:
+    edge Aut.u_tau_goright_tau_1 goto loc130;
+    edge Aut.c_open_match_4_5 goto loc279;
+    edge Aut.u_tau_goright_tau_2 goto loc103;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goup_tau_1 goto loc150;
+  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1),0,Open,Open")
+  location loc173:
+    edge Aut.c_close_match_4_5 goto loc217;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_1 goto loc73;
+    edge Aut.u_tau_goright_tau_2 goto loc361;
+  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc174:
+    edge Aut.c_open_match_4_5 goto loc29;
+    edge Aut.c_goright_match_3_2 goto loc150;
+    edge Aut.c_goup_match_3_1 goto loc144;
+  @state(Aut: "(5; 0)_OUT,(5; 1)_OUT,0,Close,Close")
+  location loc175:
+    marked;
+    edge Aut.c_open_match_4_5 goto loc376;
+  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1),0,Open,Open")
+  location loc176:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc198;
+    edge Aut.c_close_match_4_5 goto loc150;
+    edge Aut.c_goup_match_3_1 goto loc119;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc177:
+    edge Aut.c_goright_match_3_1 goto loc142;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc215;
+    edge Aut.c_goright_match_3_2 goto loc181;
+  @state(Aut: "(2; 1),(5; 0)_OUT,0,Close,Close")
+  location loc178:
+    edge Aut.u_tau_goright_tau_1 goto loc72;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc287;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0),0,Open,Open")
+  location loc179:
+    edge Aut.c_goright_match_3_1 goto loc373;
+    edge Aut.u_tau_goright_tau_2 goto loc154;
+    edge Aut.c_close_match_4_5 goto loc338;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc180:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc14;
+    edge Aut.c_goright_match_3_2 goto loc356;
+    edge Aut.c_open_match_4_5 goto loc204;
+  @state(Aut: "(2; 1)_goright_(3; 1),(5; 1)_OUT,0,Open,Open")
+  location loc181:
+    edge Aut.c_goright_match_3_1 goto loc55;
+    edge Aut.c_close_match_4_5 goto loc5;
+  @state(Aut: "(4; 0),(1; 1),0,Close,Close")
+  location loc182:
+    edge Aut.c_open_match_4_5 goto loc385;
+    edge Aut.u_tau_goright_tau_1 goto loc235;
+    edge Aut.u_tau_goright_tau_2 goto loc144;
+  @state(Aut: "(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc183:
+    edge Aut.c_open_match_4_5 goto loc213;
+    edge Aut.c_goright_match_3_2 goto loc283;
+  @state(Aut: "(0; 1)_goright_(1; 1),(5; 1)_OUT,0,Close,Close")
+  location loc184:
+    edge Aut.c_open_match_4_5 goto loc102;
+    edge Aut.c_goright_match_3_1 goto loc78;
+  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc185:
+    edge Aut.c_close_match_4_5 goto loc108;
+    edge Aut.c_goright_match_3_1 goto loc237;
+    edge Aut.c_goright_match_3_2 goto loc244;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1),0,Close,Close")
+  location loc186:
+    edge Aut.u_tau_goright_tau_2 goto loc333;
+    edge Aut.c_open_match_4_5 goto loc64;
+    edge Aut.c_goright_match_3_1 goto loc187;
+  @state(Aut: "(5; 0)_OUT,(3; 1),0,Close,Close")
+  location loc187:
+    edge Aut.c_open_match_4_5 goto loc158;
     edge Aut.u_tau_goright_tau_2 goto loc69;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc188:
+    edge Aut.c_goup_match_3_2 goto loc159;
+    edge Aut.c_goright_match_3_1 goto loc63;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc1;
+  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1),0,Open,Open")
+  location loc189:
+    edge Aut.c_close_match_4_5 goto loc229;
+    edge Aut.u_tau_goright_tau_2 goto loc212;
+    edge Aut.c_goright_match_3_1 goto loc10;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0),0,Open,Open")
+  location loc190:
+    edge Aut.c_goright_match_3_1 goto loc80;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc214;
+    edge Aut.u_tau_goright_tau_2 goto loc206;
+  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1),0,Close,Close")
+  location loc191:
+    edge Aut.c_open_match_4_5 goto loc365;
+    edge Aut.c_goright_match_3_1 goto loc12;
+    edge Aut.u_tau_goright_tau_2 goto loc202;
+  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1),0,Close,Close")
+  location loc192:
+    edge Aut.c_goright_match_3_1 goto loc201;
+    edge Aut.c_open_match_4_5 goto loc132;
+    edge Aut.u_tau_goright_tau_2 goto loc117;
+  @state(Aut: "(1; 1)_goright_(2; 1),(1; 1),0,Close,Close")
+  location loc193:
+    edge Aut.c_open_match_4_5 goto loc335;
+    edge Aut.u_tau_goright_tau_2 goto loc99;
+    edge Aut.c_goright_match_3_1 goto loc152;
+  @state(Aut: "(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc194:
+    edge Aut.c_goright_match_3_2 goto loc319;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc11;
+    edge Aut.c_close_match_4_5 goto loc28;
+  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc195:
+    edge Aut.c_open_match_4_5 goto loc281;
+    edge Aut.c_goright_match_3_1 goto loc6;
+    edge Aut.c_goright_match_3_2 goto loc19;
+  @state(Aut: "(3; 1)_goright_(4; 1),(5; 0)_OUT,0,Open,Open")
+  location loc196:
+    edge Aut.c_close_match_4_5 goto loc170;
+    edge Aut.c_goright_match_3_1 goto loc326;
+  @state(Aut: "(3; 1)_goright_(4; 1),(5; 1)_OUT,0,Open,Open")
+  location loc197:
+    edge Aut.c_goright_match_3_1 goto loc334;
+    edge Aut.c_close_match_4_5 goto loc58;
+  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc198:
+    edge Aut.c_goright_match_3_2 goto loc173;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_1 goto loc13;
+    edge Aut.c_close_match_4_5 goto loc238;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1),0,Close,Close")
+  location loc199:
+    edge Aut.c_goright_match_3_1 goto loc263;
+    edge Aut.u_tau_goup_tau_2 goto loc93;
+    edge Aut.c_open_match_4_5 goto loc277;
+    edge Aut.u_tau_goright_tau_2 goto loc45;
+  @state(Aut: "(5; 0)_OUT,(1; 1),0,Close,Close")
+  location loc200:
+    edge Aut.u_tau_goright_tau_2 goto loc101;
+    edge Aut.c_open_match_4_5 goto loc278;
+  @state(Aut: "(4; 1),(3; 1),0,Close,Close")
+  location loc201:
+    edge Aut.u_tau_goright_tau_1 goto loc100;
+    edge Aut.c_open_match_4_5 goto loc280;
+    edge Aut.u_tau_goright_tau_2 goto loc332;
+    edge Aut.u_tau_goup_tau_1 goto loc217;
+  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc202:
+    edge Aut.c_goright_match_3_2 goto loc259;
+    edge Aut.c_goright_match_3_1 goto loc203;
+    edge Aut.c_open_match_4_5 goto loc296;
+  @state(Aut: "(4; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc203:
+    edge Aut.c_goright_match_3_2 goto loc172;
+    edge Aut.c_open_match_4_5 goto loc384;
+    edge Aut.u_tau_goup_tau_1 goto loc174;
+    edge Aut.u_tau_goright_tau_1 goto loc341;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc204:
+    edge Aut.c_close_match_4_5 goto loc180;
+    edge Aut.c_goright_match_3_1 goto loc389;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc271;
+  @state(Aut: "(4; 1),(5; 1)_OUT,0,Close,Close")
+  location loc205:
+    edge Aut.u_tau_goup_tau_1 goto loc290;
+    edge Aut.c_open_match_4_5 goto loc334;
+    edge Aut.u_tau_goright_tau_1 goto loc370;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc206:
+    edge Aut.c_goright_match_3_2 goto loc196;
+    edge Aut.c_close_match_4_5 goto loc77;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc262;
+  @state(Aut: "(4; 0),(4; 1),0,Open,Open")
+  location loc207:
+    edge Aut.u_tau_goright_tau_1 goto loc83;
+    edge Aut.c_close_match_4_5 goto loc304;
+    edge Aut.u_tau_goup_tau_2 goto loc314;
+    edge Aut.u_tau_goright_tau_2 goto loc194;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(5; 1)_OUT,(5; 1)_OUT,0,Open,Open")
+  location loc208:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc109;
+  @state(Aut: "(1; 1)_goright_(2; 1),(5; 0)_OUT,0,Open,Open")
+  location loc209:
+    edge Aut.c_close_match_4_5 goto loc112;
+    edge Aut.c_goright_match_3_1 goto loc287;
+  @state(Aut: "(1; 1),(3; 1),0,Close,Close")
+  location loc210:
+    edge Aut.u_tau_goright_tau_1 goto loc52;
+    edge Aut.u_tau_goright_tau_2 goto loc149;
+    edge Aut.c_open_match_4_5 goto loc340;
+  @state(Aut: "(4; 1),(5; 0)_OUT,0,Close,Close")
+  location loc211:
+    edge Aut.u_tau_goright_tau_1 goto loc248;
+    edge Aut.u_tau_goup_tau_1 goto loc51;
+    edge Aut.c_open_match_4_5 goto loc326;
+  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc212:
+    edge Aut.c_close_match_4_5 goto loc315;
+    edge Aut.c_goright_match_3_1 goto loc352;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc68;
+  @state(Aut: "(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc213:
+    edge Aut.c_close_match_4_5 goto loc183;
+    edge Aut.c_goright_match_3_2 goto loc364;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 0),0,Close,Close")
+  location loc214:
+    edge Aut.c_goright_match_3_1 goto loc358;
+    edge Aut.c_open_match_4_5 goto loc190;
+    edge Aut.u_tau_goright_tau_2 goto loc77;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc215:
+    edge Aut.c_open_match_4_5 goto loc177;
+    edge Aut.c_goright_match_3_1 goto loc167;
+    edge Aut.c_goright_match_3_2 goto loc5;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1),(4; 1),0,Close,Close")
+  location loc216:
+    edge Aut.u_tau_goright_tau_2 goto loc81;
+    edge Aut.u_tau_goright_tau_1 goto loc17;
+    edge Aut.u_tau_goup_tau_1 goto loc155;
+    edge Aut.u_tau_goup_tau_2 goto loc92;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc260;
+  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1),0,Close,Close")
+  location loc217:
+    edge Aut.u_tau_goright_tau_2 goto loc157;
+    edge Aut.c_goup_match_3_1 goto loc363;
+    edge Aut.c_open_match_4_5 goto loc173;
+  @state(Aut: "(1; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc218:
+    edge Aut.c_open_match_4_5 goto loc44;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc210;
+    edge Aut.u_tau_goright_tau_1 goto loc108;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1),0,Close,Close")
+  location loc219:
+    edge Aut.c_goright_match_3_1 goto loc56;
+    edge Aut.u_tau_goright_tau_2 goto loc246;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc349;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 1)_OUT,0,Close,Close")
+  location loc220:
+    edge Aut.c_goright_match_3_1 goto loc175;
+    edge Aut.c_open_match_4_5 goto loc37;
+  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc221:
+    edge Aut.c_goright_match_3_1 goto loc218;
+    edge Aut.c_goright_match_3_2 goto loc82;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc312;
+  @state(Aut: "(0; 1),(4; 0),0,Close,Close")
+  location loc222:
+    edge Aut.u_tau_goright_tau_1 goto loc338;
+    edge Aut.u_tau_goright_tau_2 goto loc66;
+    edge Aut.c_open_match_4_5 goto loc87;
+  @state(Aut: "(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc223:
+    edge Aut.c_goright_match_3_2 goto loc391;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc151;
+    edge Aut.u_tau_goright_tau_1 goto loc206;
+  @state(Aut: "(2; 1),(5; 1)_OUT,0,Open,Open")
+  location loc224:
+    edge Aut.u_tau_goright_tau_1 goto loc181;
+    edge Aut.c_close_match_4_5 goto loc15;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc225:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc383;
+    edge Aut.c_goright_match_3_2 goto loc245;
+    edge Aut.c_goright_match_3_1 goto loc223;
+  @state(Aut: "(3; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc226:
+    edge Aut.c_close_match_4_5 goto loc297;
+    edge Aut.c_goright_match_3_2 goto loc164;
+    edge Aut.u_tau_goright_tau_1 goto loc325;
   @state(Aut: "(0; 1)_goright_(1; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
-  location loc391:
-    edge Aut.u_sink_off_2 goto loc135;
-    edge Aut.c_close_match_4_5 goto loc237;
+  location loc227:
+    edge Aut.c_close_match_4_5 goto loc45;
+    edge Aut.c_goright_match_3_1 goto loc307;
+    edge Aut.c_goright_match_3_2 goto loc102;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc228:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc287;
+    edge Aut.u_tau_goright_tau_1 goto loc225;
+    edge Aut.c_close_match_4_5 goto loc256;
+  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1),0,Close,Close")
+  location loc229:
+    edge Aut.c_open_match_4_5 goto loc189;
+    edge Aut.u_tau_goright_tau_2 goto loc315;
+    edge Aut.c_goright_match_3_1 goto loc169;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc230:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc252;
+    edge Aut.c_goright_match_3_1 goto loc103;
+    edge Aut.c_goright_match_3_2 goto loc192;
+  @state(Aut: "(5; 0)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc231:
+    edge Aut.c_close_match_4_5 goto loc101;
+    edge Aut.c_goright_match_3_2 goto loc369;
+  @state(Aut: "(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc232:
+    edge Aut.c_goright_match_3_2 goto loc158;
+    edge Aut.c_close_match_4_5 goto loc288;
+  @state(Aut: "(0; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc233:
+    edge Aut.u_tau_goright_tau_1 goto loc312;
+    edge Aut.c_goright_match_3_2 goto loc311;
+    edge Aut.c_close_match_4_5 goto loc168;
+  @state(Aut: "(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc234:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc177;
+    edge Aut.c_close_match_4_5 goto loc276;
+    edge Aut.c_goright_match_3_2 goto loc224;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1),0,Close,Close")
+  location loc235:
+    edge Aut.c_goright_match_3_1 goto loc200;
+    edge Aut.c_open_match_4_5 goto loc359;
+    edge Aut.u_tau_goright_tau_2 goto loc141;
+  @state(Aut: "(4; 0),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc236:
+    edge Aut.c_goright_match_3_2 goto loc119;
+    edge Aut.u_tau_goright_tau_1 goto loc88;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc144;
+  @state(Aut: "(2; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc237:
+    edge Aut.c_close_match_4_5 goto loc40;
+    edge Aut.u_tau_goright_tau_1 goto loc212;
+    edge Aut.c_goright_match_3_2 goto loc106;
+  @state(Aut: "(4; 1)_goup_(4; 0),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc238:
+    edge Aut.c_open_match_4_5 goto loc198;
+    edge Aut.c_goright_match_3_2 goto loc217;
+    edge Aut.c_goup_match_3_1 goto loc140;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1),0,Open,Open")
+  location loc239:
+    edge Aut.u_tau_goright_tau_2 goto loc299;
+    edge Aut.u_tau_goup_tau_2 goto loc258;
+    edge Aut.c_goup_match_3_1 goto loc207;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc155;
+  @state(Aut: "(0; 1)_goright_(1; 1),(5; 0)_OUT,0,Open,Open")
+  location loc240:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc381;
+    edge Aut.c_close_match_4_5 goto loc62;
+  @state(Aut: "(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc241:
+    edge Aut.c_close_match_4_5 goto loc362;
+    edge Aut.u_tau_goright_tau_1 goto loc204;
+    edge Aut.c_goright_match_3_2 goto loc2;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1),0,Close,Close")
+  location loc242:
+    edge Aut.c_open_match_4_5 goto loc83;
+    edge Aut.c_goright_match_3_1 goto loc31;
+    edge Aut.u_tau_goright_tau_2 goto loc371;
+    edge Aut.u_tau_goup_tau_2 goto loc116;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0),(4; 0),0,Close,Close")
+  location loc243:
+    edge Aut.c_open_match_4_5 goto loc95;
+    edge Aut.u_tau_goright_tau_1 goto loc146;
+    edge Aut.u_tau_goright_tau_2 goto loc362;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1),0,Open,Open")
+  location loc244:
+    edge Aut.c_close_match_4_5 goto loc52;
+    edge Aut.c_goright_match_3_1 goto loc106;
+    edge Aut.u_tau_goright_tau_2 goto loc281;
+  @state(Aut: "(2; 1)_goright_(3; 1),(5; 0)_OUT,0,Open,Open")
+  location loc245:
+    edge Aut.c_goright_match_3_1 goto loc391;
+    edge Aut.c_close_match_4_5 goto loc72;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc246:
+    edge Aut.c_open_match_4_5 goto loc27;
+    edge Aut.c_goright_match_3_2 goto loc186;
+    edge Aut.c_goright_match_3_1 goto loc288;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(1; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc247:
+    edge Aut.c_open_match_4_5 goto loc85;
+    edge Aut.u_tau_goright_tau_1 goto loc99;
+    edge Aut.c_goright_match_3_2 goto loc135;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 0)_OUT,0,Close,Close")
+  location loc248:
+    edge Aut.c_goright_match_3_1 goto loc283;
+    edge Aut.c_open_match_4_5 goto loc139;
+  @state(Aut: "(5; 1)_OUT,(4; 1),0,Open,Open")
+  location loc249:
+    edge Aut.u_tau_goup_tau_2 goto loc128;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc118;
+    edge Aut.c_close_match_4_5 goto loc292;
+  @state(Aut: "(3; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc250:
+    edge Aut.u_tau_goright_tau_1 goto loc202;
+    edge Aut.c_goright_match_3_2 goto loc169;
+    edge Aut.c_open_match_4_5 goto loc148;
+  @state(Aut: "(5; 0)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc251:
+    edge Aut.c_goup_match_3_2 goto loc306;
+    edge Aut.c_open_match_4_5 goto loc94;
+  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc252:
+    edge Aut.c_close_match_4_5 goto loc230;
+    edge Aut.c_goright_match_3_1 goto loc4;
+    edge Aut.c_goright_match_3_2 goto loc132;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0),0,Close,Close")
+  location loc253:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc159;
+    edge Aut.u_tau_goright_tau_2 goto loc383;
+    edge Aut.c_goright_match_3_1 goto loc43;
+  @state(Aut: "(1; 1)_goright_(2; 1),(2; 1),0,Close,Close")
+  location loc254:
+    edge Aut.u_tau_goright_tau_2 goto loc108;
+    edge Aut.c_goright_match_3_1 goto loc138;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc7;
+  @state(Aut: "(5; 1)_OUT,(3; 1),0,Close,Close")
+  location loc255:
+    edge Aut.u_tau_goright_tau_2 goto loc136;
+    edge Aut.c_open_match_4_5 goto loc35;
+  @state(Aut: "(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc256:
+    edge Aut.c_open_match_4_5 goto loc228;
+    edge Aut.c_goright_match_3_2 goto loc178;
+    edge Aut.u_tau_goright_tau_1 goto loc383;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc257:
+    edge Aut.c_goright_match_3_1 goto loc91;
+    edge Aut.c_goright_match_3_2 goto loc370;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc388;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc258:
+    edge Aut.c_goup_match_3_2 goto loc60;
+    edge Aut.c_goup_match_3_1 goto loc314;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc289;
+  @state(Aut: "(3; 1)_goright_(4; 1),(2; 1),0,Close,Close")
+  location loc259:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc97;
+    edge Aut.u_tau_goright_tau_2 goto loc230;
+    edge Aut.c_goright_match_3_1 goto loc172;
+  @state(Aut: "(4; 1),(4; 1),0,Open,Open")
+  location loc260:
+    edge Aut.c_close_match_4_5 goto loc216;
+    edge Aut.u_tau_goright_tau_2 goto loc86;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goup_tau_2 goto loc298;
+    edge Aut.u_tau_goright_tau_1 goto loc53;
+    edge Aut.u_tau_goup_tau_1 goto loc239;
+  @state(Aut: "(2; 1),(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc261:
+    edge Aut.c_open_match_4_5 goto loc301;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc1;
+    edge Aut.c_goup_match_3_2 goto loc270;
+  @state(Aut: "(4; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc262:
+    edge Aut.u_tau_goup_tau_1 goto loc308;
+    edge Aut.c_close_match_4_5 goto loc145;
+    edge Aut.u_tau_goright_tau_1 goto loc153;
+    edge Aut.c_goright_match_3_2 goto loc326;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(1; 1),(4; 1),0,Close,Close")
+  location loc263:
+    edge Aut.u_tau_goright_tau_1 goto loc19;
+    edge Aut.c_open_match_4_5 goto loc156;
+    edge Aut.u_tau_goright_tau_2 goto loc330;
+    edge Aut.u_tau_goup_tau_2 goto loc33;
+  @state(Aut: "(0; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc264:
+    edge Aut.u_tau_goright_tau_1 goto loc375;
+    edge Aut.c_open_match_4_5 goto loc26;
+    edge Aut.c_goright_match_3_2 goto loc90;
+  @state(Aut: "(2; 1),(4; 1),0,Close,Close")
+  location loc265:
+    edge Aut.u_tau_goup_tau_2 goto loc261;
+    edge Aut.u_tau_goright_tau_1 goto loc282;
+    edge Aut.c_open_match_4_5 goto loc79;
+    edge Aut.u_tau_goright_tau_2 goto loc276;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc266:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc153;
+    edge Aut.c_goright_match_3_1 goto loc183;
+    edge Aut.c_goright_match_3_2 goto loc248;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1),0,Open,Open")
+  location loc267:
+    edge Aut.c_goright_match_3_1 goto loc134;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc166;
+    edge Aut.c_close_match_4_5 goto loc339;
+  @state(Aut: "(1; 1),(4; 0),0,Close,Close")
+  location loc268:
+    edge Aut.c_open_match_4_5 goto loc373;
+    edge Aut.u_tau_goright_tau_1 goto loc84;
+    edge Aut.u_tau_goright_tau_2 goto loc345;
+  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc269:
+    edge Aut.c_goright_match_3_1 goto loc226;
+    edge Aut.c_close_match_4_5 goto loc378;
+    edge Aut.c_goright_match_3_2 goto loc390;
+  @state(Aut: "(2; 1),(4; 0),0,Close,Close")
+  location loc270:
+    edge Aut.u_tau_goright_tau_2 goto loc256;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc253;
+    edge Aut.c_open_match_4_5 goto loc74;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 0)_OUT,0,Open,Open")
+  location loc271:
+    edge Aut.c_close_match_4_5 goto loc356;
     edge Aut.c_goright_match_3_1 goto loc274;
-    edge Aut.c_goright_match_3_2 goto loc378;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc272:
+    edge Aut.c_open_match_4_5 goto loc299;
+    edge Aut.c_goup_match_3_1 goto loc28;
+    edge Aut.c_goright_match_3_2 goto loc290;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc273:
+    edge Aut.c_goright_match_3_1 goto loc39;
+    edge Aut.c_close_match_4_5 goto loc318;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc300;
+  @state(Aut: "(5; 0)_OUT,(5; 0)_OUT,0,Open,Open")
+  location loc274:
+    edge Aut.c_close_match_4_5 goto loc343;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(1; 1),(2; 1),0,Open,Open")
+  location loc275:
+    edge Aut.u_tau_goright_tau_1 goto loc7;
+    edge Aut.u_tau_goright_tau_2 goto loc44;
+    edge Aut.c_close_match_4_5 goto loc135;
+  @state(Aut: "(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc276:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc234;
+    edge Aut.c_goright_match_3_2 goto loc15;
+    edge Aut.u_tau_goright_tau_1 goto loc215;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1),0,Open,Open")
+  location loc277:
+    edge Aut.u_tau_goup_tau_2 goto loc372;
+    edge Aut.c_close_match_4_5 goto loc199;
+    edge Aut.u_tau_goright_tau_2 goto loc227;
+    edge Aut.c_goright_match_3_1 goto loc156;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(5; 0)_OUT,(1; 1),0,Open,Open")
+  location loc278:
+    edge Aut.c_close_match_4_5 goto loc200;
+    edge Aut.u_tau_goright_tau_2 goto loc231;
+  @state(Aut: "(4; 1),(2; 1),0,Open,Open")
+  location loc279:
+    edge Aut.u_tau_goup_tau_1 goto loc176;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc4;
+    edge Aut.u_tau_goright_tau_1 goto loc16;
+    edge Aut.c_close_match_4_5 goto loc172;
+  @state(Aut: "(4; 1),(3; 1),0,Open,Open")
+  location loc280:
+    edge Aut.u_tau_goup_tau_1 goto loc173;
+    edge Aut.c_close_match_4_5 goto loc201;
+    edge Aut.u_tau_goright_tau_2 goto loc310;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc300;
+  @state(Aut: "(1; 1)_goright_(2; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc281:
+    edge Aut.c_close_match_4_5 goto loc195;
+    edge Aut.c_goright_match_3_2 goto loc137;
+    edge Aut.c_goright_match_3_1 goto loc160;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1),0,Close,Close")
+  location loc282:
+    edge Aut.u_tau_goright_tau_2 goto loc215;
+    edge Aut.u_tau_goup_tau_2 goto loc1;
+    edge Aut.c_goright_match_3_1 goto loc387;
+    edge Aut.c_open_match_4_5 goto loc390;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(5; 1)_OUT,(5; 0)_OUT,0,Close,Close")
+  location loc283:
+    marked;
+    edge Aut.c_open_match_4_5 goto loc364;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1),0,Open,Open")
+  location loc284:
+    edge Aut.u_tau_goright_tau_2 goto loc75;
+    edge Aut.c_goright_match_3_1 goto loc260;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goup_tau_2 goto loc133;
+    edge Aut.c_close_match_4_5 goto loc324;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc285:
+    edge Aut.c_close_match_4_5 goto loc344;
+    edge Aut.c_goright_match_3_1 goto loc379;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc53;
+  @state(Aut: "(3; 1),(3; 1),0,Close,Close")
+  location loc286:
+    edge Aut.u_tau_goright_tau_2 goto loc297;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc192;
+    edge Aut.c_open_match_4_5 goto loc122;
+  @state(Aut: "(2; 1),(5; 0)_OUT,0,Open,Open")
+  location loc287:
+    edge Aut.u_tau_goright_tau_1 goto loc245;
+    edge Aut.c_close_match_4_5 goto loc178;
+  @state(Aut: "(5; 0)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc288:
+    edge Aut.c_goright_match_3_2 goto loc187;
+    edge Aut.c_open_match_4_5 goto loc232;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc289:
+    edge Aut.c_goup_match_3_2 goto loc342;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_1 goto loc380;
+    edge Aut.c_open_match_4_5 goto loc258;
+  @state(Aut: "(4; 1)_goup_(4; 0),(5; 1)_OUT,0,Close,Close")
+  location loc290:
+    edge Aut.c_goup_match_3_1 goto loc125;
+    edge Aut.c_open_match_4_5 goto loc316;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 0),0,Open,Open")
+  location loc291:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc204;
+    edge Aut.c_close_match_4_5 goto loc146;
+    edge Aut.c_goright_match_3_1 goto loc24;
+  @state(Aut: "(5; 1)_OUT,(4; 1),0,Close,Close")
+  location loc292:
+    edge Aut.u_tau_goright_tau_2 goto loc91;
+    edge Aut.u_tau_goup_tau_2 goto loc323;
+    edge Aut.c_open_match_4_5 goto loc249;
+  @state(Aut: "(2; 1)_goright_(3; 1),(1; 1),0,Open,Open")
+  location loc293:
+    edge Aut.c_close_match_4_5 goto loc131;
+    edge Aut.c_goright_match_3_1 goto loc360;
+    edge Aut.u_tau_goright_tau_2 goto loc129;
+  @state(Aut: "(3; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc294:
+    edge Aut.c_open_match_4_5 goto loc352;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc230;
+    edge Aut.c_goright_match_3_2 goto loc286;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc295:
+    edge Aut.c_goright_match_3_1 goto loc234;
+    edge Aut.c_goright_match_3_2 goto loc143;
+    edge Aut.c_close_match_4_5 goto loc49;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc296:
+    edge Aut.c_goright_match_3_2 goto loc97;
+    edge Aut.c_close_match_4_5 goto loc202;
+    edge Aut.c_goright_match_3_1 goto loc384;
+  @state(Aut: "(3; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc297:
+    edge Aut.u_tau_goright_tau_1 goto loc117;
+    edge Aut.c_open_match_4_5 goto loc226;
+    edge Aut.c_goright_match_3_2 goto loc387;
+  @state(Aut: "(4; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc298:
+    edge Aut.c_close_match_4_5 goto loc92;
+    edge Aut.u_tau_goup_tau_1 goto loc258;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_2 goto loc80;
+    edge Aut.u_tau_goright_tau_1 goto loc3;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc299:
+    edge Aut.c_goright_match_3_2 goto loc316;
+    edge Aut.c_goup_match_3_1 goto loc194;
+    edge Aut.c_close_match_4_5 goto loc272;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1),0,Open,Open")
+  location loc300:
+    edge Aut.c_close_match_4_5 goto loc100;
+    edge Aut.c_goright_match_3_1 goto loc35;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc285;
+  @state(Aut: "(2; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc301:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_2 goto loc74;
+    edge Aut.u_tau_goright_tau_1 goto loc188;
+    edge Aut.c_close_match_4_5 goto loc261;
+  @state(Aut: "(4; 1),(1; 1),0,Open,Open")
+  location loc302:
+    edge Aut.u_tau_goright_tau_1 goto loc267;
+    edge Aut.u_tau_goup_tau_1 goto loc59;
+    edge Aut.c_close_match_4_5 goto loc12;
+    edge Aut.u_tau_goright_tau_2 goto loc384;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(5; 1)_OUT,(4; 0),0,Open,Open")
+  location loc303:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc126;
+    edge Aut.u_tau_goright_tau_2 goto loc213;
+  @state(Aut: "(4; 0),(4; 1),0,Close,Close")
+  location loc304:
+    edge Aut.u_tau_goup_tau_2 goto loc380;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc28;
+    edge Aut.u_tau_goright_tau_1 goto loc242;
+    edge Aut.c_open_match_4_5 goto loc207;
+  @state(Aut: "(0; 1),(4; 1),0,Open,Open")
+  location loc305:
+    edge Aut.u_tau_goup_tau_2 goto loc317;
+    edge Aut.u_tau_goright_tau_2 goto loc9;
+    edge Aut.u_tau_goright_tau_1 goto loc277;
+    edge Aut.c_close_match_4_5 goto loc23;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(5; 0)_OUT,(4; 0),0,Close,Close")
+  location loc306:
+    edge Aut.c_open_match_4_5 goto loc24;
+    edge Aut.u_tau_goright_tau_2 goto loc14;
+  @state(Aut: "(1; 1),(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc307:
+    edge Aut.c_goright_match_3_2 goto loc165;
+    edge Aut.u_tau_goright_tau_1 goto loc295;
+    edge Aut.c_close_match_4_5 goto loc330;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc308:
+    edge Aut.c_close_match_4_5 goto loc347;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_1 goto loc241;
+    edge Aut.c_goright_match_3_2 goto loc123;
+  @state(Aut: "(5; 1)_OUT,(2; 1),0,Open,Open")
+  location loc309:
+    edge Aut.c_close_match_4_5 goto loc25;
+    edge Aut.u_tau_goright_tau_2 goto loc39;
+  @state(Aut: "(4; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc310:
+    edge Aut.c_goright_match_3_2 goto loc260;
+    edge Aut.u_tau_goright_tau_1 goto loc285;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc332;
+    edge Aut.u_tau_goup_tau_1 goto loc361;
+  @state(Aut: "(0; 1),(3; 1),0,Open,Open")
+  location loc311:
+    edge Aut.c_close_match_4_5 goto loc366;
+    edge Aut.u_tau_goright_tau_2 goto loc36;
+    edge Aut.u_tau_goright_tau_1 goto loc320;
+  @state(Aut: "(0; 1)_goright_(1; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc312:
+    edge Aut.c_goright_match_3_1 goto loc44;
+    edge Aut.c_close_match_4_5 goto loc221;
+    edge Aut.c_goright_match_3_2 goto loc320;
+  @state(Aut: "(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc313:
+    edge Aut.c_goright_match_3_2 goto loc376;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc161;
+  @state(Aut: "(4; 0),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc314:
+    edge Aut.c_goup_match_3_2 goto loc95;
+    edge Aut.c_close_match_4_5 goto loc380;
+    edge Aut.u_tau_goright_tau_1 goto loc115;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(2; 1)_goright_(3; 1),(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc315:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc294;
+    edge Aut.c_open_match_4_5 goto loc212;
+    edge Aut.c_goright_match_3_2 goto loc327;
+  @state(Aut: "(4; 1)_goup_(4; 0),(5; 1)_OUT,0,Open,Open")
+  location loc316:
+    edge Aut.c_close_match_4_5 goto loc290;
+    edge Aut.c_goup_match_3_1 goto loc319;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(0; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc317:
+    edge Aut.c_goup_match_3_2 goto loc87;
+    edge Aut.u_tau_goright_tau_1 goto loc372;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc127;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(2; 1)_goright_(3; 1),0,Close,Close")
+  location loc318:
+    edge Aut.c_goright_match_3_2 goto loc100;
+    edge Aut.c_open_match_4_5 goto loc273;
+    edge Aut.c_goright_match_3_1 goto loc111;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(4; 0),(5; 1)_OUT,0,Open,Open")
+  location loc319:
+    edge Aut.u_tau_goright_tau_1 goto loc37;
+    edge Aut.c_close_match_4_5 goto loc125;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(0; 1)_goright_(1; 1),(3; 1),0,Open,Open")
+  location loc320:
+    edge Aut.c_close_match_4_5 goto loc82;
+    edge Aut.u_tau_goright_tau_2 goto loc18;
+    edge Aut.c_goright_match_3_1 goto loc340;
+  @state(Aut: "(3; 1),(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc321:
+    edge Aut.c_open_match_4_5 goto loc63;
+    edge Aut.c_goup_match_3_2 goto loc43;
+    edge Aut.u_tau_goright_tau_1 goto loc329;
+  @state(Aut: "(0; 1),(5; 0)_OUT,0,Close,Close")
+  location loc322:
+    edge Aut.u_tau_goright_tau_1 goto loc62;
+    edge Aut.c_open_match_4_5 goto loc348;
+  @state(Aut: "(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc323:
+    edge Aut.c_goup_match_3_2 goto loc126;
+    edge Aut.c_open_match_4_5 goto loc128;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1),0,Close,Close")
+  location loc324:
+    edge Aut.c_open_match_4_5 goto loc284;
+    edge Aut.u_tau_goup_tau_2 goto loc329;
+    edge Aut.c_goright_match_3_1 goto loc216;
+    edge Aut.u_tau_goright_tau_2 goto loc355;
+  @state(Aut: "(3; 1)_goright_(4; 1),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc325:
+    edge Aut.c_close_match_4_5 goto loc117;
+    edge Aut.c_goright_match_3_2 goto loc284;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc310;
+  @state(Aut: "(4; 1),(5; 0)_OUT,0,Open,Open")
+  location loc326:
+    edge Aut.u_tau_goup_tau_1 goto loc123;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc139;
+    edge Aut.c_close_match_4_5 goto loc211;
+  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1),0,Close,Close")
+  location loc327:
+    edge Aut.u_tau_goright_tau_2 goto loc378;
+    edge Aut.c_open_match_4_5 goto loc68;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc286;
+  @state(Aut: "(0; 1),(1; 1),0,Open,Open")
+  location loc328:
+    edge Aut.c_close_match_4_5 goto loc110;
+    edge Aut.u_tau_goright_tau_2 goto loc26;
+    edge Aut.u_tau_goright_tau_1 goto loc377;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc329:
+    edge Aut.c_goright_match_3_1 goto loc92;
+    edge Aut.c_open_match_4_5 goto loc133;
+    edge Aut.c_goup_match_3_2 goto loc214;
+  @state(Aut: "(1; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc330:
+    edge Aut.c_goright_match_3_2 goto loc78;
+    edge Aut.c_open_match_4_5 goto loc307;
+    edge Aut.u_tau_goright_tau_1 goto loc49;
+  @state(Aut: "(1; 1)_goright_(2; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc331:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc209;
+    edge Aut.c_goright_match_3_1 goto loc228;
+    edge Aut.c_close_match_4_5 goto loc89;
+  @state(Aut: "(4; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc332:
+    edge Aut.c_goright_match_3_2 goto loc216;
+    edge Aut.u_tau_goright_tau_1 goto loc344;
+    edge Aut.c_open_match_4_5 goto loc310;
+    edge Aut.u_tau_goup_tau_1 goto loc157;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc333:
+    edge Aut.c_open_match_4_5 goto loc61;
+    edge Aut.c_goright_match_3_2 goto loc242;
+    edge Aut.c_goright_match_3_1 goto loc69;
+  @state(Aut: "(4; 1),(5; 1)_OUT,0,Open,Open")
+  location loc334:
+    edge Aut.c_close_match_4_5 goto loc205;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc124;
+    edge Aut.u_tau_goup_tau_1 goto loc316;
+  @state(Aut: "(1; 1)_goright_(2; 1),(1; 1),0,Open,Open")
+  location loc335:
+    edge Aut.u_tau_goright_tau_2 goto loc121;
+    edge Aut.c_close_match_4_5 goto loc193;
+    edge Aut.c_goright_match_3_1 goto loc50;
+  @state(Aut: "(0; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc336:
+    edge Aut.c_goright_match_3_2 goto loc350;
+    edge Aut.c_open_match_4_5 goto loc9;
+    edge Aut.u_tau_goright_tau_1 goto loc45;
+  @state(Aut: "(2; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc337:
+    edge Aut.c_goright_match_3_2 goto loc107;
+    edge Aut.u_tau_goright_tau_1 goto loc129;
+    edge Aut.c_close_match_4_5 goto loc32;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0),0,Close,Close")
+  location loc338:
+    edge Aut.u_tau_goright_tau_2 goto loc374;
+    edge Aut.c_open_match_4_5 goto loc179;
+    edge Aut.c_goright_match_3_1 goto loc268;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1),0,Close,Close")
+  location loc339:
+    edge Aut.c_goright_match_3_1 goto loc162;
+    edge Aut.u_tau_goright_tau_2 goto loc341;
+    edge Aut.c_open_match_4_5 goto loc267;
+  @state(Aut: "(1; 1),(3; 1),0,Open,Open")
+  location loc340:
+    edge Aut.c_close_match_4_5 goto loc210;
+    edge Aut.u_tau_goright_tau_2 goto loc76;
+    edge Aut.u_tau_goright_tau_1 goto loc244;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc341:
+    edge Aut.c_open_match_4_5 goto loc166;
+    edge Aut.c_goright_match_3_2 goto loc130;
+    edge Aut.c_goright_match_3_1 goto loc113;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0),0,Close,Close")
+  location loc342:
+    edge Aut.c_goup_match_3_1 goto loc243;
+    edge Aut.u_tau_goright_tau_2 goto loc347;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc60;
+  @state(Aut: "(5; 0)_OUT,(5; 0)_OUT,0,Close,Close")
+  location loc343:
+    marked;
+    edge Aut.c_open_match_4_5 goto loc274;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc344:
+    edge Aut.c_open_match_4_5 goto loc285;
+    edge Aut.c_goright_match_3_2 goto loc17;
+    edge Aut.c_goright_match_3_1 goto loc136;
+  @state(Aut: "(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc345:
+    edge Aut.u_tau_goright_tau_1 goto loc89;
+    edge Aut.c_goright_match_3_2 goto loc120;
+    edge Aut.c_open_match_4_5 goto loc354;
+  @state(Aut: "(4; 1)_goup_(4; 0),(1; 1),0,Close,Close")
+  location loc346:
+    edge Aut.c_open_match_4_5 goto loc59;
+    edge Aut.u_tau_goright_tau_2 goto loc174;
+    edge Aut.c_goup_match_3_1 goto loc182;
+  @state(Aut: "(4; 1)_goup_(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc347:
+    edge Aut.c_goup_match_3_1 goto loc362;
+    edge Aut.c_goright_match_3_2 goto loc51;
+    edge Aut.c_open_match_4_5 goto loc308;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(0; 1),(5; 0)_OUT,0,Open,Open")
+  location loc348:
+    edge Aut.u_tau_goright_tau_1 goto loc240;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc322;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(2; 1),0,Open,Open")
+  location loc349:
+    edge Aut.c_goright_match_3_1 goto loc369;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc219;
+    edge Aut.u_tau_goright_tau_2 goto loc27;
+  @state(Aut: "(0; 1),(5; 1)_OUT,0,Close,Close")
+  location loc350:
+    edge Aut.c_open_match_4_5 goto loc57;
+    edge Aut.u_tau_goright_tau_1 goto loc184;
+  @state(Aut: "(0; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc351:
+    edge Aut.c_open_match_4_5 goto loc36;
+    edge Aut.u_tau_goright_tau_1 goto loc104;
+    edge Aut.c_goright_match_3_2 goto loc23;
+  @state(Aut: "(3; 1),(2; 1)_goright_(3; 1),0,Open,Open")
+  location loc352:
+    edge Aut.c_goright_match_3_2 goto loc122;
+    edge Aut.u_tau_goright_tau_1 goto loc252;
+    edge Aut.c_close_match_4_5 goto loc294;
+  @state(Aut: "(4; 0),(2; 1),0,Close,Close")
+  location loc353:
+    edge Aut.u_tau_goright_tau_2 goto loc140;
+    edge Aut.c_open_match_4_5 goto loc119;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_1 goto loc219;
+  @state(Aut: "(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc354:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc381;
+    edge Aut.c_close_match_4_5 goto loc345;
+    edge Aut.u_tau_goright_tau_1 goto loc331;
+  @state(Aut: "(3; 1)_goright_(4; 1),(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc355:
+    edge Aut.c_goright_match_3_1 goto loc81;
+    edge Aut.c_goright_match_3_2 goto loc58;
+    edge Aut.c_open_match_4_5 goto loc75;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(5; 0)_OUT,0,Close,Close")
+  location loc356:
+    edge Aut.c_open_match_4_5 goto loc271;
+    edge Aut.c_goright_match_3_1 goto loc343;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc357:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc3;
+    edge Aut.c_goright_match_3_1 goto loc323;
+    edge Aut.c_goup_match_3_2 goto loc147;
+  @state(Aut: "(4; 1),(4; 0),0,Close,Close")
+  location loc358:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_open_match_4_5 goto loc80;
+    edge Aut.u_tau_goup_tau_1 goto loc342;
+    edge Aut.u_tau_goright_tau_1 goto loc147;
+    edge Aut.u_tau_goright_tau_2 goto loc145;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(1; 1),0,Open,Open")
+  location loc359:
+    edge Aut.c_close_match_4_5 goto loc235;
+    edge Aut.c_goright_match_3_1 goto loc278;
+    edge Aut.u_tau_goright_tau_2 goto loc88;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(3; 1),(1; 1),0,Open,Open")
+  location loc360:
+    edge Aut.u_tau_goright_tau_2 goto loc148;
+    edge Aut.u_tau_goright_tau_1 goto loc365;
+    edge Aut.c_close_match_4_5 goto loc382;
+  @state(Aut: "(4; 1)_goup_(4; 0),(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc361:
+    edge Aut.c_goup_match_3_1 goto loc22;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc239;
+    edge Aut.c_close_match_4_5 goto loc157;
+  @state(Aut: "(4; 0),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc362:
+    edge Aut.c_open_match_4_5 goto loc241;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc163;
+    edge Aut.u_tau_goright_tau_1 goto loc180;
+  @state(Aut: "(4; 0),(3; 1),0,Close,Close")
+  location loc363:
+    edge Aut.c_open_match_4_5 goto loc73;
+    edge Aut.u_tau_goright_tau_1 goto loc186;
+    edge Aut.u_tau_goright_tau_2 goto loc54;
+  @state(Aut: "(5; 1)_OUT,(5; 0)_OUT,0,Open,Open")
+  location loc364:
+    edge Aut.c_close_match_4_5 goto loc283;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(3; 1)_goright_(4; 1),(1; 1),0,Open,Open")
+  location loc365:
+    edge Aut.c_goright_match_3_1 goto loc302;
+    edge Aut.c_close_match_4_5 goto loc191;
+    edge Aut.u_tau_goright_tau_2 goto loc296;
+  @state(Aut: "(0; 1),(3; 1),0,Close,Close")
+  location loc366:
+    edge Aut.u_tau_goright_tau_2 goto loc351;
+    edge Aut.u_tau_goright_tau_1 goto loc82;
+    edge Aut.c_open_match_4_5 goto loc311;
+  @state(Aut: "(5; 1)_OUT,(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc367:
+    edge Aut.c_close_match_4_5 goto loc113;
+    edge Aut.c_goright_match_3_2 goto loc309;
+  @state(Aut: "(5; 0)_OUT,(4; 1),0,Open,Open")
+  location loc368:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc313;
+    edge Aut.u_tau_goup_tau_2 goto loc94;
+    edge Aut.c_close_match_4_5 goto loc31;
+  @state(Aut: "(5; 0)_OUT,(2; 1),0,Open,Open")
+  location loc369:
+    edge Aut.u_tau_goright_tau_2 goto loc232;
+    edge Aut.c_close_match_4_5 goto loc56;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(5; 1)_OUT,0,Close,Close")
+  location loc370:
+    edge Aut.c_open_match_4_5 goto loc124;
+    edge Aut.c_goright_match_3_1 goto loc109;
+  @state(Aut: "(4; 0)_goright_(5; 0)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Close,Close")
+  location loc371:
+    edge Aut.c_goright_match_3_2 goto loc220;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc161;
+    edge Aut.c_open_match_4_5 goto loc11;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 1)_goup_(4; 0),0,Open,Open")
+  location loc372:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc93;
+    edge Aut.c_goup_match_3_2 goto loc179;
+    edge Aut.c_goright_match_3_1 goto loc47;
+  @state(Aut: "(1; 1),(4; 0),0,Open,Open")
+  location loc373:
+    edge Aut.u_tau_goright_tau_1 goto loc105;
+    edge Aut.u_tau_goright_tau_2 goto loc354;
+    edge Aut.c_close_match_4_5 goto loc268;
+    edge Aut.u_sink_off_2 goto loc46;
+  @state(Aut: "(0; 1)_goright_(1; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc374:
+    edge Aut.c_open_match_4_5 goto loc154;
+    edge Aut.c_goright_match_3_1 goto loc345;
+    edge Aut.c_goright_match_3_2 goto loc62;
+  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1)_goright_(2; 1),0,Close,Close")
+  location loc375:
+    edge Aut.c_goright_match_3_2 goto loc70;
+    edge Aut.c_open_match_4_5 goto loc42;
+    edge Aut.c_goright_match_3_1 goto loc247;
+  @state(Aut: "(5; 0)_OUT,(5; 1)_OUT,0,Open,Open")
+  location loc376:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_close_match_4_5 goto loc175;
+  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1),0,Open,Open")
+  location loc377:
+    edge Aut.c_close_match_4_5 goto loc386;
+    edge Aut.c_goright_match_3_1 goto loc98;
+    edge Aut.u_tau_goright_tau_2 goto loc42;
+  @state(Aut: "(2; 1)_goright_(3; 1),(3; 1)_goright_(4; 1),0,Close,Close")
+  location loc378:
+    edge Aut.c_goright_match_3_2 goto loc282;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc297;
+    edge Aut.c_open_match_4_5 goto loc269;
+  @state(Aut: "(5; 1)_OUT,(3; 1)_goright_(4; 1),0,Open,Open")
+  location loc379:
+    edge Aut.c_goright_match_3_2 goto loc249;
+    edge Aut.c_close_match_4_5 goto loc136;
+  @state(Aut: "(4; 0),(4; 1)_goup_(4; 0),0,Close,Close")
+  location loc380:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goup_match_3_2 goto loc243;
+    edge Aut.u_tau_goright_tau_1 goto loc116;
+    edge Aut.c_open_match_4_5 goto loc314;
+  @state(Aut: "(1; 1),(5; 0)_OUT,0,Open,Open")
+  location loc381:
+    edge Aut.c_close_match_4_5 goto loc120;
+    edge Aut.u_tau_goright_tau_1 goto loc209;
+  @state(Aut: "(3; 1),(1; 1),0,Close,Close")
+  location loc382:
+    edge Aut.u_tau_goright_tau_2 goto loc250;
+    edge Aut.c_open_match_4_5 goto loc360;
+    edge Aut.u_tau_goright_tau_1 goto loc191;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 0)_goright_(5; 0)_OUT,0,Close,Close")
+  location loc383:
+    edge Aut.c_goright_match_3_1 goto loc151;
+    edge Aut.c_open_match_4_5 goto loc225;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc72;
+  @state(Aut: "(4; 1),(1; 1)_goright_(2; 1),0,Open,Open")
+  location loc384:
+    edge Aut.u_tau_goup_tau_1 goto loc29;
+    edge Aut.u_tau_goright_tau_1 goto loc166;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc279;
+    edge Aut.c_close_match_4_5 goto loc203;
+  @state(Aut: "(4; 0),(1; 1),0,Open,Open")
+  location loc385:
+    edge Aut.u_tau_goright_tau_1 goto loc359;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.u_tau_goright_tau_2 goto loc236;
+    edge Aut.c_close_match_4_5 goto loc182;
+  @state(Aut: "(0; 1)_goright_(1; 1),(1; 1),0,Close,Close")
+  location loc386:
+    edge Aut.c_open_match_4_5 goto loc377;
+    edge Aut.c_goright_match_3_1 goto loc171;
+    edge Aut.u_tau_goright_tau_2 goto loc375;
+  @state(Aut: "(3; 1),(4; 1),0,Close,Close")
+  location loc387:
+    edge Aut.u_tau_goright_tau_1 goto loc324;
+    edge Aut.u_tau_goright_tau_2 goto loc167;
+    edge Aut.u_tau_goup_tau_2 goto loc321;
+    edge Aut.c_open_match_4_5 goto loc164;
+  @state(Aut: "(4; 1)_goright_(5; 1)_OUT,(4; 1)_goright_(5; 1)_OUT,0,Open,Open")
+  location loc388:
+    edge Aut.c_close_match_4_5 goto loc257;
+    edge Aut.c_goright_match_3_2 goto loc124;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc118;
+  @state(Aut: "(5; 0)_OUT,(4; 0)_goright_(5; 0)_OUT,0,Open,Open")
+  location loc389:
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_2 goto loc274;
+    edge Aut.c_close_match_4_5 goto loc14;
+  @state(Aut: "(2; 1)_goright_(3; 1),(4; 1),0,Open,Open")
+  location loc390:
+    edge Aut.u_tau_goright_tau_2 goto loc177;
+    edge Aut.c_close_match_4_5 goto loc282;
+    edge Aut.u_sink_off_2 goto loc46;
+    edge Aut.c_goright_match_3_1 goto loc164;
+    edge Aut.u_tau_goup_tau_2 goto loc188;
+  @state(Aut: "(3; 1),(5; 0)_OUT,0,Open,Open")
+  location loc391:
+    edge Aut.c_close_match_4_5 goto loc21;
+    edge Aut.u_tau_goright_tau_1 goto loc196;
 end
