@@ -1,4 +1,4 @@
-package io.github.contractautomata.CIF3connector;
+package io.github.contractautomata.CIF3Connector;
 
 import io.github.contractautomata.catlib.automaton.Automaton;
 import io.github.contractautomata.catlib.automaton.label.CALabel;
@@ -11,9 +11,11 @@ import io.github.contractautomata.catlib.converters.AutDataConverter;
 import io.github.contractautomata.catlib.operations.MSCACompositionFunction;
 import io.github.contractautomata.catlib.operations.MpcSynthesisOperator;
 import io.github.contractautomata.catlib.requirements.StrongAgreement;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -35,8 +37,9 @@ import static io.github.contractautomata.catlib.automaton.transition.ModalTransi
 public class CIF3ConnectorExamples {
 
     private static final AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
-    private static final String dir = System.getProperty("user.dir")+ File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
+//    private static final String dir = System.getProperty("user.dir")+ File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
 
+    private static final String dir = "";
 
     public static void main(String[] args){
         System.out.println("CIF3 connector Examples");
@@ -50,8 +53,10 @@ public class CIF3ConnectorExamples {
     }
 
     private static void computeClientServiceExample() throws IOException {
-        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> client = bdc.importMSCA(dir + "client.data");
-        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> service = bdc.importMSCA(dir + "service.data");
+//        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> client = bdc.importMSCA(dir + "client.data");
+//        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> service = bdc.importMSCA(dir + "service.data");
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> client = loadFile("client.data");
+        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> service = loadFile("service.data");
 
         //compose encoded principals
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>> comp =
@@ -68,8 +73,12 @@ public class CIF3ConnectorExamples {
     }
 
     private static void computeCompositionCardExample() throws IOException {
-        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> dealer = bdc.importMSCA(dir + "Dealer.data");
-        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> player = bdc.importMSCA(dir + "Player.data");
+//        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> dealer = bdc.importMSCA(dir + "Dealer.data");
+//        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> player = bdc.importMSCA(dir + "Player.data");
+
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> dealer = loadFile("Dealer.data");
+        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> player = loadFile("Player.data");
+
 
         //compose encoded principals
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>> comp =
@@ -93,11 +102,18 @@ public class CIF3ConnectorExamples {
 
 
     private static void computeCompositionRailwayExample() throws IOException {
-        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train1 = bdc.importMSCA(dir + "train1.data");
-        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train2 = bdc.importMSCA(dir + "train2.data");
-        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> driver = bdc.importMSCA(dir + "driver.data");
-        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>> semaphoreContr = bdc.importMSCA(dir + "semaphoreContr.data");
-        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>> semaphore = bdc.importMSCA(dir + "semaphore.data");
+//        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train1 = bdc.importMSCA(dir + "train1.data");
+//        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train2 = bdc.importMSCA(dir + "train2.data");
+//        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> driver = bdc.importMSCA(dir + "driver.data");
+//        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>> semaphoreContr = bdc.importMSCA(dir + "semaphoreContr.data");
+//        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>> semaphore = bdc.importMSCA(dir + "semaphore.data");
+
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train1 = loadFile("train1.data");
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> train2 = loadFile("train2.data");
+        Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> driver = loadFile("driver.data");
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>> semaphoreContr = loadFile("semaphoreContr.data");
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>> semaphore = loadFile("semaphore.data");
+
         List<Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>,CALabel>>> list = List.of(train1,train2,driver,semaphoreContr,semaphore);
 
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>> comp =
@@ -168,5 +184,18 @@ public class CIF3ConnectorExamples {
                             || ((train1insideJunction || train2insideJunction) && semaphoreOpen) //semaphore must be closed when a train is inside the junction
                             || (!train1AtSemaphore && !train2AtSemaphore && semaphoreOpen);//the semaphore is open only when a train is near it
         };
+    }
+
+    /**
+     * load automata as package resource
+     */
+    private static Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>> loadFile(String filename) throws IOException {
+        AutDataConverter<CALabel> adc = new AutDataConverter<>(CALabel::new);
+        InputStream in = CIF3ConnectorExamples.class.getClassLoader().getResourceAsStream(filename);
+        File f = new File(filename);
+        FileUtils.copyInputStreamToFile(in, f);
+        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>>  aut = adc.importMSCA(filename);
+        f.delete();
+        return aut;
     }
 }

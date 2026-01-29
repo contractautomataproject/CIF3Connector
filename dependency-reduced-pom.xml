@@ -29,7 +29,7 @@
         <configuration>
           <transformers>
             <transformer>
-              <mainClass>io.github.contractautomata.CIF3connector.CIF3Connector</mainClass>
+              <mainClass>io.github.contractautomata.CIF3Connector.CIF3Connector</mainClass>
             </transformer>
           </transformers>
         </configuration>

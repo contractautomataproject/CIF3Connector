@@ -1,4 +1,4 @@
-package io.github.contractautomata.CIF3connector;
+package io.github.contractautomata.CIF3Connector;
 
 import io.github.contractautomata.catlib.automaton.Automaton;
 import io.github.contractautomata.catlib.automaton.label.CALabel;
@@ -66,7 +66,7 @@ public class CIF3Connector {
             System.out.println("  -i: List of input automata files (.data).");
             System.out.println("  -o: (Optional) Output CIF filenames for composition and orchestration.");
             System.out.println("      Defaults: Composition.cif and Orchestration.cif");
-            System.out.println("  -a: (Optional) Print intermediate contract automata (composition and orchestration).");
+            System.out.println("  -a: (Optional) Output intermediate contract automata (composition and orchestration).");
             System.out.println("Examples:");
             System.out.println("  java -jar CIF3connector-1.0-SNAPSHOT.jar -i Dealer.data Player.data -o CardComposition.cif CardOrchestration.cif");
             System.out.println("  java -jar tool.jar -i CardComposition.data");
@@ -241,131 +241,3 @@ public class CIF3Connector {
     }
 
 }
-
-
-
-
-
-
-//    public static String contractAutomatonToCIF3(Automaton<String,Action,State<String>,ModalTransition<String,Action,State<String>,CALabel>> aut){
-//        StringBuilder cif = new StringBuilder();
-//        cif.append("group Aut:\n");
-//
-//        aut.getTransition().parallelStream().filter(ModalTransition::isPermitted).collect(Collectors.toSet());
-//
-//        ModalTransition<String,Action,State<String>,CALabel> t = aut.getTransition().parallelStream().filter(ModalTransition::isPermitted).findFirst().orElse(null);
-//
-//        t.getLabel().getAction().toString();
-//
-//        t.getLabel().isMatch()
-//        State<String> s = aut.getStates().stream().findFirst().orElse(null);
-//
-//        s.getState().get(0).getState()
-//        return null;
-//    }
-
-//    public static String contractAutomatonToCIF3(String caSpec) {
-//        StringBuilder cif = new StringBuilder();
-//        List<String> controllable = new ArrayList<>();
-//        List<String> uncontrollable = new ArrayList<>();
-//        List<String> states = new ArrayList<>();
-//        String initialState = "";
-//        List<String> markedStates = new ArrayList<>();
-//        List<String[]> transitions = new ArrayList<>();
-//
-//        for (String line : caSpec.split("\\R")) {
-//            line = line.trim();
-//            if (line.startsWith("Initial state:")) {
-//                initialState = line.substring(line.indexOf('[')).replaceAll("[\\[\\]]", "").replaceAll("\\s+", "");
-//            } else if (line.startsWith("Final states:")) {
-//                String finals = line.substring(line.indexOf('['));
-//                for (String s : finals.split("],")) {
-//                    markedStates.add(s.replaceAll("[\\[\\]]", "").replaceAll("\\s+", ""));
-//                }
-//            } else if (line.startsWith("(") || line.startsWith("!U(")) {
-//                boolean isUncontrollable = line.startsWith("!U");
-//                String t = line.replace("!U", "").replaceAll("[()]", "");
-//                String[] parts = t.split("\\],\\[");
-//                String from = parts[0].replaceAll("[\\[\\]]", "").replaceAll("\\s+", "");
-//                String label = parts[1].replaceAll("[\\[\\]]", "").replaceAll("\\s+", "");
-//                String to = parts[2].replaceAll("[\\[\\]]", "").replaceAll("\\s+", "");
-//                states.add(from);
-//                states.add(to);
-//                transitions.add(new String[]{from, label, to, isUncontrollable ? "u" : "c"});
-//                // Collect actions for group
-//                String[] acts = label.split(",");
-//                if (acts.length == 2) {
-//                    String actName = acts[0].replaceAll("[!?-]", "");
-//                    String actType = acts[0].contains("!") ? "c" : acts[0].contains("?") ? "u" : "c";
-//                    if (acts[0].contains("!") && acts[1].contains("?")) {
-//                        String name = "c_" + actName + "_match_1_2";
-//                        if (!controllable.contains(name)) controllable.add(name);
-//                    } else if (acts[0].contains("?")) {
-//                        String name = "u_" + actName + "_req_1";
-//                        if (!uncontrollable.contains(name)) uncontrollable.add(name);
-//                    } else if (!acts[0].equals("-")) {
-//                        String name = (isUncontrollable ? "u_" : "c_") + actName + "_off_1";
-//                        if (isUncontrollable) {
-//                            if (!uncontrollable.contains(name)) uncontrollable.add(name);
-//                        } else {
-//                            if (!controllable.contains(name)) controllable.add(name);
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        // Remove duplicates
-//        states = new ArrayList<>(new java.util.LinkedHashSet<>(states));
-//        // Group section
-//        cif.append("group Aut:\n");
-//        for (String c : controllable) cif.append("  controllable ").append(c).append(";\n");
-//        for (String u : uncontrollable) cif.append("  uncontrollable ").append(u).append(";\n");
-//        cif.append("end\n");
-//        // Plant automaton
-//        cif.append("plant automaton statespace:\n  alphabet ");
-//        cif.append(String.join(", ", controllable));
-//        if (!uncontrollable.isEmpty()) cif.append(", ").append(String.join(", ", uncontrollable));
-//        cif.append(";\n");
-//        // Locations
-//        int locIdx = 1;
-//        java.util.Map<String, String> stateLoc = new java.util.HashMap<>();
-//        for (String s : states) {
-//            String loc = "loc" + locIdx++;
-//            stateLoc.put(s, loc);
-//            cif.append("  @state(Aut: \"").append(s).append("\")\n  location ").append(loc).append(":\n");
-//            if (s.equals(initialState)) cif.append("    initial;\n");
-//            if (markedStates.contains(s)) cif.append("    marked;\n");
-//            // Edges will be added later
-//        }
-//        // Add edges
-//        locIdx = 1;
-//        for (String[] t : transitions) {
-//            String fromLoc = stateLoc.get(t[0]);
-//            String toLoc = stateLoc.get(t[2]);
-//            String label = t[1];
-//            String type = t[3];
-//            String edge = "";
-//            String[] acts = label.split(",");
-//            if (acts.length == 2) {
-//                if (acts[0].contains("!") && acts[1].contains("?")) {
-//                    String actName = acts[0].replace("!", "");
-//                    edge = (type.equals("c") ? "Aut.c_" : "Aut.u_") + actName + "_match_1_2";
-//                } else if (acts[0].contains("?")) {
-//                    String actName = acts[0].replace("?", "");
-//                    edge = (type.equals("c") ? "Aut.c_" : "Aut.u_") + actName + "_req_1";
-//                } else if (!acts[0].equals("-")) {
-//                    String actName = acts[0].replaceAll("[!?]", "");
-//                    edge = (type.equals("c") ? "Aut.c_" : "Aut.u_") + actName + "_off_1";
-//                }
-//            }
-//            // Insert edge in the correct location
-//            int idx = cif.indexOf("location " + fromLoc + ":");
-//            if (idx != -1) {
-//                int nextLoc = cif.indexOf("location ", idx + 1);
-//                int insertPos = nextLoc == -1 ? cif.length() : nextLoc;
-//                cif.insert(insertPos, "    edge " + edge + " goto " + toLoc + ";\n");
-//            }
-//        }
-//        cif.append("end\n");
-//        return cif.toString();
-//    }

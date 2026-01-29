@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.contractautomata.CIF3connector</groupId>
-    <artifactId>CIF3connector</artifactId>
+    <groupId>io.github.contractautomata.CIF3Connector</groupId>
+    <artifactId>CIF3Connector</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <developers>
@@ -63,7 +63,7 @@
           <archive>
               <manifest>
                   <mainClass>
-                      io.github.contractautomata.CIF3connector.CIF3Connector
+                      io.github.contractautomata.CIF3Connector.CIF3Connector
                   </mainClass>
               </manifest>
           </archive>
@@ -89,7 +89,7 @@
                     <configuration>
                         <transformers>
                             <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <mainClass>io.github.contractautomata.CIF3connector.CIF3Connector</mainClass>
+                                <mainClass>io.github.contractautomata.CIF3Connector.CIF3Connector</mainClass>
                             </transformer>
                         </transformers>
                     </configuration>
@@ -101,7 +101,7 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <mainClass>io.github.contractautomata.CIF3connector.CIF3Connector</mainClass>
+                                <mainClass>io.github.contractautomata.CIF3Connector.CIF3Connector</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
