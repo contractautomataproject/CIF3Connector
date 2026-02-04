@@ -62,7 +62,7 @@ public class CIF3Connector {
         }
 
         if (inputFiles.isEmpty()) {
-            System.out.println("Usage: java -jar <jarfile> -i <input1.data> [<input2.data> ...] [-o <composition.cif> <orchestration.cif>]");
+            System.out.println("Usage: java -jar <jarfile> -i <input1.data> [<input2.data> ...] [-o <composition.cif> <orchestration.cif>] [-a]");
             System.out.println("  -i: List of input automata files (.data).");
             System.out.println("  -o: (Optional) Output CIF filenames for composition and orchestration.");
             System.out.println("      Defaults: Composition.cif and Orchestration.cif");
