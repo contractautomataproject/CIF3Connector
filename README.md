@@ -36,8 +36,10 @@ java -jar CIF3Connector.jar -i <input1.data> [<input2.data> ...] [-o <compositio
 2. **Single Input File:**
    If a single automaton is provided, it is treated as a pre-composed automaton. The tool will apply the most permissive controller synthesis before translating it to CIF3:
    ```bash
-   java -jar CIF3Connector.jar -i CardComposition.data
+   java -jar CIF3Connector.jar -i precomposed.data
    ```
+
+   Replace `precomposed.data` with an existing precomposed automaton. `CardComposition.data` is a generated intermediate file and is not necessarily present in `src/main/resources`.
 
 ## Workflow Overview
 When you run the tool with a list of principal contract automata, it performs the following internal steps:

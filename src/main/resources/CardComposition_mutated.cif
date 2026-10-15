@@ -1,0 +1,540 @@
+group Aut:
+  uncontrollable c_2_match_3_2;
+  uncontrollable c_2_match_3_1;
+  uncontrollable c_pair2_match_1_3;
+  uncontrollable c_3_match_3_1;
+  uncontrollable c_3_match_3_2;
+  uncontrollable c_4_match_3_1;
+  uncontrollable c_pair2_match_2_3;
+  uncontrollable c_1_match_3_2;
+  uncontrollable c_pair3_match_1_3;
+  uncontrollable c_pair1_match_2_3;
+  uncontrollable c_4_match_3_2;
+  uncontrollable c_1_match_3_1;
+  uncontrollable c_pair1_match_1_3;
+  uncontrollable c_pair3_match_2_3;
+  controllable u_tau_1_tau_1;
+  controllable u_tau_1_tau_2;
+  controllable u_tau_2_tau_2;
+  controllable u_tau_3_tau_1;
+  controllable u_tau_4_tau_1;
+  controllable u_tau_3_tau_2;
+  controllable u_tau_2_tau_1;
+  controllable u_tau_4_tau_2;
+end
+plant automaton statespace:
+  alphabet Aut.c_2_match_3_2, Aut.c_2_match_3_1, Aut.c_pair2_match_1_3, Aut.c_3_match_3_1, Aut.c_3_match_3_2, Aut.c_4_match_3_1, Aut.c_pair2_match_2_3, Aut.c_1_match_3_2, Aut.c_pair3_match_1_3, Aut.c_pair1_match_2_3, Aut.c_4_match_3_2, Aut.c_1_match_3_1, Aut.c_pair1_match_1_3, Aut.c_pair3_match_2_3, Aut.u_tau_1_tau_1, Aut.u_tau_1_tau_2, Aut.u_tau_2_tau_2, Aut.u_tau_3_tau_1, Aut.u_tau_4_tau_1, Aut.u_tau_3_tau_2, Aut.u_tau_2_tau_1, Aut.u_tau_4_tau_2;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair3_3_Pair3Card3,3")
+  location loc1:
+    edge Aut.c_3_match_3_2 goto loc59;
+    edge Aut.c_3_match_3_1 goto loc108;
+  @state(Aut: "Pair2Card2,Pair1_1_Pair1Card1,Card2")
+  location loc2:
+    edge Aut.c_1_match_3_2 goto loc127;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair3Card2,Card2")
+  location loc3;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair3_2_Pair3Card2,3")
+  location loc4:
+    edge Aut.c_2_match_3_2 goto loc3;
+    edge Aut.c_4_match_3_1 goto loc83;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair1,3")
+  location loc5:
+    edge Aut.c_3_match_3_1 goto loc30;
+    edge Aut.u_tau_3_tau_2 goto loc40;
+    edge Aut.u_tau_1_tau_2 goto loc141;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair2_2_Pair2Card2,3")
+  location loc6:
+    edge Aut.c_2_match_3_2 goto loc10;
+    edge Aut.c_3_match_3_1 goto loc129;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair1_3_Pair1Card3,3")
+  location loc7:
+    edge Aut.c_2_match_3_1 goto loc49;
+    edge Aut.c_3_match_3_2 goto loc140;
+  @state(Aut: "Pair3,Pair2,3")
+  location loc8:
+    edge Aut.u_tau_2_tau_2 goto loc65;
+    edge Aut.u_tau_4_tau_2 goto loc20;
+    edge Aut.u_tau_2_tau_1 goto loc137;
+    edge Aut.u_tau_3_tau_1 goto loc134;
+  @state(Aut: "Pair2Card4,Pair3Card2,Cards42")
+  location loc9:
+    marked;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair2Card2,Card2")
+  location loc10;
+  @state(Aut: "Pair1,Pair2Card2,Card2")
+  location loc11:
+    edge Aut.u_tau_1_tau_1 goto loc17;
+    edge Aut.u_tau_3_tau_1 goto loc58;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair2_2_Pair2Card2,3")
+  location loc12:
+    edge Aut.c_3_match_3_1 goto loc29;
+    edge Aut.c_2_match_3_2 goto loc58;
+  @state(Aut: "Pair2Card2,Pair3_2_Pair3Card2,Card2")
+  location loc13;
+  @state(Aut: "Waiting,Pair3,P3")
+  location loc14:
+    edge Aut.c_pair2_match_1_3 goto loc42;
+    edge Aut.c_pair1_match_1_3 goto loc109;
+  @state(Aut: "Pair1Card3,Pair2_4_Pair2Card4,Card3")
+  location loc15;
+  @state(Aut: "Pair2,Pair1_3_Pair1Card3,3")
+  location loc16:
+    edge Aut.u_tau_4_tau_1 goto loc47;
+    edge Aut.u_tau_2_tau_1 goto loc39;
+    edge Aut.c_3_match_3_2 goto loc18;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair2Card2,Card2")
+  location loc17:
+    edge Aut.c_1_match_3_1 goto loc123;
+  @state(Aut: "Pair2,Pair1Card3,Card3")
+  location loc18:
+    edge Aut.u_tau_4_tau_1 goto loc28;
+    edge Aut.u_tau_2_tau_1 goto loc126;
+  @state(Aut: "Pair1Card3,Pair2Card4,Cards43")
+  location loc19:
+    marked;
+  @state(Aut: "Pair3,Pair2_4_Pair2Card4,3")
+  location loc20:
+    edge Aut.u_tau_2_tau_1 goto loc128;
+    edge Aut.c_4_match_3_2 goto loc38;
+    edge Aut.u_tau_3_tau_1 goto loc52;
+  @state(Aut: "Pair2Card4,Pair1_1_Pair1Card1,Card4")
+  location loc21:
+    edge Aut.c_1_match_3_2 goto loc104;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair2_4_Pair2Card4,3")
+  location loc22:
+    edge Aut.c_4_match_3_2 goto loc48;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair2Card4,Card4")
+  location loc23:
+    edge Aut.c_3_match_3_1 goto loc19;
+  @state(Aut: "Pair3Card3,Pair1_1_Pair1Card1,Card3")
+  location loc24:
+    edge Aut.c_1_match_3_2 goto loc67;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair2Card4,Card4")
+  location loc25:
+    edge Aut.c_2_match_3_1 goto loc27;
+  @state(Aut: "Pair2Card2,Pair1,Card2")
+  location loc26:
+    edge Aut.u_tau_3_tau_2 goto loc62;
+    edge Aut.u_tau_1_tau_2 goto loc2;
+  @state(Aut: "Pair3Card2,Pair2Card4,Cards42")
+  location loc27:
+    marked;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair1Card3,Card3")
+  location loc28;
+  @state(Aut: "Pair1Card3,Pair2_2_Pair2Card2,Card3")
+  location loc29:
+    edge Aut.c_2_match_3_2 goto loc86;
+  @state(Aut: "Pair3Card3,Pair1,Card3")
+  location loc30:
+    edge Aut.u_tau_3_tau_2 goto loc92;
+    edge Aut.u_tau_1_tau_2 goto loc24;
+  @state(Aut: "Pair1Card3,Pair2,Card3")
+  location loc31:
+    edge Aut.u_tau_4_tau_2 goto loc15;
+    edge Aut.u_tau_2_tau_2 goto loc29;
+  @state(Aut: "Pair3Card2,Pair1Card3,Cards32")
+  location loc32:
+    marked;
+  @state(Aut: "Pair1Card3,Pair3,Card3")
+  location loc33:
+    edge Aut.u_tau_2_tau_2 goto loc80;
+    edge Aut.u_tau_3_tau_2 goto loc108;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair1,3")
+  location loc34:
+    edge Aut.u_tau_1_tau_2 goto loc99;
+    edge Aut.c_2_match_3_1 goto loc91;
+    edge Aut.u_tau_3_tau_2 goto loc7;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair3Card2,Card2")
+  location loc35;
+  @state(Aut: "Pair3Card3,Pair2_4_Pair2Card4,Card3")
+  location loc36;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair2_2_Pair2Card2,3")
+  location loc37:
+    edge Aut.c_2_match_3_2 goto loc75;
+    edge Aut.c_2_match_3_1 goto loc72;
+  @state(Aut: "Pair3,Pair2Card4,Card4")
+  location loc38:
+    edge Aut.u_tau_2_tau_1 goto loc25;
+    edge Aut.u_tau_3_tau_1 goto loc46;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair1_3_Pair1Card3,3")
+  location loc39:
+    edge Aut.c_2_match_3_1 goto loc62;
+    edge Aut.c_3_match_3_2 goto loc126;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair1_3_Pair1Card3,3")
+  location loc40:
+    edge Aut.c_3_match_3_2 goto loc76;
+    edge Aut.c_3_match_3_1 goto loc92;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair3Card2,Card2")
+  location loc41:
+    edge Aut.c_1_match_3_1 goto loc51;
+  @state(Aut: "Pair2,Pair3,3")
+  location loc42:
+    edge Aut.u_tau_3_tau_2 goto loc93;
+    edge Aut.u_tau_4_tau_1 goto loc54;
+    edge Aut.u_tau_2_tau_2 goto loc130;
+    edge Aut.u_tau_2_tau_1 goto loc82;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair2_2_Pair2Card2,3")
+  location loc43:
+    edge Aut.c_2_match_3_2 goto loc17;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair3Card3,Card3")
+  location loc44:
+    edge Aut.c_2_match_3_1 goto loc139;
+  @state(Aut: "Pair3Card3,Pair2Card2,Cards32")
+  location loc45:
+    marked;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair2Card4,Card4")
+  location loc46:
+    edge Aut.c_3_match_3_1 goto loc60;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair1_3_Pair1Card3,3")
+  location loc47:
+    edge Aut.c_3_match_3_2 goto loc28;
+    edge Aut.c_4_match_3_1 goto loc125;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair2Card4,Card4")
+  location loc48:
+    edge Aut.c_1_match_3_1 goto loc90;
+  @state(Aut: "Pair3Card2,Pair1_3_Pair1Card3,Card2")
+  location loc49;
+  @state(Aut: "Pair2Card2,Pair3_3_Pair3Card3,Card2")
+  location loc50;
+  @state(Aut: "Pair1Card1,Pair3Card2,Cards21")
+  location loc51:
+    marked;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair2_4_Pair2Card4,3")
+  location loc52:
+    edge Aut.c_4_match_3_2 goto loc46;
+    edge Aut.c_3_match_3_1 goto loc36;
+  @state(Aut: "Waiting,Waiting,Dealing")
+  location loc53:
+    initial;
+    edge Aut.c_pair1_match_1_3 goto loc79;
+    edge Aut.c_pair1_match_2_3 goto loc97;
+    edge Aut.c_pair3_match_2_3 goto loc14;
+    edge Aut.c_pair2_match_1_3 goto loc117;
+    edge Aut.c_pair3_match_1_3 goto loc132;
+    edge Aut.c_pair2_match_2_3 goto loc85;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair3,3")
+  location loc54:
+    edge Aut.u_tau_2_tau_2 goto loc4;
+    edge Aut.c_4_match_3_1 goto loc122;
+    edge Aut.u_tau_3_tau_2 goto loc81;
+  @state(Aut: "Pair2,Pair1_1_Pair1Card1,3")
+  location loc55:
+    edge Aut.u_tau_2_tau_1 goto loc124;
+    edge Aut.u_tau_4_tau_1 goto loc101;
+  @state(Aut: "Pair1,Pair2_2_Pair2Card2,3")
+  location loc56:
+    edge Aut.u_tau_3_tau_1 goto loc12;
+    edge Aut.c_2_match_3_2 goto loc11;
+    edge Aut.u_tau_1_tau_1 goto loc43;
+  @state(Aut: "Pair2Card2,Pair3,Card2")
+  location loc57:
+    edge Aut.u_tau_2_tau_2 goto loc13;
+    edge Aut.u_tau_3_tau_2 goto loc50;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair2Card2,Card2")
+  location loc58;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair3Card3,Card3")
+  location loc59;
+  @state(Aut: "Pair3Card3,Pair2Card4,Cards43")
+  location loc60:
+    marked;
+  @state(Aut: "Pair3Card2,Pair2,Card2")
+  location loc61:
+    edge Aut.u_tau_4_tau_2 goto loc100;
+    edge Aut.u_tau_2_tau_2 goto loc72;
+  @state(Aut: "Pair2Card2,Pair1_3_Pair1Card3,Card2")
+  location loc62;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair3_2_Pair3Card2,3")
+  location loc63:
+    edge Aut.c_2_match_3_2 goto loc41;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair3_3_Pair3Card3,3")
+  location loc64:
+    edge Aut.c_3_match_3_2 goto loc44;
+    edge Aut.c_2_match_3_1 goto loc50;
+  @state(Aut: "Pair3,Pair2_2_Pair2Card2,3")
+  location loc65:
+    edge Aut.c_2_match_3_2 goto loc138;
+    edge Aut.u_tau_3_tau_1 goto loc6;
+    edge Aut.u_tau_2_tau_1 goto loc37;
+  @state(Aut: "Pair2Card4,Pair1Card3,Cards43")
+  location loc66:
+    marked;
+  @state(Aut: "Pair3Card3,Pair1Card1,Cards31")
+  location loc67:
+    marked;
+  @state(Aut: "Pair1,Pair3_3_Pair3Card3,3")
+  location loc68:
+    edge Aut.c_3_match_3_2 goto loc105;
+    edge Aut.u_tau_1_tau_1 goto loc119;
+    edge Aut.u_tau_3_tau_1 goto loc1;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair2,3")
+  location loc69:
+    edge Aut.u_tau_4_tau_2 goto loc121;
+    edge Aut.c_3_match_3_1 goto loc31;
+    edge Aut.u_tau_2_tau_2 goto loc12;
+  @state(Aut: "Pair3Card2,Pair1_1_Pair1Card1,Card2")
+  location loc70:
+    edge Aut.c_1_match_3_2 goto loc103;
+  @state(Aut: "Pair1,Pair3_2_Pair3Card2,3")
+  location loc71:
+    edge Aut.u_tau_1_tau_1 goto loc63;
+    edge Aut.u_tau_3_tau_1 goto loc74;
+    edge Aut.c_2_match_3_2 goto loc113;
+  @state(Aut: "Pair3Card2,Pair2_2_Pair2Card2,Card2")
+  location loc72;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair3Card2,Card2")
+  location loc73;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair3_2_Pair3Card2,3")
+  location loc74:
+    edge Aut.c_2_match_3_2 goto loc35;
+    edge Aut.c_3_match_3_1 goto loc80;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair2Card2,Card2")
+  location loc75;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair1Card3,Card3")
+  location loc76;
+  @state(Aut: "Pair2,Pair3Card2,Card2")
+  location loc77:
+    edge Aut.u_tau_4_tau_1 goto loc3;
+    edge Aut.u_tau_2_tau_1 goto loc73;
+  @state(Aut: "Pair2,Pair3Card3,Card3")
+  location loc78:
+    edge Aut.u_tau_2_tau_1 goto loc44;
+    edge Aut.u_tau_4_tau_1 goto loc94;
+  @state(Aut: "Pair1,Waiting,P1")
+  location loc79:
+    edge Aut.c_pair2_match_2_3 goto loc135;
+    edge Aut.c_pair3_match_2_3 goto loc109;
+  @state(Aut: "Pair1Card3,Pair3_2_Pair3Card2,Card3")
+  location loc80:
+    edge Aut.c_2_match_3_2 goto loc116;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair3_3_Pair3Card3,3")
+  location loc81:
+    edge Aut.c_3_match_3_2 goto loc94;
+    edge Aut.c_4_match_3_1 goto loc89;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair3,3")
+  location loc82:
+    edge Aut.c_2_match_3_1 goto loc57;
+    edge Aut.u_tau_3_tau_2 goto loc64;
+    edge Aut.u_tau_2_tau_2 goto loc87;
+  @state(Aut: "Pair2Card4,Pair3_2_Pair3Card2,Card4")
+  location loc83:
+    edge Aut.c_2_match_3_2 goto loc9;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair3,3")
+  location loc84:
+    edge Aut.u_tau_2_tau_2 goto loc74;
+    edge Aut.u_tau_3_tau_2 goto loc1;
+    edge Aut.c_3_match_3_1 goto loc33;
+  @state(Aut: "Waiting,Pair2,P2")
+  location loc85:
+    edge Aut.c_pair1_match_1_3 goto loc135;
+    edge Aut.c_pair3_match_1_3 goto loc8;
+  @state(Aut: "Pair1Card3,Pair2Card2,Cards32")
+  location loc86:
+    marked;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair3_2_Pair3Card2,3")
+  location loc87:
+    edge Aut.c_2_match_3_1 goto loc13;
+    edge Aut.c_2_match_3_2 goto loc73;
+  @state(Aut: "Pair2Card4,Pair1,Card4")
+  location loc88:
+    edge Aut.u_tau_3_tau_2 goto loc125;
+    edge Aut.u_tau_1_tau_2 goto loc21;
+  @state(Aut: "Pair2Card4,Pair3_3_Pair3Card3,Card4")
+  location loc89:
+    edge Aut.c_3_match_3_2 goto loc118;
+  @state(Aut: "Pair1Card1,Pair2Card4,Cards41")
+  location loc90:
+    marked;
+  @state(Aut: "Pair3Card2,Pair1,Card2")
+  location loc91:
+    edge Aut.u_tau_1_tau_2 goto loc70;
+    edge Aut.u_tau_3_tau_2 goto loc49;
+  @state(Aut: "Pair3Card3,Pair1_3_Pair1Card3,Card3")
+  location loc92;
+  @state(Aut: "Pair2,Pair3_3_Pair3Card3,3")
+  location loc93:
+    edge Aut.u_tau_4_tau_1 goto loc81;
+    edge Aut.c_3_match_3_2 goto loc78;
+    edge Aut.u_tau_2_tau_1 goto loc64;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair3Card3,Card3")
+  location loc94;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair3,3")
+  location loc95:
+    edge Aut.u_tau_3_tau_2 goto loc119;
+    edge Aut.u_tau_2_tau_2 goto loc63;
+  @state(Aut: "Pair3,Pair1_1_Pair1Card1,3")
+  location loc96:
+    edge Aut.u_tau_2_tau_1 goto loc99;
+    edge Aut.u_tau_3_tau_1 goto loc141;
+  @state(Aut: "Waiting,Pair1,P1")
+  location loc97:
+    edge Aut.c_pair2_match_1_3 goto loc107;
+    edge Aut.c_pair3_match_1_3 goto loc110;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair2,3")
+  location loc98:
+    edge Aut.u_tau_4_tau_2 goto loc22;
+    edge Aut.u_tau_2_tau_2 goto loc43;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair1_1_Pair1Card1,3")
+  location loc99:
+    edge Aut.c_2_match_3_1 goto loc70;
+  @state(Aut: "Pair3Card2,Pair2_4_Pair2Card4,Card2")
+  location loc100;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair1_1_Pair1Card1,3")
+  location loc101:
+    edge Aut.c_4_match_3_1 goto loc21;
+  @state(Aut: "Pair3Card3,Pair2,Card3")
+  location loc102:
+    edge Aut.u_tau_2_tau_2 goto loc129;
+    edge Aut.u_tau_4_tau_2 goto loc36;
+  @state(Aut: "Pair3Card2,Pair1Card1,Cards21")
+  location loc103:
+    marked;
+  @state(Aut: "Pair2Card4,Pair1Card1,Cards41")
+  location loc104:
+    marked;
+  @state(Aut: "Pair1,Pair3Card3,Card3")
+  location loc105:
+    edge Aut.u_tau_1_tau_1 goto loc114;
+    edge Aut.u_tau_3_tau_1 goto loc59;
+  @state(Aut: "Pair2_4_Pair2Card4,Pair1,3")
+  location loc106:
+    edge Aut.u_tau_1_tau_2 goto loc101;
+    edge Aut.c_4_match_3_1 goto loc88;
+    edge Aut.u_tau_3_tau_2 goto loc47;
+  @state(Aut: "Pair2,Pair1,3")
+  location loc107:
+    edge Aut.u_tau_4_tau_1 goto loc106;
+    edge Aut.u_tau_1_tau_2 goto loc55;
+    edge Aut.u_tau_3_tau_2 goto loc16;
+    edge Aut.u_tau_2_tau_1 goto loc115;
+  @state(Aut: "Pair1Card3,Pair3_3_Pair3Card3,Card3")
+  location loc108;
+  @state(Aut: "Pair1,Pair3,3")
+  location loc109:
+    edge Aut.u_tau_3_tau_2 goto loc68;
+    edge Aut.u_tau_1_tau_1 goto loc95;
+    edge Aut.u_tau_2_tau_2 goto loc71;
+    edge Aut.u_tau_3_tau_1 goto loc84;
+  @state(Aut: "Pair3,Pair1,3")
+  location loc110:
+    edge Aut.u_tau_2_tau_1 goto loc34;
+    edge Aut.u_tau_3_tau_2 goto loc131;
+    edge Aut.u_tau_1_tau_2 goto loc96;
+    edge Aut.u_tau_3_tau_1 goto loc5;
+  @state(Aut: "Pair1,Pair2Card4,Card4")
+  location loc111:
+    edge Aut.u_tau_3_tau_1 goto loc23;
+    edge Aut.u_tau_1_tau_1 goto loc48;
+  @state(Aut: "Pair3,Pair1Card3,Card3")
+  location loc112:
+    edge Aut.u_tau_3_tau_1 goto loc76;
+    edge Aut.u_tau_2_tau_1 goto loc140;
+  @state(Aut: "Pair1,Pair3Card2,Card2")
+  location loc113:
+    edge Aut.u_tau_3_tau_1 goto loc35;
+    edge Aut.u_tau_1_tau_1 goto loc41;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair3Card3,Card3")
+  location loc114:
+    edge Aut.c_1_match_3_1 goto loc136;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair1,3")
+  location loc115:
+    edge Aut.u_tau_3_tau_2 goto loc39;
+    edge Aut.c_2_match_3_1 goto loc26;
+    edge Aut.u_tau_1_tau_2 goto loc124;
+  @state(Aut: "Pair1Card3,Pair3Card2,Cards32")
+  location loc116:
+    marked;
+  @state(Aut: "Pair2,Waiting,P2")
+  location loc117:
+    edge Aut.c_pair3_match_2_3 goto loc42;
+    edge Aut.c_pair1_match_2_3 goto loc107;
+  @state(Aut: "Pair2Card4,Pair3Card3,Cards43")
+  location loc118:
+    marked;
+  @state(Aut: "Pair1_1_Pair1Card1,Pair3_3_Pair3Card3,3")
+  location loc119:
+    edge Aut.c_3_match_3_2 goto loc114;
+  @state(Aut: "Pair2Card2,Pair1Card3,Cards32")
+  location loc120:
+    marked;
+  @state(Aut: "Pair1_3_Pair1Card3,Pair2_4_Pair2Card4,3")
+  location loc121:
+    edge Aut.c_3_match_3_1 goto loc15;
+    edge Aut.c_4_match_3_2 goto loc23;
+  @state(Aut: "Pair2Card4,Pair3,Card4")
+  location loc122:
+    edge Aut.u_tau_3_tau_2 goto loc89;
+    edge Aut.u_tau_2_tau_2 goto loc83;
+  @state(Aut: "Pair1Card1,Pair2Card2,Cards21")
+  location loc123:
+    marked;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair1_1_Pair1Card1,3")
+  location loc124:
+    edge Aut.c_2_match_3_1 goto loc2;
+  @state(Aut: "Pair2Card4,Pair1_3_Pair1Card3,Card4")
+  location loc125:
+    edge Aut.c_3_match_3_2 goto loc66;
+  @state(Aut: "Pair2_2_Pair2Card2,Pair1Card3,Card3")
+  location loc126:
+    edge Aut.c_2_match_3_1 goto loc120;
+  @state(Aut: "Pair2Card2,Pair1Card1,Cards21")
+  location loc127:
+    marked;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair2_4_Pair2Card4,3")
+  location loc128:
+    edge Aut.c_2_match_3_1 goto loc100;
+    edge Aut.c_4_match_3_2 goto loc25;
+  @state(Aut: "Pair3Card3,Pair2_2_Pair2Card2,Card3")
+  location loc129:
+    edge Aut.c_2_match_3_2 goto loc45;
+  @state(Aut: "Pair2,Pair3_2_Pair3Card2,3")
+  location loc130:
+    edge Aut.c_2_match_3_2 goto loc77;
+    edge Aut.u_tau_2_tau_1 goto loc87;
+    edge Aut.u_tau_4_tau_1 goto loc4;
+  @state(Aut: "Pair3,Pair1_3_Pair1Card3,3")
+  location loc131:
+    edge Aut.u_tau_2_tau_1 goto loc7;
+    edge Aut.u_tau_3_tau_1 goto loc40;
+    edge Aut.c_3_match_3_2 goto loc112;
+  @state(Aut: "Pair3,Waiting,P3")
+  location loc132:
+    edge Aut.c_pair1_match_2_3 goto loc110;
+    edge Aut.c_pair2_match_2_3 goto loc8;
+  @state(Aut: "Pair1,Pair2_4_Pair2Card4,3")
+  location loc133:
+    edge Aut.u_tau_1_tau_1 goto loc22;
+    edge Aut.u_tau_3_tau_1 goto loc121;
+    edge Aut.c_4_match_3_2 goto loc111;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair2,3")
+  location loc134:
+    edge Aut.u_tau_2_tau_2 goto loc6;
+    edge Aut.u_tau_4_tau_2 goto loc52;
+    edge Aut.c_3_match_3_1 goto loc102;
+  @state(Aut: "Pair1,Pair2,3")
+  location loc135:
+    edge Aut.u_tau_2_tau_2 goto loc56;
+    edge Aut.u_tau_1_tau_1 goto loc98;
+    edge Aut.u_tau_3_tau_1 goto loc69;
+    edge Aut.u_tau_4_tau_2 goto loc133;
+  @state(Aut: "Pair1Card1,Pair3Card3,Cards31")
+  location loc136:
+    marked;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair2,3")
+  location loc137:
+    edge Aut.u_tau_2_tau_2 goto loc37;
+    edge Aut.c_2_match_3_1 goto loc61;
+    edge Aut.u_tau_4_tau_2 goto loc128;
+  @state(Aut: "Pair3,Pair2Card2,Card2")
+  location loc138:
+    edge Aut.u_tau_3_tau_1 goto loc10;
+    edge Aut.u_tau_2_tau_1 goto loc75;
+  @state(Aut: "Pair2Card2,Pair3Card3,Cards32")
+  location loc139:
+    marked;
+  @state(Aut: "Pair3_2_Pair3Card2,Pair1Card3,Card3")
+  location loc140:
+    edge Aut.c_2_match_3_1 goto loc32;
+  @state(Aut: "Pair3_3_Pair3Card3,Pair1_1_Pair1Card1,3")
+  location loc141:
+    edge Aut.c_3_match_3_1 goto loc24;
+end

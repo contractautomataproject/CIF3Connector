@@ -68,8 +68,10 @@ public class CIF3Connector {
             System.out.println("      Defaults: Composition.cif and Orchestration.cif");
             System.out.println("  -a: (Optional) Output intermediate contract automata (composition and orchestration).");
             System.out.println("Examples:");
-            System.out.println("  java -jar CIF3connector-1.0-SNAPSHOT.jar -i Dealer.data Player.data -o CardComposition.cif CardOrchestration.cif");
-            System.out.println("  java -jar tool.jar -i CardComposition.data");
+            System.out.println("  java -jar CIF3connector-1.0-SNAPSHOT.jar -i Player.data Player.data Dealer.data -o CardComposition.cif CardOrchestration.cif");
+            System.out.println("  java -jar tool.jar -i precomposed.data");
+            System.out.println("  Replace precomposed.data with an existing precomposed automaton.");
+            System.out.println("  CardComposition.data is a generated intermediate file and is not necessarily present in src/main/resources.");
             System.err.println("No input files specified.");
             return;
         }

@@ -5,13 +5,13 @@ the explored CIF3 orchestration, and the destination. It does not invoke CIF too
 After building the project, run (substitute the actual JAR path):
 
 ```text
-java -cp target/CIF3Connector-1.0-SNAPSHOT.jar io.github.contractautomata.CIF3Connector.CIF3EquivalencePreparation catlib.cif cif3.cif comparison.cif
+java -cp target/CIF3Connector-1.0-SNAPSHOT.jar io.github.contractautomata.CIF3Connector.CIF3EquivalencePreparation [--ignore-controllability-conflicts] catlib.cif cif3.cif comparison.cif
 ```
 
 The output has a single `group Aut`, containing the union of declared events, and
 automata named `statespace` and `statespace2`. Each retains its original kind
 (`plant automaton` or `automaton`). Both receive the union of the explicit input
-alphabets. Controllability conflicts are errors. Events declared but absent from
+alphabets. Controllability conflicts are errors by default. With `--ignore-controllability-conflicts`, conflicts are reported as warnings and the first input classification is retained. Events declared but absent from
 both alphabets remain declared without being added to those alphabets.
 
 All location bodies are copied verbatim, including annotations, initial/marked
@@ -57,7 +57,7 @@ This is an explicitly invoked Java test harness, not a JUnit/Surefire suite. It
 requires no new dependencies. It checks a synthetic extra-edge mutation, alphabet
 and declaration unions, conflicts and unsupported syntax, exact preservation of
 the automaton bodies, input protection, and the two original Card files. It also
-compares shared event declarations with `TwoOrchestrations.cif`; that manual file's
+compares shared event declarations with `TwoCardOrchestrations.cif`; that manual file's
 alphabet is not used as the expected union.
 
 The test produces `target/equivalence-tests/CardEquivalence.cif`. With ESCET
@@ -70,4 +70,10 @@ ciflngeqv target/equivalence-tests/CardEquivalence.cif
 Alternatively, open the generated file in ESCET and choose **CIF synthesis tools >
 Event-based synthesis tools > Apply language equivalence check**. See the
 [ESCET language equivalence documentation](https://eclipse.dev/escet/cif/tools/eventbased/language-equivalence-check.html).
+For mutation-testing experiments, use for example:
+
+```text
+java -cp target/CIF3Connector-1.0-SNAPSHOT.jar io.github.contractautomata.CIF3Connector.CIF3EquivalencePreparation --ignore-controllability-conflicts catlib.cif cif3-mutated.cif comparison-mutated.cif
+``
+
 The merger and its tests check preparation and preservation, not language equivalence.

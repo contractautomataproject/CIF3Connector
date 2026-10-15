@@ -1,0 +1,21 @@
+group Aut:
+  controllable c_quit_match_2_1;
+  controllable c_create_match_2_1;
+  controllable c_update_match_2_1;
+  uncontrollable u_tau_update_tau_1;
+end
+plant automaton statespace:
+  alphabet Aut.c_quit_match_2_1, Aut.c_create_match_2_1, Aut.c_update_match_2_1, Aut.u_tau_update_tau_1;
+  @state(Aut: "Computing,Computing")
+  location loc1:
+    edge Aut.c_quit_match_2_1 goto loc2;
+    edge Aut.u_tau_update_tau_1 goto loc3;
+  @state(Aut: "Init,Init")
+  location loc2:
+    initial;
+    marked;
+    edge Aut.c_create_match_2_1 goto loc1;
+  @state(Aut: "Computing_update_Computing,Computing")
+  location loc3:
+    edge Aut.c_update_match_2_1 goto loc1;
+end

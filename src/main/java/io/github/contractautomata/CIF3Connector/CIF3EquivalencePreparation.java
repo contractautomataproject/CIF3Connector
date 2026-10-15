@@ -23,35 +23,58 @@ public final class CIF3EquivalencePreparation {
     private CIF3EquivalencePreparation() { }
 
     public static void main(String[] args) {
-        if (args.length != 3) {
-            System.err.println("Usage: CIF3EquivalencePreparation <catlib.cif> <cif3.cif> <output.cif>");
+        boolean ignoreConflicts = args.length > 0 && args[0].equals("--ignore-controllability-conflicts");
+        int offset = ignoreConflicts ? 1 : 0;
+        boolean invalidFlag = java.util.Arrays.stream(args, offset, args.length)
+                .anyMatch(argument -> argument.startsWith("--"));
+        if (args.length - offset != 3 || invalidFlag) {
+            System.err.println("Usage: CIF3EquivalencePreparation [--ignore-controllability-conflicts] <first.cif> <second.cif> <output.cif>");
             System.exit(2);
         }
         try {
-            prepare(Path.of(args[0]), Path.of(args[1]), Path.of(args[2]));
+            prepare(Path.of(args[offset]), Path.of(args[offset + 1]), Path.of(args[offset + 2]), ignoreConflicts);
         } catch (IOException | IllegalArgumentException e) {
             System.err.println("CIF equivalence preparation failed: " + e.getMessage());
             System.exit(1);
         }
     }
-
     /** Writes only after both inputs have been parsed and validated. Input aliases are rejected. */
     public static void prepare(Path catlib, Path cif3, Path output) throws IOException {
+        prepare(catlib, cif3, output, false);
+    }
+
+    /** Writes only after both inputs have been parsed and validated. */
+    public static void prepare(Path catlib, Path cif3, Path output,
+                               boolean ignoreControllabilityConflicts) throws IOException {
         for (Path input : List.of(catlib, cif3)) {
             if (output.toAbsolutePath().normalize().equals(input.toAbsolutePath().normalize())
                     || (Files.exists(output) && Files.isSameFile(input, output))) {
                 throw new IllegalArgumentException("Output must not overwrite an input: " + input);
             }
         }
-        String merged = merge(Files.readString(catlib), Files.readString(cif3));
+        String merged = merge(Files.readString(catlib), Files.readString(cif3),
+                ignoreControllabilityConflicts);
         Files.writeString(output, merged);
     }
 
     public static String merge(String catlib, String cif3) {
+        return merge(catlib, cif3, false);
+    }
+
+    public static String merge(String catlib, String cif3, boolean ignoreControllabilityConflicts) {
         Document first = new Parser(catlib, "CATLib input").parse();
         Document second = new Parser(cif3, "CIF3 input").parse();
         Map<String, String> events = new LinkedHashMap<>(first.events);
-        second.events.forEach((name, kind) -> declare(events, name, kind));
+        second.events.forEach((name, kind) -> {
+            if (ignoreControllabilityConflicts && events.containsKey(name)
+                    && !events.get(name).equals(kind)) {
+                System.err.println("Warning: conflicting controllability for Aut." + name
+                        + ": using first input classification " + events.get(name)
+                        + " instead of " + kind);
+            } else {
+                declare(events, name, kind);
+            }
+        });
         Set<String> alphabet = new LinkedHashSet<>(first.alphabet);
         alphabet.addAll(second.alphabet);
         StringBuilder result = new StringBuilder("group Aut:\n");
@@ -62,7 +85,6 @@ public final class CIF3EquivalencePreparation {
         result.append(second.render("statespace2", alphabet));
         return result.toString();
     }
-
     private static void declare(Map<String, String> events, String name, String kind) {
         String previous = events.putIfAbsent(name, kind);
         if (previous != null && !previous.equals(kind)) {

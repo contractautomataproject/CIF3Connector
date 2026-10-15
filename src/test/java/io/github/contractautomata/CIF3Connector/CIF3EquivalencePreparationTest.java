@@ -29,6 +29,19 @@ public final class CIF3EquivalencePreparationTest {
         verify(empty, empty, CIF3EquivalencePreparation.merge(empty, empty));
 
         fails(() -> CIF3EquivalencePreparation.merge(first, first.replace("controllable a", "uncontrollable a")), "Conflicting controllability");
+        String conflicting = second.replace("controllable a, b;", "uncontrollable a, b;");
+        fails(() -> CIF3EquivalencePreparation.merge(first, conflicting), "Conflicting controllability");
+        String resolved = CIF3EquivalencePreparation.merge(first, conflicting, true);
+        check(count(resolved, "controllable a;") == 1
+                && !eventDeclarations(resolved).contains("uncontrollable a;"),
+                "Ignore flag keeps first input classification");
+        String reversed = CIF3EquivalencePreparation.merge(conflicting, first, true);
+        check(count(reversed, "uncontrollable a;") == 1
+                && !eventDeclarations(reversed).contains("controllable a;"),
+                "Reversed inputs reverse classification precedence");
+        check(resolved.contains("uncontrollable b;") && reversed.contains("uncontrollable b;"),
+                "Events declared only in one input are preserved");
+        verify(first, conflicting, resolved);
         fails(() -> CIF3EquivalencePreparation.merge(first, first.replace("controllable a;", "controllable a; uncontrollable a;")), "Conflicting controllability");
         for (String invalid : List.of(
                 first + " automaton extra: alphabet Aut.a; location s; end",
