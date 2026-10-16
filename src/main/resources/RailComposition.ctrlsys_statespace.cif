@@ -1,0 +1,360 @@
+group Aut:
+  controllable c_goright_match_3_1;
+  controllable c_close_match_4_5;
+  controllable c_open_match_4_5;
+  controllable c_goright_match_3_2;
+  controllable c_goup_match_3_2;
+  controllable c_goup_match_3_1;
+  uncontrollable u_sink_off_2;
+  uncontrollable u_tau_goright_tau_2;
+  uncontrollable u_tau_goright_tau_1;
+  uncontrollable u_tau_goup_tau_2;
+  uncontrollable u_tau_goup_tau_1;
+end
+automaton statespace:
+  alphabet Aut.c_goright_match_3_1, Aut.c_close_match_4_5, Aut.c_open_match_4_5, Aut.c_goright_match_3_2, Aut.c_goup_match_3_2, Aut.c_goup_match_3_1, Aut.u_sink_off_2, Aut.u_tau_goright_tau_2, Aut.u_tau_goright_tau_1, Aut.u_tau_goup_tau_2, Aut.u_tau_goup_tau_1;
+  @state(statespace: "loc227", sup: "*")
+  location loc1:
+    initial;
+    edge Aut.c_open_match_4_5 goto loc2;
+    edge Aut.u_tau_goright_tau_2 goto loc3;
+    edge Aut.u_tau_goright_tau_1 goto loc4;
+  @state(statespace: "loc10", sup: "*")
+  location loc2:
+    edge Aut.c_close_match_4_5 goto loc1;
+    edge Aut.u_tau_goright_tau_2 goto loc5;
+    edge Aut.u_tau_goright_tau_1 goto loc6;
+  @state(statespace: "loc79", sup: "*")
+  location loc3:
+    edge Aut.c_open_match_4_5 goto loc5;
+    edge Aut.u_tau_goright_tau_1 goto loc7;
+  @state(statespace: "loc349", sup: "*")
+  location loc4:
+    edge Aut.c_open_match_4_5 goto loc6;
+    edge Aut.u_tau_goright_tau_2 goto loc7;
+  @state(statespace: "loc239", sup: "*")
+  location loc5:
+    edge Aut.c_close_match_4_5 goto loc3;
+    edge Aut.c_goright_match_3_2 goto loc8;
+    edge Aut.u_tau_goright_tau_1 goto loc9;
+  @state(statespace: "loc300", sup: "*")
+  location loc6:
+    edge Aut.c_close_match_4_5 goto loc4;
+    edge Aut.u_tau_goright_tau_2 goto loc9;
+  @state(statespace: "loc365", sup: "*")
+  location loc7:
+    edge Aut.c_open_match_4_5 goto loc9;
+  @state(statespace: "loc14", sup: "*")
+  location loc8:
+    edge Aut.u_tau_goright_tau_2 goto loc10;
+    edge Aut.u_tau_goright_tau_1 goto loc11;
+  @state(statespace: "loc154", sup: "*")
+  location loc9:
+    edge Aut.c_close_match_4_5 goto loc7;
+    edge Aut.c_goright_match_3_2 goto loc11;
+  @state(statespace: "loc65", sup: "*")
+  location loc10:
+    edge Aut.c_goright_match_3_2 goto loc12;
+    edge Aut.u_tau_goright_tau_1 goto loc13;
+  @state(statespace: "loc312", sup: "*")
+  location loc11:
+    edge Aut.c_goright_match_3_1 goto loc14;
+    edge Aut.u_tau_goright_tau_2 goto loc13;
+  @state(statespace: "loc282", sup: "*")
+  location loc12:
+    edge Aut.c_close_match_4_5 goto loc15;
+    edge Aut.u_tau_goright_tau_2 goto loc16;
+    edge Aut.u_tau_goright_tau_1 goto loc17;
+  @state(statespace: "loc233", sup: "*")
+  location loc13:
+    edge Aut.c_goright_match_3_1 goto loc18;
+    edge Aut.c_goright_match_3_2 goto loc17;
+  @state(statespace: "loc85", sup: "*")
+  location loc14:
+    edge Aut.u_tau_goright_tau_2 goto loc18;
+    edge Aut.u_tau_goright_tau_1 goto loc19;
+  @state(statespace: "loc206", sup: "*")
+  location loc15:
+    edge Aut.c_open_match_4_5 goto loc12;
+    edge Aut.u_tau_goright_tau_2 goto loc20;
+    edge Aut.u_tau_goright_tau_1 goto loc21;
+  @state(statespace: "loc167", sup: "*")
+  location loc16:
+    edge Aut.c_close_match_4_5 goto loc20;
+    edge Aut.u_tau_goright_tau_1 goto loc22;
+  @state(statespace: "loc73", sup: "*")
+  location loc17:
+    edge Aut.c_goright_match_3_1 goto loc23;
+    edge Aut.c_close_match_4_5 goto loc21;
+    edge Aut.u_tau_goright_tau_2 goto loc22;
+  @state(statespace: "loc327", sup: "*")
+  location loc18:
+    edge Aut.c_goright_match_3_2 goto loc23;
+    edge Aut.u_tau_goright_tau_1 goto loc24;
+  @state(statespace: "loc307", sup: "*")
+  location loc19:
+    edge Aut.u_tau_goright_tau_2 goto loc24;
+  @state(statespace: "loc287", sup: "*")
+  location loc20:
+    edge Aut.c_open_match_4_5 goto loc16;
+    edge Aut.c_goright_match_3_2 goto loc25;
+    edge Aut.u_tau_goright_tau_1 goto loc26;
+  @state(statespace: "loc362", sup: "*")
+  location loc21:
+    edge Aut.c_goright_match_3_1 goto loc27;
+    edge Aut.c_open_match_4_5 goto loc17;
+    edge Aut.u_tau_goright_tau_2 goto loc26;
+  @state(statespace: "loc15", sup: "*")
+  location loc22:
+    edge Aut.c_goright_match_3_1 goto loc28;
+    edge Aut.c_close_match_4_5 goto loc26;
+  @state(statespace: "loc196", sup: "*")
+  location loc23:
+    edge Aut.c_close_match_4_5 goto loc27;
+    edge Aut.u_tau_goright_tau_2 goto loc28;
+    edge Aut.u_tau_goright_tau_1 goto loc29;
+  @state(statespace: "loc284", sup: "*")
+  location loc24:
+    edge Aut.c_goright_match_3_2 goto loc29;
+  @state(statespace: "loc161", sup: "*")
+  location loc25:
+    edge Aut.u_tau_goright_tau_2 goto loc30;
+    edge Aut.u_tau_goright_tau_1 goto loc31;
+    edge Aut.u_tau_goup_tau_2 goto loc32;
+  @state(statespace: "loc116", sup: "*")
+  location loc26:
+    edge Aut.c_goright_match_3_1 goto loc33;
+    edge Aut.c_open_match_4_5 goto loc22;
+    edge Aut.c_goright_match_3_2 goto loc31;
+  @state(statespace: "loc180", sup: "*")
+  location loc27:
+    edge Aut.c_open_match_4_5 goto loc23;
+    edge Aut.u_tau_goright_tau_2 goto loc33;
+    edge Aut.u_tau_goright_tau_1 goto loc34;
+  @state(statespace: "loc353", sup: "*")
+  location loc28:
+    edge Aut.c_close_match_4_5 goto loc33;
+    edge Aut.u_tau_goright_tau_1 goto loc35;
+  @state(statespace: "loc24", sup: "*")
+  location loc29:
+    edge Aut.c_close_match_4_5 goto loc34;
+    edge Aut.u_tau_goright_tau_2 goto loc35;
+  @state(statespace: "loc135", sup: "*")
+  location loc30:
+    edge Aut.c_goright_match_3_2 goto loc36;
+    edge Aut.u_tau_goright_tau_1 goto loc37;
+  @state(statespace: "loc375", sup: "*")
+  location loc31:
+    edge Aut.c_goright_match_3_1 goto loc38;
+    edge Aut.u_tau_goright_tau_2 goto loc37;
+    edge Aut.u_tau_goup_tau_2 goto loc39;
+  @state(statespace: "loc335", sup: "*")
+  location loc32:
+    edge Aut.c_goup_match_3_2 goto loc40;
+    edge Aut.u_tau_goright_tau_1 goto loc39;
+  @state(statespace: "loc30", sup: "*")
+  location loc33:
+    edge Aut.c_open_match_4_5 goto loc28;
+    edge Aut.c_goright_match_3_2 goto loc38;
+    edge Aut.u_tau_goright_tau_1 goto loc41;
+  @state(statespace: "loc376", sup: "*")
+  location loc34:
+    edge Aut.c_open_match_4_5 goto loc29;
+    edge Aut.u_tau_goright_tau_2 goto loc41;
+  @state(statespace: "loc285", sup: "*")
+  location loc35:
+    edge Aut.c_close_match_4_5 goto loc41;
+  @state(statespace: "loc121", sup: "*")
+  location loc36:
+    edge Aut.u_tau_goright_tau_1 goto loc42;
+  @state(statespace: "loc119", sup: "*")
+  location loc37:
+    edge Aut.c_goright_match_3_1 goto loc43;
+    edge Aut.c_goright_match_3_2 goto loc42;
+  @state(statespace: "loc134", sup: "*")
+  location loc38:
+    edge Aut.u_tau_goright_tau_2 goto loc43;
+    edge Aut.u_tau_goright_tau_1 goto loc44;
+    edge Aut.u_tau_goup_tau_2 goto loc45;
+  @state(statespace: "loc211", sup: "*")
+  location loc39:
+    edge Aut.c_goright_match_3_1 goto loc45;
+    edge Aut.c_goup_match_3_2 goto loc46;
+  @state(statespace: "loc384", sup: "*")
+  location loc40:
+    edge Aut.u_tau_goright_tau_2 goto loc47;
+    edge Aut.u_tau_goright_tau_1 goto loc46;
+  @state(statespace: "loc70", sup: "*")
+  location loc41:
+    edge Aut.c_open_match_4_5 goto loc35;
+    edge Aut.c_goright_match_3_2 goto loc44;
+  @state(statespace: "loc257", sup: "*")
+  location loc42:
+    edge Aut.c_goright_match_3_1 goto loc48;
+  @state(statespace: "loc311", sup: "*")
+  location loc43:
+    edge Aut.c_goright_match_3_2 goto loc48;
+    edge Aut.u_tau_goright_tau_1 goto loc49;
+  @state(statespace: "loc251", sup: "*")
+  location loc44:
+    edge Aut.u_tau_goright_tau_2 goto loc49;
+    edge Aut.u_tau_goup_tau_2 goto loc50;
+  @state(statespace: "loc252", sup: "*")
+  location loc45:
+    edge Aut.c_goup_match_3_2 goto loc51;
+    edge Aut.u_tau_goright_tau_1 goto loc50;
+  @state(statespace: "loc391", sup: "*")
+  location loc46:
+    edge Aut.c_goright_match_3_1 goto loc51;
+    edge Aut.u_tau_goright_tau_2 goto loc52;
+  @state(statespace: "loc187", sup: "*")
+  location loc47:
+    edge Aut.c_goright_match_3_2 goto loc53;
+    edge Aut.u_tau_goright_tau_1 goto loc52;
+  @state(statespace: "loc220", sup: "*")
+  location loc48:
+    edge Aut.c_open_match_4_5 goto loc54;
+    edge Aut.u_tau_goright_tau_1 goto loc55;
+  @state(statespace: "loc289", sup: "*")
+  location loc49:
+    edge Aut.c_goright_match_3_2 goto loc55;
+  @state(statespace: "loc228", sup: "*")
+  location loc50:
+    edge Aut.c_goup_match_3_2 goto loc56;
+  @state(statespace: "loc111", sup: "*")
+  location loc51:
+    edge Aut.u_tau_goright_tau_2 goto loc57;
+    edge Aut.u_tau_goright_tau_1 goto loc56;
+  @state(statespace: "loc20", sup: "*")
+  location loc52:
+    edge Aut.c_goright_match_3_1 goto loc57;
+    edge Aut.c_goright_match_3_2 goto loc58;
+  @state(statespace: "loc272", sup: "*")
+  location loc53:
+    edge Aut.u_tau_goright_tau_1 goto loc58;
+  @state(statespace: "loc103", sup: "*")
+  location loc54:
+    edge Aut.c_close_match_4_5 goto loc48;
+    edge Aut.u_tau_goright_tau_1 goto loc59;
+  @state(statespace: "loc57", sup: "*")
+  location loc55:
+    edge Aut.c_open_match_4_5 goto loc59;
+  @state(statespace: "loc115", sup: "*")
+  location loc56:
+    edge Aut.u_tau_goright_tau_2 goto loc60;
+  @state(statespace: "loc343", sup: "*")
+  location loc57:
+    edge Aut.c_goright_match_3_2 goto loc61;
+    edge Aut.u_tau_goright_tau_1 goto loc60;
+  @state(statespace: "loc9", sup: "*")
+  location loc58:
+    edge Aut.c_goright_match_3_1 goto loc61;
+  @state(statespace: "loc105", sup: "*")
+  location loc59:
+    edge Aut.c_goright_match_3_1 goto loc62;
+    edge Aut.c_close_match_4_5 goto loc55;
+  @state(statespace: "loc138", sup: "*")
+  location loc60:
+    edge Aut.c_goright_match_3_2 goto loc63;
+  @state(statespace: "loc54", sup: "*")
+  location loc61:
+    edge Aut.c_open_match_4_5 goto loc64;
+    edge Aut.u_tau_goright_tau_1 goto loc63;
+  @state(statespace: "loc248", sup: "*")
+  location loc62:
+    edge Aut.u_tau_goright_tau_1 goto loc65;
+  @state(statespace: "loc72", sup: "*")
+  location loc63:
+    edge Aut.c_open_match_4_5 goto loc66;
+  @state(statespace: "loc315", sup: "*")
+  location loc64:
+    edge Aut.c_close_match_4_5 goto loc61;
+    edge Aut.u_tau_goright_tau_1 goto loc66;
+  @state(statespace: "loc326", sup: "*")
+  location loc65:
+    edge Aut.c_goright_match_3_1 goto loc67;
+  @state(statespace: "loc209", sup: "*")
+  location loc66:
+    edge Aut.c_goright_match_3_1 goto loc68;
+    edge Aut.c_close_match_4_5 goto loc63;
+  @state(statespace: "loc23", sup: "*")
+  location loc67:
+    edge Aut.c_close_match_4_5 goto loc69;
+    edge Aut.u_tau_goright_tau_1 goto loc70;
+  @state(statespace: "loc264", sup: "*")
+  location loc68:
+    edge Aut.u_tau_goright_tau_1 goto loc71;
+  @state(statespace: "loc230", sup: "*")
+  location loc69:
+    edge Aut.c_open_match_4_5 goto loc67;
+    edge Aut.u_tau_goright_tau_1 goto loc72;
+  @state(statespace: "loc306", sup: "*")
+  location loc70:
+    edge Aut.c_close_match_4_5 goto loc72;
+  @state(statespace: "loc240", sup: "*")
+  location loc71:
+    edge Aut.c_goright_match_3_1 goto loc73;
+  @state(statespace: "loc118", sup: "*")
+  location loc72:
+    edge Aut.c_goright_match_3_1 goto loc74;
+    edge Aut.c_open_match_4_5 goto loc70;
+  @state(statespace: "loc350", sup: "*")
+  location loc73:
+    edge Aut.c_close_match_4_5 goto loc75;
+    edge Aut.u_tau_goright_tau_1 goto loc76;
+  @state(statespace: "loc191", sup: "*")
+  location loc74:
+    edge Aut.u_tau_goright_tau_1 goto loc77;
+    edge Aut.u_tau_goup_tau_1 goto loc78;
+  @state(statespace: "loc372", sup: "*")
+  location loc75:
+    edge Aut.c_open_match_4_5 goto loc73;
+    edge Aut.u_tau_goright_tau_1 goto loc79;
+  @state(statespace: "loc294", sup: "*")
+  location loc76:
+    edge Aut.c_close_match_4_5 goto loc79;
+  @state(statespace: "loc275", sup: "*")
+  location loc77:
+    edge Aut.c_goright_match_3_1 goto loc80;
+  @state(statespace: "loc44", sup: "*")
+  location loc78:
+    edge Aut.c_goup_match_3_1 goto loc81;
+  @state(statespace: "loc250", sup: "*")
+  location loc79:
+    edge Aut.c_goright_match_3_1 goto loc82;
+    edge Aut.c_open_match_4_5 goto loc76;
+  @state(statespace: "loc389", sup: "*")
+  location loc80:
+    marked;
+  @state(statespace: "loc94", sup: "*")
+  location loc81:
+    edge Aut.u_tau_goright_tau_1 goto loc83;
+  @state(statespace: "loc27", sup: "*")
+  location loc82:
+    edge Aut.u_tau_goright_tau_1 goto loc84;
+    edge Aut.u_tau_goup_tau_1 goto loc85;
+  @state(statespace: "loc25", sup: "*")
+  location loc83:
+    edge Aut.c_goright_match_3_1 goto loc86;
+  @state(statespace: "loc266", sup: "*")
+  location loc84:
+    edge Aut.c_goright_match_3_1 goto loc87;
+  @state(statespace: "loc139", sup: "*")
+  location loc85:
+    edge Aut.c_goup_match_3_1 goto loc88;
+  @state(statespace: "loc69", sup: "*")
+  location loc86:
+    marked;
+  @state(statespace: "loc176", sup: "*")
+  location loc87:
+    marked;
+  @state(statespace: "loc46", sup: "*")
+  location loc88:
+    edge Aut.u_tau_goright_tau_1 goto loc89;
+  @state(statespace: "loc291", sup: "*")
+  location loc89:
+    edge Aut.c_goright_match_3_1 goto loc90;
+  @state(statespace: "loc317", sup: "*")
+  location loc90:
+    marked;
+end

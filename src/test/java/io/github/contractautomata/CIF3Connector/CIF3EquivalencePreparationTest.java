@@ -70,7 +70,7 @@ public final class CIF3EquivalencePreparationTest {
         verify(Files.readString(catlib), Files.readString(cif3), card);
         check(Arrays.equals(originalCatlib, Files.readAllBytes(catlib)), "CATLib input unchanged");
         check(Arrays.equals(originalCif3, Files.readAllBytes(cif3)), "CIF3 input unchanged");
-        String reference = Files.readString(resources.resolve("TwoOrchestrations.cif"));
+        String reference = Files.readString(resources.resolve("TwoCardOrchestrations.cif"));
         check(count(reference, "group Aut:") == 1 && count(reference, "automaton ") == 2,
                 "Manual reference has expected document structure");
         check(eventDeclarations(card).equals(eventDeclarations(reference)), "Shared events agree with manual reference");

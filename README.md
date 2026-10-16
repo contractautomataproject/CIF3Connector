@@ -17,7 +17,7 @@ The tool is provided as a JAR package and can be executed from the command line.
 
 ### Basic Command Syntax
 ```bash
-java -jar CIF3Connector.jar -i <input1.data> [<input2.data> ...] [-o <composition.cif> <orchestration.cif>] [-a]
+java -jar CIF3Connector-1.0-SNAPSHOT.jar -i <input1.data> [<input2.data> ...] [-o <composition.cif> <orchestration.cif>] [-a]
 ```
 
 ### Parameters
@@ -30,13 +30,13 @@ java -jar CIF3Connector.jar -i <input1.data> [<input2.data> ...] [-o <compositio
 1. **Multiple Input Files:**
    To compose a dealer and a player automaton and specify custom output names:
    ```bash
-   java -jar CIF3Connector.jar -i Dealer.data Player.data -o MyComp.cif MyOrch.cif
+   java -jar CIF3Connector-1.0-SNAPSHOT.jar -i Dealer.data Player.data -o MyComp.cif MyOrch.cif
    ```
 
 2. **Single Input File:**
    If a single automaton is provided, it is treated as a pre-composed automaton. The tool will apply the most permissive controller synthesis before translating it to CIF3:
    ```bash
-   java -jar CIF3Connector.jar -i precomposed.data
+   java -jar CIF3Connector-1.0-SNAPSHOT.jar -i precomposed.data
    ```
 
    Replace `precomposed.data` with an existing precomposed automaton. `CardComposition.data` is a generated intermediate file and is not necessarily present in `src/main/resources`.
