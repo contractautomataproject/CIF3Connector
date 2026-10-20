@@ -38,7 +38,7 @@ public class CIF3Connector {
     private static boolean printContractAutomata = false;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<String> inputFiles = new ArrayList<>();
         String compCif = "Composition.cif";
         String orchCif = "Orchestration.cif";
@@ -70,55 +70,51 @@ public class CIF3Connector {
             System.out.println("Examples:");
             System.out.println("  java -jar CIF3connector-1.0-SNAPSHOT.jar -i Player.data Player.data Dealer.data -o CardComposition.cif CardOrchestration.cif");
             System.out.println("  java -jar tool.jar -i precomposed.data");
-            System.out.println("  Replace precomposed.data with an existing precomposed automaton.");
-            System.out.println("  CardComposition.data is a generated intermediate file and is not necessarily present in src/main/resources.");
             System.err.println("No input files specified.");
             return;
         }
 
-        try {
-            if (inputFiles.size() == 1) {
-                // Only one automaton: treat as already composed
-                var aut = bdc.importMSCA(inputFiles.get(0));
-                if (aut.getTransition().parallelStream().anyMatch(ModalTransition::isLazy))
-                    throw new RuntimeException("The provided composed automaton contains lazy transitions. ");
-                exportToCif(aut, compCif);
-
-                var mpc = new MpcSynthesisOperator<String>(new StrongAgreement()).apply(aut);
-                exportToCif(mpc, orchCif);
-            } else {
-                // Multiple automata: compose, then synthesize
-                List<Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>>> automata =
-                        inputFiles.stream().map(f -> {
-                            try {
-                                return bdc.importMSCA(f);
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                        }).collect(Collectors.toList());
-
-                var comp = new MSCACompositionFunction<>(
-                        encodePrincipals(automata),
-                        t -> new StrongAgreement().negate().test(t.getLabel())
-                ).apply(Integer.MAX_VALUE);
-
-                exportToCif(comp, compCif);
-
-                var mpc = new MpcSynthesisOperator<String>(new StrongAgreement()).apply(comp);
-                exportToCif(mpc, orchCif);
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> comp;
+        if (inputFiles.size() == 1) {
+            // Only one automaton: treat as already composed
+            comp = bdc.importMSCA(inputFiles.get(0));
+            if (comp.getTransition().parallelStream().anyMatch(ModalTransition::isLazy))
+                throw new RuntimeException("The provided composed automaton contains lazy transitions. ");
+        } else {
+            // Multiple automata: compose, then synthesize
+            List<Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, CALabel>>> automata = new ArrayList<>();
+            for (String inputFile : inputFiles) {
+                automata.add(bdc.importMSCA(inputFile));
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            comp = new MSCACompositionFunction<>(
+                    encodePrincipals(automata),
+                    t -> new StrongAgreement().negate().test(t.getLabel())
+            ).apply(Integer.MAX_VALUE);
         }
+        System.out.println("Input composition states: " + comp.getStates().size());
+        System.out.println("Input composition transitions: " + comp.getTransition().size());
+        exportToCif(comp, compCif, "Composition");
+
+        long synthesisStart = System.nanoTime();
+        var mpc = new MpcSynthesisOperator<String>(new StrongAgreement()).apply(comp);
+        long synthesisElapsed = System.nanoTime() - synthesisStart;
+        System.out.println("CATLib MPC synthesis time (ms): " + synthesisElapsed / 1_000_000.0);
+        System.out.println("Synthesized orchestration states: " + mpc.getStates().size());
+        System.out.println("Synthesized orchestration transitions: " + mpc.getTransition().size());
+        exportToCif(mpc, orchCif, "Orchestration");
     }
 
 
-    private static void exportToCif(Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> aut, String filename) throws IOException {
+    private static void exportToCif(Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> aut, String filename, String stage) throws IOException {
         if (printContractAutomata){
             AutDataConverter<CALabel> adc = new AutDataConverter<>(CALabel::new);
             adc.exportMSCA(filename.substring(0,filename.length()-3)+"data",aut);
         }
+        long translationStart = System.nanoTime();
         String content = contractAutomatonToCIF3(aut);
+        long translationElapsed = System.nanoTime() - translationStart;
+        System.out.println(stage + " CIF3 translation time (ms): " + translationElapsed / 1_000_000.0);
         Path filePath = Path.of(filename);
         Files.writeString(filePath, content, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
     }
