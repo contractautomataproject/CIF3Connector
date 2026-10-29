@@ -55,8 +55,8 @@ run the ESCET tools.
 
 ## Automated experiment reproduction
 
-`CIF3ConnectorExperiments` is a convenience tool for reproducing the experiments. 
-It automates the manual operations described below.
+`CIF3ConnectorExperiments` is a convenience tool for reproducing synthesis and
+language-equivalence checks on the unmodified composition.
 
 For convenience, the Zenodo artifact distributes the JAR and the example `.data` 
 files in the same directory, but they may also be located in different directories 
@@ -124,13 +124,14 @@ For both original experiments, the expected checker result is
 ## Manual experiment reproduction
 
 Each stage can also be executed independently, without
-`CIF3ConnectorExperiments`. These artifact commands assume the JAR and required
-example inputs are in the current directory. Put the ESCET `bin` directory on
-`PATH` so its commands can be invoked as shown. Use a clean directory for newly
-generated outputs; the standalone tools do not provide the automated pipeline's
-combined collision checks.
+`CIF3ConnectorExperiments`. The commands below assume that the JAR and required
+example inputs are in the same working directory, with the ESCET `bin` directory
+on `PATH`. The example inputs and CIF fixtures are available in
+`src/main/resources/` and can be copied to a working directory for reproduction,
+leaving the repository resources unchanged. Standalone commands write the output
+filenames shown and replace existing files with those names.
 
-### Original Card
+### Card
 
 ```text
 java -jar CIF3Connector-1.0-SNAPSHOT.jar -i CardComposition.data -o CardComposition.cif CardOrchestration.cif
@@ -154,12 +155,27 @@ Both sequences should report `Automata have the same language.` If using the
 supplied CIF orchestrations after synthesis and exploration have already been
 performed, run only the final preparation and checking commands.
 
-### Mutated Card (manual experiment)
+### Card fault injection (manual experiment)
 
-This experiment compares the **original CATLib orchestration** against the CIF3
-orchestration synthesized from the supplied mutated composition CIF. Start with
-`CardOrchestration.cif` and the prepared `CardComposition_mutated.cif`; mutation
-creation is not an automated pipeline feature.
+The Card fault-injection experiment is reproduced manually using the individual
+CIF3Connector and ESCET commands. It deliberately modifies the controllability of selected actions in the CIF3
+model produced by translation to demonstrate discrepancy detection.
+It is separate from `CIF3ConnectorExperiments`, whose automated reproduction
+pipeline operates on the unmodified model.
+
+The supplied `CardComposition_mutated.cif` reverses the controllability
+declarations of 22 actions: 14 from `controllable` to `uncontrollable` and eight
+in the opposite direction. Action names, states, transitions and all other model
+content remain unchanged. The original `CardComposition.cif` is also supplied
+for inspection of the mutation.
+
+The Card procedure above provides the original CATLib orchestration
+`CardOrchestration.cif` and the successful language-equivalence check. With the
+JAR and supplied `CardComposition_mutated.cif` in the same working directory,
+the following commands synthesise the CIF3 orchestration from the modified
+composition and compare it with that original CATLib orchestration.
+The original `CardOrchestration.cif` is used unchanged, and all generated outputs
+have distinct filenames.
 
 ```text
 cifdatasynth CardComposition_mutated.cif
@@ -168,8 +184,17 @@ java -cp CIF3Connector-1.0-SNAPSHOT.jar io.github.contractautomata.CIF3Connector
 ciflngeqv CardEquivalence_mutated.cif
 ```
 
-Expected result: the automata have different languages. With the supplied
-mutated state-space file, run only the preparation and checking commands.
+The mutation introduces conflicting controllability declarations when preparing
+the comparison. `--ignore-controllability-conflicts` permits the comparison file
+to be generated, retaining the original CATLib classifications for shared
+actions. Actions declared only in the second input retain their own
+classifications. The transitions of both automata remain unchanged.
+
+The mutated CIF3 orchestration contains 97 states and 118 transitions, and the
+checker reports `Automata have a different language!` The distinguishing action
+`Aut.c_pair3_match_2_3` can be performed from the initial state of the mutated
+orchestration but is unavailable in the original CATLib orchestration. ESCET 10
+returns exit code 1 for this non-equivalence result.
 
 Alternatively, open a generated comparison file in ESCET and choose **CIF
 synthesis tools > Event-based synthesis tools > Apply language equivalence
